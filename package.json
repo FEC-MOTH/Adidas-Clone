@@ -4,7 +4,8 @@
   "description": "[ ] Create a helper function that generates passable fake product listings",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "react-dev": "webpack -w"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,22 @@
   },
   "homepage": "https://github.com/FEC-MOTH/hayden-module#readme",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "cli": "^1.0.1",
+    "express": "^4.16.4",
     "faker": "^4.1.0",
+    "morgan": "^1.9.1",
     "node": "^10.12.0",
-    "random-part-of-speech": "^1.0.0"
+    "nodemon": "^1.18.4",
+    "random-part-of-speech": "^1.0.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "webpack": "^4.23.0",
+    "webpack-cli": "^3.1.2"
   }
 }

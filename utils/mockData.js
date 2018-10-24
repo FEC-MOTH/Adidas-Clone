@@ -83,3 +83,5 @@ const generateShoe = (sport) => {
   return basketballShoe;
 }
 
+console.log(generateShoe('Football'));
+
