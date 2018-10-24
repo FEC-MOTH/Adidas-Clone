@@ -22,9 +22,9 @@ I want to fake the following fields:
 “Price” - int
 “salePrice” - int
 “Gender” - [Men, Women, Children]
+“Sport” : [Originals, Running, Soccer, Basketball, Football, Skateboarding, Workout, Essentials, Sandals & Slides, Hiking, Golf, Tennis, Baseball]
 “Category” - [Shoes, Clothing, Accessories]
 “Size” - [] - this is hard because it depends 
-“Sport” : [Originals, Running, Soccer, Basketball, Football, Skateboarding, Workout, Essentials, Sandals & Slides, Hiking, Golf, Tennis, Baseball]
 “Franchise” - string
 “Color” - string - can easily use faker for this
 “Partner” - string
@@ -32,6 +32,30 @@ I want to fake the following fields:
 “Brand” - string
 "imageUrl" - string
 
-
-
 */
+
+const {genders, sports, teamNames} = require('./staticDataForMock.js');
+const validShoePriceRange = {min: 50, max: 300};
+
+/**
+ * Returns a random number between min (inclusive) and max (exclusive)
+ */
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+const generateBasketballShoe = () => {
+  const basketballShoe = {};
+
+  basketballShoe.price = getRandomInt(validShoePriceRange.min, validShoePriceRange.max);
+  
+  if (getRandomInt(0, 10) <= 3) {
+    basketballShoe.salePrice = getRandomInt(validShoePriceRange.min,  basketballShoe.price);
+  } else {
+    basketballShoe.salePrice = null;
+  }
+
+  basketballShoe.gender = genders[getRandomInt(0, genders.length)];
+
+  return basketballShoe;
+}
