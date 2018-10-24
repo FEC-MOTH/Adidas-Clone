@@ -7,7 +7,7 @@ We have the following schema:
 1 - 10 = basketball shoes
 11-20 = football shoes 
 21-30 = sandles and slides
-31-40 = soccer
+31-40 = soccer shoes
 41-50 = original shoes
 51-60 = hoodies and sweater
 61-70 = running shoes
@@ -32,7 +32,6 @@ I want to fake the following fields:
 “Team” - string
 “Brand” - string
 "imageUrl" - string
-
 */
 
 const {genders, sports, teamNames} = require('./staticDataForMock.js');
@@ -47,10 +46,20 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-const generateBasketballShoe = () => {
+const generateShoe = (sport) => {
   const basketballShoe = {};
 
-  basketballShoe.sport = 'Basketball';
+  basketballShoe.sport = sport;
+
+  if (basketballShoe.sport === 'Football') {
+    // TODO separate teams !
+  } else if (basketballShoe.sport === 'Soccer') {
+    
+  } else if (basketballShoe.sport === 'Football') {
+
+  } else {
+    basketballShoe.team = null;
+  }
 
   basketballShoe.category = 'Shoe';
 
@@ -64,12 +73,13 @@ const generateBasketballShoe = () => {
 
   basketballShoe.gender = genders[getRandomInt(0, genders.length)];
 
-    basketballShoe.color = faker.fake("{{commerce.color}}")
+  basketballShoe.color = faker.fake("{{commerce.color}}")
 
-    basketballShoe.name = faker.fake("{{name.firstName}}") + " " + faker.fake("{{address.countryCode}}") + " " +  basketballShoe.sport + " " + basketballShoe.category; 
+  basketballShoe.name = faker.fake("{{name.firstName}}") + " " + faker.fake("{{address.countryCode}}") + " " +  basketballShoe.sport + " " + basketballShoe.category; 
     
-    return basketballShoe;
-}
 
-console.log(generateBasketballShoe())
+  basketballShoe.imageUrl = `https://loremflickr.com/320/240/${basketballShoe.sport},${basketballShoe.category},${basketballShoe.color.split(' ')[0]}/all`;
+
+  return basketballShoe;
+}
 
