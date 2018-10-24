@@ -48,7 +48,7 @@ Product.sync().then(() => {
 })
 
 Category.sync().then(() => {
-  console.log('successfully created Product table!')
+  console.log('successfully created Category table!')
 })
 
 module.exports.Product = Product;

@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+// TODO source these attributes from a .env file
 const connection = new Sequelize('adidas', 'root', 'hayden', {
     host: 'localhost',
     dialect: 'mysql'
