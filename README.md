@@ -1,0 +1,1 @@
+[ ] Create a helper function that generates passable fake product listings
