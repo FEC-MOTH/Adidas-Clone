@@ -22,8 +22,9 @@ I want to fake the following fields:
 “Price” - int
 “salePrice” - int
 “Gender” - [Men, Women, Children]
-“Sport” : [Originals, Running, Soccer, Basketball, Football, Skateboarding, Workout, Essentials, Sandals & Slides, Hiking, Golf, Tennis, Baseball]
-“Category” - [Shoes, Clothing, Accessories]
+"Sport" - [Basketball, Football, null, Soccer, Original];
+“Category” - [Shoes, Sandles and Slides, Hoodies and Sweater, Pants, Bags and Backpacks, Hats and Beanies]
+“Category” - [Shoes, Sandles and Slides, Hoodies and Sweater, Pants, Bags and Backpacks, Hats and Beanies]
 “Size” - [] - this is hard because it depends 
 “Franchise” - string
 “Color” - string - can easily use faker for this
@@ -36,6 +37,8 @@ I want to fake the following fields:
 
 const {genders, sports, teamNames} = require('./staticDataForMock.js');
 const validShoePriceRange = {min: 50, max: 300};
+const rpos = require('random-part-of-speech');
+const faker = require('faker');
 
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
@@ -47,6 +50,10 @@ function getRandomInt(min, max) {
 const generateBasketballShoe = () => {
   const basketballShoe = {};
 
+  basketballShoe.sport = 'Basketball';
+
+  basketballShoe.category = 'Shoe';
+
   basketballShoe.price = getRandomInt(validShoePriceRange.min, validShoePriceRange.max);
   
   if (getRandomInt(0, 10) <= 3) {
@@ -57,5 +64,12 @@ const generateBasketballShoe = () => {
 
   basketballShoe.gender = genders[getRandomInt(0, genders.length)];
 
-  return basketballShoe;
+    basketballShoe.color = faker.fake("{{commerce.color}}")
+
+    basketballShoe.name = faker.fake("{{name.firstName}}") + " " + faker.fake("{{address.countryCode}}") + " " +  basketballShoe.sport + " " + basketballShoe.category; 
+    
+    return basketballShoe;
 }
+
+console.log(generateBasketballShoe())
+

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/FEC-MOTH/hayden-module#readme",
   "dependencies": {
     "faker": "^4.1.0",
-    "node": "^10.12.0"
+    "node": "^10.12.0",
+    "random-part-of-speech": "^1.0.0"
   }
 }
