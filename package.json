@@ -1,0 +1,23 @@
+{
+  "name": "hayden-module",
+  "version": "1.0.0",
+  "description": "[ ] Create a helper function that generates passable fake product listings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FEC-MOTH/hayden-module.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FEC-MOTH/hayden-module/issues"
+  },
+  "homepage": "https://github.com/FEC-MOTH/hayden-module#readme",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "node": "^10.12.0"
+  }
+}
