@@ -1,5 +1,5 @@
-const { connection } = require("./index.js");
 const Sequelize = require("sequelize");
+const { connection } = require("./index.js");
 
 const Product = connection.define("product", {
   name: {

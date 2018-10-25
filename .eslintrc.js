@@ -1,4 +1,7 @@
 module.exports = {
-  extends: ["airbnb", "prettier", "prettier/react"],
-  plugins: ["prettier"]
+  extends: ["airbnb", "prettier"],
+  plugins: ["prettier", "react", "jest"],
+  env: {
+    "jest": true
+  }
 };

@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
+    "lint": "eslint --ignore-path .gitignore .",
     "react-dev": "webpack -w",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "validate": "npm-run-all --parallel test lint",
+    "precommit": "npm run validate"
   },
   "repository": {
     "type": "git",
@@ -43,10 +46,15 @@
     "babel-jest": "^23.6.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.1",
     "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
     "jest": "^23.6.0",
+    "prettier": "1.14.3",
     "regenerator-runtime": "^0.12.1",
     "superagent": "^4.0.0-beta.5",
     "supertest": "^3.3.0"

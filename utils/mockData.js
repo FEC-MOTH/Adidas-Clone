@@ -34,11 +34,10 @@ I want to fake the following fields:
 "imageUrl" - string
 */
 
-const { genders, sports, teamNames } = require("./staticDataForMock.js");
 const validShoePriceRange = { min: 50, max: 300 };
-const rpos = require("random-part-of-speech");
 const faker = require("faker");
-
+const { genders } = require("./staticDataForMock.js");
+// const { sports, teamNames } = require("./staticDataForMock.js");
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
  */
@@ -54,7 +53,9 @@ const generateShoe = sport => {
   if (basketballShoe.sport === "Football") {
     // TODO separate teams !
   } else if (basketballShoe.sport === "Soccer") {
+    // TODO handle soccer team
   } else if (basketballShoe.sport === "Football") {
+    // TODO handle football team
   } else {
     basketballShoe.team = null;
   }
@@ -80,19 +81,19 @@ const generateShoe = sport => {
   basketballShoe.color = faker.fake("{{commerce.color}}");
 
   basketballShoe.name =
-    faker.fake("{{name.firstName}}") +
-    " " +
-    faker.fake("{{address.countryCode}}") +
-    " " +
-    basketballShoe.sport +
-    " " +
-    basketballShoe.category;
+    `${faker.fake("{{name.firstName}}")
+    } ${
+    faker.fake("{{address.countryCode}}")
+    } ${
+    basketballShoe.sport
+    } ${
+    basketballShoe.category}`;
 
   basketballShoe.imageUrl = `https://loremflickr.com/320/240/${
     basketballShoe.sport
-  },${basketballShoe.category},${basketballShoe.color.split(" ")[0]}/all`;
+    },${basketballShoe.category},${basketballShoe.color.split(" ")[0]}/all`;
 
   return basketballShoe;
 };
 
-console.log(generateShoe("Football"));
+module.exports = generateShoe;
