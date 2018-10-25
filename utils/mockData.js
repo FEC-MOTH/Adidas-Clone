@@ -34,10 +34,10 @@ I want to fake the following fields:
 "imageUrl" - string
 */
 
-const {genders, sports, teamNames} = require('./staticDataForMock.js');
-const validShoePriceRange = {min: 50, max: 300};
-const rpos = require('random-part-of-speech');
-const faker = require('faker');
+const { genders, sports, teamNames } = require("./staticDataForMock.js");
+const validShoePriceRange = { min: 50, max: 300 };
+const rpos = require("random-part-of-speech");
+const faker = require("faker");
 
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
@@ -46,42 +46,53 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-const generateShoe = (sport) => {
+const generateShoe = sport => {
   const basketballShoe = {};
 
   basketballShoe.sport = sport;
 
-  if (basketballShoe.sport === 'Football') {
+  if (basketballShoe.sport === "Football") {
     // TODO separate teams !
-  } else if (basketballShoe.sport === 'Soccer') {
-    
-  } else if (basketballShoe.sport === 'Football') {
-
+  } else if (basketballShoe.sport === "Soccer") {
+  } else if (basketballShoe.sport === "Football") {
   } else {
     basketballShoe.team = null;
   }
 
-  basketballShoe.category = 'Shoe';
+  basketballShoe.category = "Shoe";
 
-  basketballShoe.price = getRandomInt(validShoePriceRange.min, validShoePriceRange.max);
-  
+  basketballShoe.price = getRandomInt(
+    validShoePriceRange.min,
+    validShoePriceRange.max
+  );
+
   if (getRandomInt(0, 10) <= 3) {
-    basketballShoe.salePrice = getRandomInt(validShoePriceRange.min,  basketballShoe.price);
+    basketballShoe.salePrice = getRandomInt(
+      validShoePriceRange.min,
+      basketballShoe.price
+    );
   } else {
     basketballShoe.salePrice = null;
   }
 
   basketballShoe.gender = genders[getRandomInt(0, genders.length)];
 
-  basketballShoe.color = faker.fake("{{commerce.color}}")
+  basketballShoe.color = faker.fake("{{commerce.color}}");
 
-  basketballShoe.name = faker.fake("{{name.firstName}}") + " " + faker.fake("{{address.countryCode}}") + " " +  basketballShoe.sport + " " + basketballShoe.category; 
-    
+  basketballShoe.name =
+    faker.fake("{{name.firstName}}") +
+    " " +
+    faker.fake("{{address.countryCode}}") +
+    " " +
+    basketballShoe.sport +
+    " " +
+    basketballShoe.category;
 
-  basketballShoe.imageUrl = `https://loremflickr.com/320/240/${basketballShoe.sport},${basketballShoe.category},${basketballShoe.color.split(' ')[0]}/all`;
+  basketballShoe.imageUrl = `https://loremflickr.com/320/240/${
+    basketballShoe.sport
+  },${basketballShoe.category},${basketballShoe.color.split(" ")[0]}/all`;
 
   return basketballShoe;
-}
+};
 
-console.log(generateShoe('Football'));
-
+console.log(generateShoe("Football"));
