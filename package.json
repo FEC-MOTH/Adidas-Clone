@@ -4,7 +4,7 @@
   "description": "[ ] Create a helper function that generates passable fake product listings",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "react-dev": "webpack -w",
     "start": "nodemon server/index.js"
   },
@@ -40,7 +40,9 @@
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
+    "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
+    "regenerator-runtime": "^0.12.1",
     "superagent": "^4.0.0-beta.5",
     "supertest": "^3.3.0"
   }

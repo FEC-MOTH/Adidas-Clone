@@ -43,12 +43,12 @@ const Category = connection.define('category', {
   }
 })
 
-Product.sync().then(() => {
-    console.log('successfully created Product table!')
+Category.sync({force: true}).then(() => {
+  console.log('successfully created Category table!')
 })
 
-Category.sync().then(() => {
-  console.log('successfully created Category table!')
+Product.sync({force: true}).then(() => {
+    console.log('successfully created Product table!')
 })
 
 module.exports.Product = Product;
