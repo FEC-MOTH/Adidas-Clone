@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../css/app.css";
-import Header from "../components/Header.jsx";
+import TopHeader from "./TopHeader.jsx";
+import BottomHeader from "./BottomHeader.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -9,9 +10,9 @@ class App extends React.Component {
 
   render() {
     return (
-
-      < div >
-        <Header />
+      <div className="header-desktop">
+        <TopHeader />
+        <BottomHeader />
       </div >
     );
   }

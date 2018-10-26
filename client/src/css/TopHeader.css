@@ -1,0 +1,44 @@
+.glass-header-top-desktop {
+  vertical-align: center;
+  font-weight: 400;
+  font-size: 11px;
+  display: relative;
+  height: 32px;
+  background: linear-gradient(90deg,#000 30%,transparent 50%),linear-gradient(180deg,#000 0,#363738);
+}
+
+.glass-header-bottom-desktop {
+  vertical-align: center;
+  font-weight: 400;
+  font-size: 11px;
+  display: relative;
+  height: 32px;
+  background: black;
+}
+
+a {
+  padding: 0 10px;
+  align-items: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ebedee;
+  list-style-type: none;
+  display: inline;
+}
+
+em a {
+  font-weight: bold;
+}
+
+em {
+  font-style: normal;
+}
+
+.menu-spacer {
+  display: inline;
+  height: 12px;
+  width: 1px;
+  position: relative;
+  top: -1px;
+  background-color: #98989a;
+}

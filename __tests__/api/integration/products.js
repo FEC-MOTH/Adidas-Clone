@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require("../../../server/app");
-const connection = require("../../../database/index");
+// const connection = require("../../../database/index");
 
 beforeEach(() => {
   // await dropProductTables()

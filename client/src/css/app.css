@@ -1,0 +1,11 @@
+.header-desktop {
+  font-family: Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  text-align: right;
+}
