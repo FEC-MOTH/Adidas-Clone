@@ -1,4 +1,5 @@
 .glass-header-top-desktop {
+  padding: 0 10px;
   vertical-align: center;
   font-weight: 400;
   font-size: 11px;
@@ -7,13 +8,10 @@
   background: linear-gradient(90deg,#000 30%,transparent 50%),linear-gradient(180deg,#000 0,#363738);
 }
 
-.glass-header-bottom-desktop {
-  vertical-align: center;
-  font-weight: 400;
-  font-size: 11px;
-  display: relative;
-  height: 32px;
-  background: black;
+.inner-for-vertical-align {
+  position: relative;
+  top: 25%;
+  float: right;
 }
 
 a {
@@ -28,17 +26,14 @@ a {
 
 em a {
   font-weight: bold;
-}
-
-em {
   font-style: normal;
 }
 
 .menu-spacer {
-  display: inline;
+  display: inline-block;
   height: 12px;
   width: 1px;
   position: relative;
-  top: -1px;
+  top: 2px;
   background-color: #98989a;
 }
