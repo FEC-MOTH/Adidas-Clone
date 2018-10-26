@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "[ ] Create a helper function that generates passable fake product listings",
   "main": "index.js",
+  "jest": {
+    "collectCoverage": true,
+    "notify": true,
+    "verbose": true
+  },
   "scripts": {
     "test": "jest --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore .",
