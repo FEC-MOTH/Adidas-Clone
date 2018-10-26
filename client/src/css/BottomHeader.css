@@ -72,12 +72,18 @@
 }
 
 .menu-main li:hover .menu-sub {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .menu-sub li {
   display: block;
   margin: .5em 0em;
+}
+
+.menu-sub .emphasized {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .menu-sub .horizontal-separator {
