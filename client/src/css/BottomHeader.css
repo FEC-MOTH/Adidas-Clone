@@ -1,8 +1,97 @@
 .glass-header-bottom-desktop {
-  vertical-align: center;
+  position: relative;
+  top: 25px;
   font-weight: 400;
-  font-size: 11px;
-  display: relative;
-  height: 32px;
+  font-size: 15px;
+  height: 35px;
   background: black;
+  margin: 0 auto;
+}
+
+.menu-main {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+
+.menu-main li {
+  display: inline-block;
+  color: white;
+  margin: 0 5px;
+  height: 100%;
+}
+
+.menu-main li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 100%;
+  padding: .5em;
+}
+
+.menu-main li a:hover {
+  background-color: white;
+  color: black;
+}
+
+.menu-separator {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  width: 1px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.menu-sub {
+  position: absolute;
+  background: white;
+  width: 100%;
+  padding: 2em;
+  display: none;
+  color: black;
+  box-shadow: 0px 5px 10px -10px black;
+}
+
+.menu-sub ul {
+  padding: 0;
+}
+
+.menu-sub li a {
+  color: black;
+  padding: 0;
+  text-transform: none;
+}
+
+.menu-sub li a:hover {
+  text-decoration: underline;
+}
+
+.menu-main li:hover .menu-sub {
+  display: block;
+}
+
+.menu-sub li {
+  display: block;
+  margin: .5em 0em;
+}
+
+.menu-sub .horizontal-separator {
+  width: 16px;
+  height: 1px;
+  overflow: hidden;
+  margin: 40px 0 11px;
+  background-color: #ccc;
+}
+
+.menu-category {
+  margin: 2.5em 0 .5em;
+}
+
+.menu-category:first-of-type {
+  margin-top: 0;
 }
