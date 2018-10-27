@@ -1,5 +1,6 @@
 module.exports = {
-    menMainMenuData: {
+    mainMenuAssets: [{
+        "name": "Men",
         "Categories": [
             {
                 "name": "FEATURED",
@@ -93,6 +94,6 @@ module.exports = {
             ]
         }
         ]
-    }
+    }]
 }
 
