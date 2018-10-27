@@ -35,12 +35,7 @@ I want to fake the following fields:
 const validProductPriceRange = { min: 50, max: 300 };
 const faker = require("faker");
 const { teamNames } = require("./staticDataForMock.js");
-// const { sports, teamNames } = require("./staticDataForMock.js");
-/**
- * Returns a random number between min (inclusive) and max (exclusive)
- */
 
-const categoriesForMock = ["Shoe", "Sandle", "Sweater", "Pants", "Backpack", "Hat"];
 const gendersForMock = ["Men", "Women", "Children"];
 const colorsForMock = ["Black", "white", "red", "green", "yellow", "blue", "pink", "gray", "brown", "orange", "purple"];
 const sportsForMock = ["Basketball", "Football", null, "Soccer", "Original"];
@@ -50,56 +45,12 @@ function getRandomInt(min, max) {
 }
 
 
-/* 
-  First, we generate a base product with the following properties:
-  category - x
-  price - x
-  salePrice - x
-  color - x
-  rating - x
-  num_ratings - x
-  gender - x
-*/
+const sweaterPantsBackpackHatDecorator = (product) => {
 
-const generateProduct = (category) => {
-  let product = {};
-
-  product.category = category;
-
-  product.price = getRandomInt(
-    validProductPriceRange.min,
-    validProductPriceRange.max
-  );
-
-  // Add a sale price based on actual price 1/3 of the time
-  if (getRandomInt(0, 10) <= 3) {
-    product.salePrice = getRandomInt(
-      validProductPriceRange.min,
-      product.price
-    );
-  } else {
-    product.salePrice = null;
-  }
-
-  product.color = colorsForMock[getRandomInt(0, colorsForMock.length)];
-
-  // the random int generator is exclusive of the max (which is why we make max 6 here)
-  // TODO - ratings should have non-integer values
-  // TODO - come up with a distribution of ratings so there are more 4 and 5
-  product.rating = getRandomInt(0, 6);
-
-  product.num_ratings = getRandomInt(10, 500);
-
-  product.gender = gendersForMock[getRandomInt(0, gendersForMock.length)];
-
-  if (product.category === 'Shoe' || product.category === 'Sandle') {
-    product = shoeDecorator(product);
-  } else if (product.category === 'Hat') {
-    //TODO ["Sweater", "Pants", "Backpack"];
-  } else if (product.category == 'Sweater' || product.category === 'Pants' || product.category === 'Backpack') {
-    // TODO
-  }
-
+  product.sport = null;
+  product.team = null;
+  product.imageUrl = `https://loremflickr.com/320/240/${product.category},${product.color}/all`;
+  product.name = `${faker.fake("{{address.city}}")} ${product.category}`;
   return product;
 }
 
@@ -154,11 +105,44 @@ const shoeDecorator = (product) => {
   return product;
 };
 
+const generateProduct = (category) => {
+  let product = {};
 
-/*
-["Sweater", "Pants", "Backpack"];
-*/
+  product.category = category;
 
-console.log(generateProduct('Shoe'))
+  product.price = getRandomInt(
+    validProductPriceRange.min,
+    validProductPriceRange.max
+  );
 
-//module.exports = generateShoe;
+  // Add a sale price based on actual price 1/3 of the time
+  if (getRandomInt(0, 10) <= 3) {
+    product.salePrice = getRandomInt(
+      validProductPriceRange.min,
+      product.price
+    );
+  } else {
+    product.salePrice = null;
+  }
+
+  product.color = colorsForMock[getRandomInt(0, colorsForMock.length)];
+
+  // the random int generator is exclusive of the max (which is why we make max 6 here)
+  // TODO - ratings should have non-integer values
+  // TODO - come up with a distribution of ratings so there are more 4 and 5
+  product.rating = getRandomInt(0, 6);
+
+  product.num_ratings = getRandomInt(10, 500);
+
+  product.gender = gendersForMock[getRandomInt(0, gendersForMock.length)];
+
+  if (product.category === 'Shoe' || product.category === 'Sandle') {
+    product = shoeDecorator(product);
+  } else if (product.category == 'Sweater' || product.category === 'Pants' || product.category === 'Backpack' || product.category === 'Hat') {
+    prouduct = sweaterPantsBackpackHatDecorator(product);
+  }
+
+  return product;
+}
+
+module.exports.generateProduct = generateProduct;
