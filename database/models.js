@@ -49,11 +49,11 @@ const Category = connection.define("category", {
   }
 });
 
-Category.sync({ force: true }).then(() => {
+Category.sync().then(() => {
   console.log("successfully created Category table!");
 });
 
-Product.sync({ force: true }).then(() => {
+Product.sync().then(() => {
   console.log("successfully created Product table!");
 });
 
