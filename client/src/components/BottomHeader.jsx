@@ -9,11 +9,16 @@ const BottomHeader = (props) => {
       <ul className="menu-main">
 
         {mainMenuAssets.map((mainMenuAsset) => {
+
+          if (mainMenuAsset === null) {
+            return <li className="vertical-separator"></li>
+          } else {
           return (
           <li><a href="#">{mainMenuAsset.name}</a>
             <SubMenu mainMenuAsset={mainMenuAsset} />
           </li>
           )
+        }
         })}
       </ul >
     </div >

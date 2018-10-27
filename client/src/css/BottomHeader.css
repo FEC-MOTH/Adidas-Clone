@@ -17,6 +17,7 @@
   text-align: left;
 }
 
+
 .menu-main li {
   display: inline-block;
   color: white;
@@ -31,6 +32,14 @@
   text-transform: uppercase;
   height: 100%;
   padding: .5em;
+}
+
+.menu-main .vertical-separator {
+  width: 1px;
+  height: 24px;
+  top: 7px;
+  position: relative;
+  background-color: hsla(0,0%,100%,.25);
 }
 
 .menu-main li a:hover {
@@ -51,6 +60,7 @@
   position: absolute;
   background: white;
   width: 100%;
+  left: 0;
   padding: 2em;
   display: none;
   color: black;
