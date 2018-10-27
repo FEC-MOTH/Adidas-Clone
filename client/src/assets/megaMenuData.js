@@ -392,7 +392,7 @@ module.exports = {
                     "NMD",
                     "Falcon",
                     null,
-                    {"name": "all adidas Originals", "emphasized": true},
+                    { "name": "all adidas Originals", "emphasized": true },
                 ]
             },
             {
@@ -408,7 +408,7 @@ module.exports = {
                     "Z.N.E.",
                     "ID",
                     null,
-                    {"name": "all Athletics", "emphasized": true},
+                    { "name": "all Athletics", "emphasized": true },
                 ]
             },
             {
@@ -424,7 +424,7 @@ module.exports = {
                     "Tennis",
                     "Training",
                     null,
-                    {"name": "all adidas by Stella McCartney", "emphasized": true},
+                    { "name": "all adidas by Stella McCartney", "emphasized": true },
                 ]
             },
             {
@@ -441,7 +441,7 @@ module.exports = {
                     "Matchcourt",
                     "Busenitz",
                     null,
-                    {"name": "all Skateboarding", "emphasized": true},
+                    { "name": "all Skateboarding", "emphasized": true },
                 ]
             },
             {
@@ -458,11 +458,73 @@ module.exports = {
                     "Samba",
                     "I-5923",
                     null,
-                    {"name": "adicolor Clothing", "emphasized": true},
+                    { "name": "adicolor Clothing", "emphasized": true },
                 ]
             }
         ]
-    }
+    },
+        null,
+        {
+            "name": "Customize",
+            "Categories": [
+                {
+                    "name": "ORIGINALS",
+                    "columnHeaderImage": null,
+                    "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwf6ca62c8/_other/_navigation/mi_172x80_super.jpg",
+                    "subCategories": [
+                        "Superstar",
+                        "adilette",
+                        "Stan Smith",
+                        "Swift Run",
+                        "Campus",
+                        "I-5923",
+                        "EQT",
+                        "Tubular",
+                        "Gazelle",
+                        "Spezial",
+                        null,
+                        {"name": "All Originals", "emphasized": true}
+                    ]
+                },
+                {
+                    "name": "RUNNING",
+                    "columnHeaderImage": null,
+                    "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwe78d54b8/_other/_navigation/mi_172x80_pure.jpg",
+                    "subCategories": [
+                        "Pureboost",
+                        "Alphabounce Beyond",
+                        "Ultraboost X",
+                        "Solar Glide",
+                        "adizero Adios 3",
+                        "Energy Cloud",
+                        null,
+                        {"name": "All Running", "emphasized": true}
+                    ]
+                },
+                {
+                    "name": "BASKETBALL",
+                    "columnHeaderImage": null,
+                    "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw67e56fe0/_other/_navigation/mi_172x80_dame.jpg",
+                    "subCategories": [
+                        "Dame 4",
+                        null,
+                        {"name": "All Basketball", "emphasized": true}
+                    ]
+                },
+                {
+                    "name": "EXPLORE MORE",
+                    "columnHeaderImage": null,
+                    "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw7e4e8f17/_other/_navigation/alpha_172x80.jpg",
+                    "subCategories": [
+                        "Baseball",
+                        "All Men’s",
+                        "All Women’s",
+                        "Gift Cards",
+                        null
+                    ]
+                }
+            ]
+        }
     ]
 }
 
