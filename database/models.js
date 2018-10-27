@@ -11,13 +11,7 @@ const Product = connection.define("product", {
   salePrice: {
     type: Sequelize.INTEGER
   },
-  gender: {
-    type: Sequelize.STRING
-  },
   sport: {
-    type: Sequelize.STRING
-  },
-  category: {
     type: Sequelize.STRING
   },
   color: {
@@ -26,7 +20,19 @@ const Product = connection.define("product", {
   team: {
     type: Sequelize.STRING
   },
+  rating: {
+    type: Sequelize.FLOAT
+  },
+  num_ratings: {
+    type: Sequelize.INTEGER
+  },
   imageUrl: {
+    type: Sequelize.STRING
+  },
+  gender: {
+    type: Sequelize.STRING
+  },
+  category: {
     type: Sequelize.STRING
   }
 });

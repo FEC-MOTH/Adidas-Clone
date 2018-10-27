@@ -40,12 +40,12 @@ describe("/api/products", () => {
     expect(response.statusCode).toBe(200);
   });
 
-  test("/search should respond to GET", async () => {
+  test("/search/:query should respond to GET", async () => {
     const response = await request(app).get("/api/products/search");
     expect(response.statusCode).toBe(200);
   });
 
-  test("/search/suggestions should respond to GET", async () => {
+  test("/search/suggestions/:query should respond to GET", async () => {
     const response = await request(app).get("/api/products/search/suggestions");
     expect(response.statusCode).toBe(200);
   });

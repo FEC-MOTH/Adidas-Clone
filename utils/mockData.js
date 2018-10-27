@@ -18,82 +18,147 @@ We have the following schema:
 I want to fake the following fields:
 
 
-“Name” - string
-“Price” - int
+“name” - string
+“price” - int
 “salePrice” - int
-“Gender” - [Men, Women, Children]
-"Sport" - [Basketball, Football, null, Soccer, Original];
-“Category” - [Shoes, Sandles and Slides, Hoodies and Sweater, Pants, Bags and Backpacks, Hats and Beanies]
-“Category” - [Shoes, Sandles and Slides, Hoodies and Sweater, Pants, Bags and Backpacks, Hats and Beanies]
-“Size” - [] - this is hard because it depends 
-“Franchise” - string
-“Color” - string - can easily use faker for this
-“Partner” - string
-“Team” - string
-“Brand” - string
+"sport" - [Basketball, Football, null, Soccer, Original];
+“color” - string - can easily use faker for this
+“team” - string
+"rating" - Float
+"num_ratings" - integer
 "imageUrl" - string
+"gender" - string [Men, Women, Children]
+"category" - string [Shoes, Sandles and Slides, Hoodies and Sweater, Pants, Bags and Backpacks, Hats and Beanies]
 */
 
-const validShoePriceRange = { min: 50, max: 300 };
+
+const validProductPriceRange = { min: 50, max: 300 };
 const faker = require("faker");
-const { genders } = require("./staticDataForMock.js");
+const { teamNames } = require("./staticDataForMock.js");
 // const { sports, teamNames } = require("./staticDataForMock.js");
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
  */
+
+const categoriesForMock = ["Shoe", "Sandle", "Sweater", "Pants", "Backpack", "Hat"];
+const gendersForMock = ["Men", "Women", "Children"];
+const colorsForMock = ["Black", "white", "red", "green", "yellow", "blue", "pink", "gray", "brown", "orange", "purple"];
+const sportsForMock = ["Basketball", "Football", null, "Soccer", "Original"];
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-const generateShoe = sport => {
-  const basketballShoe = {};
 
-  basketballShoe.sport = sport;
+/* 
+  First, we generate a base product with the following properties:
+  category - x
+  price - x
+  salePrice - x
+  color - x
+  rating - x
+  num_ratings - x
+  gender - x
+*/
 
-  if (basketballShoe.sport === "Football") {
-    // TODO separate teams !
-  } else if (basketballShoe.sport === "Soccer") {
-    // TODO handle soccer team
-  } else if (basketballShoe.sport === "Football") {
-    // TODO handle football team
-  } else {
-    basketballShoe.team = null;
-  }
+const generateProduct = (category) => {
+  let product = {};
 
-  basketballShoe.category = "Shoe";
+  product.category = category;
 
-  basketballShoe.price = getRandomInt(
-    validShoePriceRange.min,
-    validShoePriceRange.max
+  product.price = getRandomInt(
+    validProductPriceRange.min,
+    validProductPriceRange.max
   );
 
+  // Add a sale price based on actual price 1/3 of the time
   if (getRandomInt(0, 10) <= 3) {
-    basketballShoe.salePrice = getRandomInt(
-      validShoePriceRange.min,
-      basketballShoe.price
+    product.salePrice = getRandomInt(
+      validProductPriceRange.min,
+      product.price
     );
   } else {
-    basketballShoe.salePrice = null;
+    product.salePrice = null;
   }
 
-  basketballShoe.gender = genders[getRandomInt(0, genders.length)];
+  product.color = colorsForMock[getRandomInt(0, colorsForMock.length)];
 
-  basketballShoe.color = faker.fake("{{commerce.color}}");
+  // the random int generator is exclusive of the max (which is why we make max 6 here)
+  // TODO - ratings should have non-integer values
+  // TODO - come up with a distribution of ratings so there are more 4 and 5
+  product.rating = getRandomInt(0, 6);
 
-  basketballShoe.name =
-    `${faker.fake("{{name.firstName}}")
-    } ${
-    faker.fake("{{address.countryCode}}")
-    } ${
-    basketballShoe.sport
-    } ${
-    basketballShoe.category}`;
+  product.num_ratings = getRandomInt(10, 500);
 
-  basketballShoe.imageUrl = `https://loremflickr.com/320/240/${
-    basketballShoe.sport
-    },${basketballShoe.category},${basketballShoe.color.split(" ")[0]}/all`;
+  product.gender = gendersForMock[getRandomInt(0, gendersForMock.length)];
 
-  return basketballShoe;
+  if (product.category === 'Shoe' || product.category === 'Sandle') {
+    product = shoeDecorator(product);
+  } else if (product.category === 'Hat') {
+    //TODO ["Sweater", "Pants", "Backpack"];
+  } else if (product.category == 'Sweater' || product.category === 'Pants' || product.category === 'Backpack') {
+    // TODO
+  }
+
+  return product;
+}
+
+const shoeDecorator = (product) => {
+
+  if (product.category === 'Shoe') {
+    product.sport = sportsForMock[getRandomInt(0, sportsForMock.length)];
+  }
+
+  // TODO CURRENTLY WE ARE FILTERING A GIANT TEAMS ARRAY EVERY TIME THIS IS RUN
+  if (product.sport === "Football") {
+    var nfl = teamNames.filter((team) => team.league === "nfl");
+    product.team = nfl[getRandomInt(0, nfl.length)].name;
+  } else if (product.sport === "Soccer") {
+    var mls = teamNames.filter((team) => team.league === "mls");
+    product.team = mls[getRandomInt(0, mls.length)].name;
+  } else if (product.sport === "Basketball") {
+    var nba = teamNames.filter((team) => team.league === "nba");
+    product.team = nba[getRandomInt(0, nba.length)].name;
+  } else {
+    product.team = null;
+  }
+
+  // TODO DRY!
+  if (product.team) {
+    product.name =
+      ` ${
+      product.team
+      } ${
+      product.sport
+      } ${
+      product.category}`;
+
+    product.imageUrl = `https://loremflickr.com/320/240/${
+      product.team
+      },${product.category},${product.color}/all`;
+  } else {
+    product.name =
+      `${faker.fake("{{name.firstName}}")
+      } ${
+      faker.fake("{{address.countryCode}}")
+      } ${
+      product.sport
+      } ${
+      product.category}`;
+
+    product.imageUrl = `https://loremflickr.com/320/240/${
+      product.team
+      },${product.category},${product.color}/all`;
+  }
+
+  return product;
 };
 
-module.exports = generateShoe;
+
+/*
+["Sweater", "Pants", "Backpack"];
+*/
+
+console.log(generateProduct('Shoe'))
+
+//module.exports = generateShoe;
