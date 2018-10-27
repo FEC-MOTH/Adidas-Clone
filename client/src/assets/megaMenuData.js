@@ -1,5 +1,5 @@
 module.exports = {
-    mainMenuAssets: [{
+    megaMenuAssets: [{
         "name": "Men",
         "Categories": [
             {
@@ -117,7 +117,7 @@ module.exports = {
                     "New Arrivals",
                     "Best Sellers",
                     "Release Dates",
-                    "null",
+                    null,
                     "P.O.D.System",
                     "Ultraboost",
                     "NMD",

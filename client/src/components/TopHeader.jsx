@@ -6,9 +6,9 @@ const TopHeader = (props) => {
     <nav className="glass-header-top-desktop">
       <div className="inner-for-vertical-align">
         <a> Help </a>
-        <div className="menu-spacer"></div>
+        <div className="top-header-vertical-spacer"></div>
         <a> Order Tracking and Returns </a>
-        <div className="menu-spacer"></div>
+        <div className="top-header-vertical-spacer"></div>
         <em>
           <a> Newsletter Signup </a>
         </em>

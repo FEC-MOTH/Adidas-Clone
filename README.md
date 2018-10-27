@@ -2,6 +2,12 @@
 
 This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in October 2018.
 
+## Adidas.com (10/27/18)
+![adidas](https://i.imgur.com/cJG0tOL.png)
+
+## Shoedidas (10/27/18)
+![shoedidas](https://i.imgur.com/HWtOEGy.png)
+
 ## Running Development Environment Locally
 
 To run locally

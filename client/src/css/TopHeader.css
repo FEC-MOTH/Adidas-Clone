@@ -1,3 +1,4 @@
+/* Containers */
 .glass-header-top-desktop {
   padding: 0 10px;
   vertical-align: center;
@@ -14,6 +15,8 @@
   float: right;
 }
 
+
+/* Element styling */
 a {
   padding: 0 10px;
   align-items: center;
@@ -29,7 +32,8 @@ em a {
   font-style: normal;
 }
 
-.menu-spacer {
+/* Spacer elements */
+.top-header-vertical-spacer {
   display: inline-block;
   height: 12px;
   width: 1px;

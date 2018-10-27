@@ -1,3 +1,4 @@
+/* Main Menu Containers and Wrappers */
 .glass-header-bottom-desktop {
   position: relative;
   top: 25px;
@@ -17,7 +18,7 @@
   text-align: left;
 }
 
-
+/* Mega Menu Top Level Elements */
 .menu-main li {
   display: inline-block;
   color: white;
@@ -42,21 +43,21 @@
   background-color: hsla(0,0%,100%,.25);
 }
 
+/* IMPORTANT - these are the hover styles that reveal
+each sub-menu component of the mega-menu.
+*/
 .menu-main li a:hover {
   background-color: white;
   color: black;
 }
 
-.menu-separator {
-  display: inline-block;
-  position: relative;
-  top: 1px;
-  width: 1px;
-  height: 15px;
-  background-color: #fff;
+.menu-main li:hover .mega-menu-sub-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.menu-sub {
+/* Mega Menu Sub Menu */
+.mega-menu-sub-menu {
   position: absolute;
   background: white;
   width: 100%;
@@ -67,47 +68,48 @@
   box-shadow: 0px 5px 10px -10px black;
 }
 
-.menu-sub ul {
+/* Mega Menu Sub Menu Column */
+.mega-menu-sub-menu ul {
   padding: 0;
 }
 
-.menu-sub li a {
+/* Mega Menu Sub Menu Column Header */
+
+.mega-menu-second-level-category {
+  margin: 2.5em 0 .5em;
+  color: black;
+}
+
+.mega-menu-second-level-category:first-of-type {
+  margin-top: 0;
+}
+
+/* Mega Menu Sub Menu Column Elements */
+
+.mega-menu-sub-menu li a {
   color: black;
   padding: 0;
   text-transform: none;
 }
 
-.menu-sub li a:hover {
+.mega-menu-sub-menu li a:hover {
   text-decoration: underline;
 }
 
-.menu-main li:hover .menu-sub {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.menu-sub li {
+.mega-menu-sub-menu li {
   display: block;
   margin: .5em 0em;
 }
 
-.menu-sub .emphasized {
+.mega-menu-sub-menu .emphasized {
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.menu-sub .horizontal-separator {
+.mega-menu-sub-menu .horizontal-separator {
   width: 16px;
   height: 1px;
   overflow: hidden;
   margin: 40px 0 11px;
   background-color: #ccc;
-}
-
-.menu-category {
-  margin: 2.5em 0 .5em;
-}
-
-.menu-category:first-of-type {
-  margin-top: 0;
 }
