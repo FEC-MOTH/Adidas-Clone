@@ -1,0 +1,115 @@
+/* Main Menu Containers and Wrappers */
+.glass-header-bottom-desktop {
+  position: relative;
+  top: 25px;
+  font-weight: 400;
+  font-size: 15px;
+  height: 35px;
+  background: black;
+  margin: 0 auto;
+}
+
+.menu-main {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+
+/* Mega Menu Top Level Elements */
+.menu-main li {
+  display: inline-block;
+  color: white;
+  margin: 0 5px;
+  height: 100%;
+}
+
+.menu-main li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 100%;
+  padding: .5em;
+}
+
+.menu-main .vertical-separator {
+  width: 1px;
+  height: 24px;
+  top: 7px;
+  position: relative;
+  background-color: hsla(0,0%,100%,.25);
+}
+
+/* IMPORTANT - these are the hover styles that reveal
+each sub-menu component of the mega-menu.
+*/
+.menu-main li a:hover {
+  background-color: white;
+  color: black;
+}
+
+.menu-main li:hover .mega-menu-sub-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* Mega Menu Sub Menu */
+.mega-menu-sub-menu {
+  position: absolute;
+  background: white;
+  width: 100%;
+  left: 0;
+  padding: 2em;
+  display: none;
+  color: black;
+  box-shadow: 0px 5px 10px -10px black;
+}
+
+/* Mega Menu Sub Menu Column */
+.mega-menu-sub-menu ul {
+  padding: 0;
+}
+
+/* Mega Menu Sub Menu Column Header */
+
+.mega-menu-second-level-category {
+  margin: 2.5em 0 .5em;
+  color: black;
+}
+
+.mega-menu-second-level-category:first-of-type {
+  margin-top: 0;
+}
+
+/* Mega Menu Sub Menu Column Elements */
+
+.mega-menu-sub-menu li a {
+  color: black;
+  padding: 0;
+  text-transform: none;
+}
+
+.mega-menu-sub-menu li a:hover {
+  text-decoration: underline;
+}
+
+.mega-menu-sub-menu li {
+  display: block;
+  margin: .5em 0em;
+}
+
+.mega-menu-sub-menu .emphasized {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mega-menu-sub-menu .horizontal-separator {
+  width: 16px;
+  height: 1px;
+  overflow: hidden;
+  margin: 40px 0 11px;
+  background-color: #ccc;
+}
