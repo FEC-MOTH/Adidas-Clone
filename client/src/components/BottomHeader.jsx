@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../css/BottomHeader.css'
 import { megaMenuAssets } from '../assets/megaMenuData';
-import MegaMenu from '../components/MegaMenu.jsx';
+import MegaMenu from '../components/MegaMenuComponents/MegaMenu';
 
 const BottomHeader = (props) => (
   <div className="glass-header-bottom-desktop">

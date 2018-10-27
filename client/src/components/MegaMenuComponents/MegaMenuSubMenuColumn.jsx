@@ -1,5 +1,5 @@
 import React from 'react';
-import MegaMenuSubMenuColumnHeader from '../components/MegaMenuSubMenuColumnHeader';
+import MegaMenuSubMenuColumnHeader from '../MegaMenuComponents/MegaMenuSubMenuColumnHeader';
 
 class MegaMenuSubMenuColumn extends React.Component {
     constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import MegaMenuSubMenuColumn from '../components/MegaMenuSubMenuColumn';
+import MegaMenuSubMenuColumn from '../MegaMenuComponents/MegaMenuSubMenuColumn';
 
 const MegaMenuSubMenu = (props) => (
     <div className="mega-menu-sub-menu">
