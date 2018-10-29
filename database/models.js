@@ -35,7 +35,11 @@ const Product = connection.define("product", {
   category: {
     type: Sequelize.STRING
   }
-});
+}, {
+    indexes: [
+      { type: 'FULLTEXT', name: 'search_idx', fields: ['name', 'team', 'sport', 'category', 'color', 'gender'] }
+    ]
+  });
 
 const Category = connection.define("category", {
   name: {
