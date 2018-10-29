@@ -49,13 +49,13 @@ const Category = connection.define("category", {
   }
 });
 
-Category.sync().then(() => {
-  console.log("successfully created Category table!");
-});
+// Category.sync().then(() => {
+//   console.log("successfully created Category table!");
+// });
 
-Product.sync().then(() => {
-  console.log("successfully created Product table!");
-});
+// Product.sync().then(() => {
+//   console.log("successfully created Product table!");
+// });
 
 module.exports.Product = Product;
 module.exports.Category = Category;

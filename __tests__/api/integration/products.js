@@ -1,15 +1,18 @@
 const request = require("supertest");
 const app = require("../../../server/app");
+const connection = require("../../../database/index");
+const { Product } = require("../../../database/models");
+const { dropProducts, syncProducts } = require('../../../database/utils/testUtils')
 // const connection = require("../../../database/index");
 
-beforeEach(() => {
-  // await dropProductTables()
-  // await dropCategoryTables()
-  // await syncProductTables()
-  // await syncCategoryTables()
-  // token = await request(app)
-  // .post(signupUrl)
+beforeEach(async () => {
+  await dropProducts();
+  await syncProducts();
 });
+
+afterAll(() => {
+  Product.sequelize.close();
+})
 
 /* example tests
 it('should fetch all users', async() => {

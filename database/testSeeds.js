@@ -2,12 +2,12 @@ const { Product } = require("./models");
 const { generateProduct } = require("../utils/mockData.js");
 
 const categoriesForMock = [
-  { "name": "Shoe", "numItemsToGenerate": 200 },
-  { "name": "Sandle", "numItemsToGenerate": 25 },
-  { "name": "Sweater", "numItemsToGenerate": 25 },
-  { "name": "Pants", "numItemsToGenerate": 25 },
-  { "name": "Backpack", "numItemsToGenerate": 25 },
-  { "name": "Hat", "numItemsToGenerate": 25 }
+  { "name": "Shoe", "numItemsToGenerate": 1 },
+  { "name": "Sandle", "numItemsToGenerate": 1 },
+  { "name": "Sweater", "numItemsToGenerate": 1 },
+  { "name": "Pants", "numItemsToGenerate": 1 },
+  { "name": "Backpack", "numItemsToGenerate": 1 },
+  { "name": "Hat", "numItemsToGenerate": 1 }
 ];
 
 Product.sync({ force: true }).then(() => {
@@ -17,4 +17,5 @@ Product.sync({ force: true }).then(() => {
     }
   })
 });
+
 

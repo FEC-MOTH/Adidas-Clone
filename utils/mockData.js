@@ -46,63 +46,63 @@ function getRandomInt(min, max) {
 
 
 const sweaterPantsBackpackHatDecorator = (product) => {
-
-  product.sport = null;
-  product.team = null;
-  product.imageUrl = `https://loremflickr.com/320/240/${product.category},${product.color}/all`;
-  product.name = `${faker.fake("{{address.city}}")} ${product.category}`;
-  return product;
+  const decoratedProduct = product;
+  decoratedProduct.sport = null;
+  decoratedProduct.team = null;
+  decoratedProduct.imageUrl = `https://loremflickr.com/320/240/${decoratedProduct.category},${decoratedProduct.color}/all`;
+  decoratedProduct.name = `${faker.fake("{{address.city}}")} ${decoratedProduct.category}`;
+  return decoratedProduct;
 }
 
 const shoeDecorator = (product) => {
-
-  if (product.category === 'Shoe') {
-    product.sport = sportsForMock[getRandomInt(0, sportsForMock.length)];
+  const shoe = product;
+  if (shoe.category === 'Shoe') {
+    shoe.sport = sportsForMock[getRandomInt(0, sportsForMock.length)];
   }
 
   // TODO CURRENTLY WE ARE FILTERING A GIANT TEAMS ARRAY EVERY TIME THIS IS RUN
-  if (product.sport === "Football") {
-    var nfl = teamNames.filter((team) => team.league === "nfl");
-    product.team = nfl[getRandomInt(0, nfl.length)].name;
-  } else if (product.sport === "Soccer") {
-    var mls = teamNames.filter((team) => team.league === "mls");
-    product.team = mls[getRandomInt(0, mls.length)].name;
-  } else if (product.sport === "Basketball") {
-    var nba = teamNames.filter((team) => team.league === "nba");
-    product.team = nba[getRandomInt(0, nba.length)].name;
+  if (shoe.sport === "Football") {
+    const nfl = teamNames.filter((team) => team.league === "nfl");
+    shoe.team = nfl[getRandomInt(0, nfl.length)].name;
+  } else if (shoe.sport === "Soccer") {
+    const mls = teamNames.filter((team) => team.league === "mls");
+    shoe.team = mls[getRandomInt(0, mls.length)].name;
+  } else if (shoe.sport === "Basketball") {
+    const nba = teamNames.filter((team) => team.league === "nba");
+    shoe.team = nba[getRandomInt(0, nba.length)].name;
   } else {
-    product.team = null;
+    shoe.team = null;
   }
 
   // TODO DRY!
-  if (product.team) {
-    product.name =
+  if (shoe.team) {
+    shoe.name =
       ` ${
-      product.team
+      shoe.team
       } ${
-      product.sport
+      shoe.sport
       } ${
-      product.category}`;
+      shoe.category}`;
 
-    product.imageUrl = `https://loremflickr.com/320/240/${
-      product.team
-      },${product.category},${product.color}/all`;
+    shoe.imageUrl = `https://loremflickr.com/320/240/${
+      shoe.team
+      },${shoe.category},${shoe.color}/all`;
   } else {
-    product.name =
+    shoe.name =
       `${faker.fake("{{name.firstName}}")
       } ${
       faker.fake("{{address.countryCode}}")
       } ${
-      product.sport
+      shoe.sport
       } ${
-      product.category}`;
+      shoe.category}`;
 
-    product.imageUrl = `https://loremflickr.com/320/240/${
-      product.team
-      },${product.category},${product.color}/all`;
+    shoe.imageUrl = `https://loremflickr.com/320/240/${
+      shoe.team
+      },${shoe.category},${shoe.color}/all`;
   }
 
-  return product;
+  return shoe;
 };
 
 const generateProduct = (category) => {
@@ -138,8 +138,8 @@ const generateProduct = (category) => {
 
   if (product.category === 'Shoe' || product.category === 'Sandle') {
     product = shoeDecorator(product);
-  } else if (product.category == 'Sweater' || product.category === 'Pants' || product.category === 'Backpack' || product.category === 'Hat') {
-    prouduct = sweaterPantsBackpackHatDecorator(product);
+  } else if (product.category === 'Sweater' || product.category === 'Pants' || product.category === 'Backpack' || product.category === 'Hat') {
+    product = sweaterPantsBackpackHatDecorator(product);
   }
 
   return product;

@@ -18,15 +18,16 @@ router.route('/search')
       limit: 10,
       where: {
         $or: [
-          { name: { $like: '%' + query + '%' } },
-          { team: { $like: '%' + query + '%' } },
-          { sport: { $like: '%' + query + '%' } },
-          { category: { $like: '%' + query + '%' } },
-          { color: { $like: '%' + query + '%' } },
-          { gender: { $like: query + '%' } }
+          { name: { $like: `%${query}%` } },
+          { team: { $like: `%${query}%` } },
+          { sport: { $like: `%${query}%` } },
+          { category: { $like: `%${query}%` } },
+          { color: { $like: `%${query}%` } },
+          { gender: { $like: `${query}%` } }
         ]
       }
     }).then((response) => {
+      console.log('here is the search reponse', response)
       res.send(response);
     })
   })
@@ -43,7 +44,7 @@ router.route('/search/suggestions')
       limit: 10,
       where: {
         $or: [
-          { sport: { $like: '%' + query + '%' } }
+          { sport: { $like: `%${query}%` } }
         ]
       },
       attributes: ['sport']
@@ -61,22 +62,20 @@ router.route('/search/suggestions')
 
       const possibleAttributes = ['name', 'team', 'sport', 'category', 'color', 'gender'];
       // create an array of all of the keys in the response
-      for (let i = 0; i < responseArray.length; i++) {
+      for (let i = 0; i < responseArray.length; i += 1) {
 
-        for (let j = 0; j < possibleAttributes.length; j++) {
-          if (responseArray[i][possibleAttributes[j]] === undefined) {
-            continue;
-          }
-          if (counts[responseArray[i][possibleAttributes[j]]] === undefined) {
-            counts[responseArray[i][possibleAttributes[j]]] = 1;
-          } else {
-            counts[responseArray[i][possibleAttributes[j]]] += 1;
+        for (let j = 0; j < possibleAttributes.length; j += 1) {
+          if (responseArray[i][possibleAttributes[j]] !== undefined) {
+            if (counts[responseArray[i][possibleAttributes[j]]] === undefined) {
+              counts[responseArray[i][possibleAttributes[j]]] = 1;
+            } else {
+              counts[responseArray[i][possibleAttributes[j]]] += 1;
+            }
           }
         }
       }
       res.send(counts);
     })
   })
-
 
 module.exports = router;
