@@ -16,30 +16,60 @@
 .search-menu-sub-menu {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 11fr;
   position: absolute;
   background: white;
-  width: 700px;
-  height: 300px;
-  padding: 1em;
+  width: 627px;
+  height: 460px;
+  padding: 10px 10px;
   color: black;
   box-shadow: 0px 5px 10px -10px black;
   right: 0px;
   text-align: left;
 }
 
-.search-menu-sub-menu-column .search-menu-sub-menu-column-header {
+.search-menu-sub-menu ul {
+  padding: 0px;
+}
+
+.search-menu-sub-menu-column-header {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.search-menu-sub-menu-column li {
+.search-menu-sub-menu li {
   height: 25px;
+  letter-spacing: .5px;
   color: black;
   display: block;
   position: relative;
   margin: 0;
   padding: 0;
+  
+}
+
+/* here are the products lis! */
+.search-products-column li {
+  color: black;
+  width: 100%;
+  display: block;
+  height: 90px;
+  position: relative;
+  border: 1px solid black;
+}
+
+.search-products-column li .product-information {
+  padding: 0 0 0 100px;
+  font-size: .8em;
+}
+
+.search-products-column li img {
+  height: 90px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 90px;
 }
 
 

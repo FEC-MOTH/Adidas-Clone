@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../css/Search.css'
 import axios from 'axios';
+import SearchResultsListEntry from '../components/SearchResultsListEntry.jsx';
 
 class Search extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Search extends React.Component {
     this.state = {
       suggestions: [],
       suggestionsBoldedForRender: [],
+      searchResults: [],
       search: "",
       displayFlyout: false
     }
@@ -63,14 +65,22 @@ class Search extends React.Component {
     const context = this;
 
     if (query.length > 2) {
-      axios.get('/api/products/search/suggestions', {
-        params: {
-          q: query
-        }
-      }).then((data) => {
-        context.setState({ suggestions: data.data }, () => {
+      axios.all([
+        axios.get('/api/products/search/suggestions', {
+          params: {
+            q: query
+          }
+        }),
+        axios.get('/api/products/search', {
+          params: {
+            q: query
+          }
+        })
+      ]).then(axios.spread((suggestions, searchResults) => {
+        context.setState({ suggestions: suggestions.data, searchResults: searchResults.data }, () => {
           // figure out some efficient method for when you should run this, and when you should
           // run the corresponding method client side!
+          console.log(context.state.searchResults);
 
           const boldedSuggestions = context.state.suggestions.map((suggestion) => {
             if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
@@ -89,10 +99,8 @@ class Search extends React.Component {
             }
           })
           context.setState({ suggestionsBoldedForRender: boldedSuggestions });
-
-
         });
-      })
+      }))
     }
   }
 
@@ -107,8 +115,10 @@ class Search extends React.Component {
         <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
 
         <div className="search-menu-sub-menu">
+          <div className="search-menu-sub-menu-column-header"> Suggestions </div>
+          <div className="search-menu-sub-menu-column-header"> Products </div>
+
           <ul className="search-menu-sub-menu-column">
-            <li className="search-menu-sub-menu-column-header"> Suggestions </li>
             {this.state.suggestionsBoldedForRender.map((suggestion) => {
               if (!!suggestion === true) {
                 return <li
@@ -121,9 +131,10 @@ class Search extends React.Component {
             })}
           </ul>
 
-          <ul className="search-menu-sub-menu-column">
-            <li className="search-menu-sub-menu-column-header"> Column 2 </li>
-
+          <ul className="search-products-column">
+            {this.state.searchResults.map((searchResult) => (
+              <SearchResultsListEntry searchResult={searchResult} />
+            ))}
           </ul>
 
         </div>
@@ -135,10 +146,4 @@ class Search extends React.Component {
 
 module.exports = Search;
 
-// steps
-// make search a controlled component
-// after some debounce time and no more than two characters
-// submit a request to /search
-// and a request to /search/suggestions
-// when those results come back, set some state which causes the fly out to conditionally
-// render
+// 

@@ -18,7 +18,7 @@ router.route('/search')
     and then trickle down to less specific: color, gender. 
     */
     Product.findAll({
-      limit: 10,
+      limit: 4,
       where: {
         $or: [
           { name: { $like: `%${query}%` } },
