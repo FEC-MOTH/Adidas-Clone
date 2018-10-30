@@ -7,6 +7,7 @@ class Search extends React.Component {
     super(props);
     this.state = {
       suggestions: [],
+      suggestionsBoldedForRender: [],
       search: "",
       displayFlyout: false
     }
@@ -26,9 +27,33 @@ class Search extends React.Component {
   }
 
   changeHandler(e) {
+    const context = this;
     this.setState({ search: e.target.value }, () => {
+
+      /*
+      if (context.state.suggestions.length > 2) {
+        const boldedSuggestions = context.state.suggestions.map((suggestion) => {
+          if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
+            const matchingBeginningIndex = suggestion.match.toLowerCase().match(context.state.search.toLowerCase()).index;
+            const matchingEndingIndex = matchingBeginningIndex + context.state.search.length;
+            const beginning = suggestion.match.slice(0, matchingBeginningIndex);
+            const matched = suggestion.match.slice(matchingBeginningIndex, matchingEndingIndex);
+            const end = suggestion.match.slice(matchingEndingIndex, suggestion.match.length);
+
+            return {
+              beginning,
+              matched,
+              end,
+              count: suggestion.count
+            }
+          }
+        })
+        context.setState({ suggestionsBoldedForRender: boldedSuggestions });
+        */
       this.debouncedSearch(this.state.search)
-    })
+
+    }
+    )
   }
 
   search(query) {
@@ -41,7 +66,28 @@ class Search extends React.Component {
         }
       }).then((data) => {
         context.setState({ suggestions: data.data }, () => {
-          console.log(this.state.suggestions)
+          // figure out some efficient method for when you should run this, and when you should
+          // run the corresponding method client side!
+
+          const boldedSuggestions = context.state.suggestions.map((suggestion) => {
+            if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
+              const matchingBeginningIndex = suggestion.match.toLowerCase().match(context.state.search.toLowerCase()).index;
+              const matchingEndingIndex = matchingBeginningIndex + context.state.search.length;
+              const beginning = suggestion.match.slice(0, matchingBeginningIndex);
+              const matched = suggestion.match.slice(matchingBeginningIndex, matchingEndingIndex);
+              const end = suggestion.match.slice(matchingEndingIndex, suggestion.match.length);
+
+              return {
+                beginning,
+                matched,
+                end,
+                count: suggestion.count
+              }
+            }
+          })
+          context.setState({ suggestionsBoldedForRender: boldedSuggestions });
+
+
         });
       })
     }
@@ -60,8 +106,15 @@ class Search extends React.Component {
         <div className="search-menu-sub-menu">
           <ul className="search-menu-sub-menu-column">
             <li className="search-menu-sub-menu-column-header"> Suggestions </li>
-            {this.state.suggestions.map((suggestion) => {
-              return <li className="search-suggestion" > {suggestion.match} {suggestion.count}</li>
+            {this.state.suggestionsBoldedForRender.map((suggestion) => {
+              if (!!suggestion === true) {
+                return <li
+                  className="search-suggestion" >
+                  {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
+              </li>
+              } else {
+                return <li></li>
+              }
             })}
           </ul>
 
