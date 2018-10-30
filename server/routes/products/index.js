@@ -46,36 +46,40 @@ router.route('/search/suggestions')
     SELECT Count(*) FROM name, team, spot, category, color, gender
       WHERE name || team || sport || category || color || gender like query
   */
+    if (!!query === false) {
+      res.send('');
+    } else {
 
-    connection.query(sqlQuery(query), { type: sequelize.QueryTypes.SELECT })
-      .then((responseArray) => {
+      connection.query(sqlQuery(query), { type: sequelize.QueryTypes.SELECT })
+        .then((responseArray) => {
 
-        const counts = {};
-        const keys = Object.keys(responseArray[0]);
+          const counts = {};
+          const keys = Object.keys(responseArray[0]);
 
-        for (let i = 0; i < responseArray.length; i += 1) {
-          keys.forEach((key) => {
-            if (responseArray[i][key] !== null) {
-              if (counts[responseArray[i][key]]) {
-                counts[responseArray[i][key]] += 1;
-              } else {
-                counts[responseArray[i][key]] = 1;
+          for (let i = 0; i < responseArray.length; i += 1) {
+            keys.forEach((key) => {
+              if (responseArray[i][key] !== null) {
+                if (counts[responseArray[i][key]]) {
+                  counts[responseArray[i][key]] += 1;
+                } else {
+                  counts[responseArray[i][key]] = 1;
+                }
               }
-            }
+            })
+          }
+
+          const countsArray = [];
+
+          Object.keys(counts).forEach((key) => {
+            countsArray.push({ match: key, count: counts[key] });
           })
-        }
 
-        const countsArray = [];
+          countsArray.sort((aTuple, bTuple) => bTuple.count - aTuple.count)
 
-        Object.keys(counts).forEach((key) => {
-          countsArray.push({ match: key, count: counts[key] });
+
+          res.send(countsArray.slice(0, 10));
         })
-
-        countsArray.sort((aTuple, bTuple) => bTuple.count - aTuple.count)
-
-
-        res.send(countsArray.slice(0, 10));
-      })
+    }
   })
 
 module.exports = router;
