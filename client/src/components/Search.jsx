@@ -28,10 +28,11 @@ class Search extends React.Component {
 
   changeHandler(e) {
     const context = this;
+    const oldSearch = this.state.search;
     this.setState({ search: e.target.value }, () => {
 
-      /*
-      if (context.state.suggestions.length > 2) {
+
+      if (context.state.search.length < oldSearch.length) {
         const boldedSuggestions = context.state.suggestions.map((suggestion) => {
           if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
             const matchingBeginningIndex = suggestion.match.toLowerCase().match(context.state.search.toLowerCase()).index;
@@ -49,7 +50,9 @@ class Search extends React.Component {
           }
         })
         context.setState({ suggestionsBoldedForRender: boldedSuggestions });
-        */
+
+      }
+
       this.debouncedSearch(this.state.search)
 
     }
