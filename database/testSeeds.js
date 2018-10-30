@@ -4,7 +4,7 @@ const { generateProduct } = require("../utils/mockData.js");
 const categoriesForMock = [
   { "name": "Shoe", "numItemsToGenerate": 1 },
   { "name": "Sandle", "numItemsToGenerate": 1 },
-  { "name": "Sweater", "numItemsToGenerate": 1 },
+  { "name": "Hoodie", "numItemsToGenerate": 1 },
   { "name": "Pants", "numItemsToGenerate": 1 },
   { "name": "Backpack", "numItemsToGenerate": 1 },
   { "name": "Hat", "numItemsToGenerate": 1 }
