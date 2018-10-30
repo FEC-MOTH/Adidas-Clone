@@ -18,12 +18,30 @@
   grid-template-columns: 1fr 1fr;
   position: absolute;
   background: white;
-  width: 550px;
-  padding: 2em;
+  width: 700px;
+  height: 300px;
+  padding: 1em;
   color: black;
   box-shadow: 0px 5px 10px -10px black;
   right: 0px;
+  text-align: left;
 }
+
+.search-menu-sub-menu-column .search-menu-sub-menu-column-header {
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.search-menu-sub-menu-column li {
+  height: 25px;
+  color: black;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
 
 /*
 Mega Menu Sub Menu Column
