@@ -30,9 +30,6 @@ I want to fake the following fields:
 "gender" - string [Men, Women, Children]
 "category" - string [Shoes, Sandles and Slides, Hoodies and Sweater, Pants, Bags and Backpacks, Hats and Beanies]
 */
-
-const axios = require('axios');
-
 const validProductPriceRange = { min: 50, max: 300 };
 const faker = require("faker");
 const { teamNames } = require("./staticDataForMock.js");
@@ -43,11 +40,11 @@ const sportsForMock = ["Basketball", "Football", null, "Soccer", "Original"];
 const basketballAccessories = require('./data/basketball-accessories');
 const basketBallApparel = require('./data/basketball-apparel');
 const basketballShoes = require('./data/basketball-shoes');
-const footballAccessories = require('./data/football-accessories');
-const footballApparel = require('./data/football-apparel');
+// const footballAccessories = require('./data/football-accessories');
+// const footballApparel = require('./data/football-apparel');
 const footballCleats = require('./data/football-cleats');
 const runningAccessories = require('./data/running-accessories');
-const runningApparel = require('./data/running-apparel');
+// const runningApparel = require('./data/running-apparel');
 const runningShoes = require('./data/running-shoes');
 
 
