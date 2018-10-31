@@ -120,6 +120,15 @@
   text-decoration: line-through;
 }
 
+.gl-star-rating__star {
+  height: 10px;
+}
+
+.num-reviews {
+  color: #98989a;
+}
+
+
 
 
 /*

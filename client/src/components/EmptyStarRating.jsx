@@ -1,11 +1,11 @@
 import React from 'react'
 
-const RatingStar = props => (
+const EmptyStarRating = props => (
   <svg className="gl-star-rating__star" viewBox="0 0 15 15" {...props}>
     <linearGradient id="a">
       <stop offset="0%" stopColor="currentcolor" />
-      <stop offset="100%" stopColor="currentcolor" />
-      <stop offset="100%" stopOpacity={0} stopColor="currentcolor" />
+      <stop offset="11.11%" stopColor="currentcolor" />
+      <stop offset="11.11%" stopOpacity={0} stopColor="currentcolor" />
       <stop offset="100%" stopOpacity={0} stopColor="currentcolor" />
     </linearGradient>
     <path
@@ -22,4 +22,4 @@ const RatingStar = props => (
   </svg>
 )
 
-export default RatingStar;
+export default EmptyStarRating
