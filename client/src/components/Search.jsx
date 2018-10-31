@@ -3,6 +3,7 @@ import styles from '../css/Search.css'
 import axios from 'axios';
 import SearchResultsListEntry from '../components/SearchResultsListEntry.jsx';
 import SearchGlass from './SearchGlass.jsx';
+import ClearSearchIcon from './ClearSearchIcon.jsx';
 
 class Search extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Search extends React.Component {
     this.search = this.search.bind(this);
     this.debouncedSearch = this.debounce(this.search, 500).bind(this);
     this.changeHandler = this.changeHandler.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   debounce(callback, timeout) {
@@ -105,6 +107,10 @@ class Search extends React.Component {
     }
   }
 
+  clearSearch() {
+    this.setState({ search: "" })
+  }
+
   render() {
     if (this.state.displayFlyout === true) {
 
@@ -116,6 +122,7 @@ class Search extends React.Component {
         <div className="search-input-wrapper">
           <SearchGlass />
           <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
+          <ClearSearchIcon search={this.state.search} clearSearch={this.clearSearch} />
         </div>
         <div className="search-menu-sub-menu">
           <div className="search-menu-sub-menu-grid">

@@ -161,7 +161,13 @@ input:focus {
 .search-glass {
   height: 29px;
   color: black;
-  padding: 2px;
+  padding: 2px 4px;
+}
+
+.clear-search-icon {
+  height: 29px;
+  color: black;
+  padding: 2px 4px;
 }
 
 .search-input-wrapper {
@@ -169,3 +175,4 @@ input:focus {
   display: flex;
   align-items: center; 
 }
+
