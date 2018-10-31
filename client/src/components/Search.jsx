@@ -4,6 +4,7 @@ import axios from 'axios';
 import SearchResultsListEntry from '../components/SearchResultsListEntry.jsx';
 import SearchGlass from './SearchGlass.jsx';
 import ClearSearchIcon from './ClearSearchIcon.jsx';
+import SearchSubMenu from './SearchSubMenu.jsx';
 
 class Search extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Search extends React.Component {
     this.search = this.search.bind(this);
     this.debouncedSearch = this.debounce(this.search, 500).bind(this);
     this.changeHandler = this.changeHandler.bind(this);
-    this.clearSearch = this.clearSearch.bind(this);
+    this.clearSearchResults = this.clearSearchResults.bind(this);
   }
 
   debounce(callback, timeout) {
@@ -34,10 +35,11 @@ class Search extends React.Component {
   changeHandler(e) {
     const context = this;
     const oldSearch = this.state.search;
+
     this.setState({ search: e.target.value }, () => {
-
-
-      if (context.state.search.length < oldSearch.length) {
+      if (context.state.search.length < oldSearch.length && this.state.search.length === 0) {
+        context.clearSearchResults();
+      } else if (context.state.search.length < oldSearch.length) {
         const boldedSuggestions = context.state.suggestions.map((suggestion) => {
           if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
             const matchingBeginningIndex = suggestion.match.toLowerCase().match(context.state.search.toLowerCase()).index;
@@ -55,13 +57,43 @@ class Search extends React.Component {
           }
         })
         context.setState({ suggestionsBoldedForRender: boldedSuggestions });
-
       }
-
       this.debouncedSearch(this.state.search)
 
     }
     )
+  }
+
+  renderFlyOut() {
+    if (this.setState.displayFlyout === true) {
+      return (
+        <div className="search-menu-sub-menu">
+          <div className="search-menu-sub-menu-grid">
+            <div className="search-menu-sub-menu-column-header"> Suggestions </div>
+            <div className="search-menu-sub-menu-column-header"> Products </div>
+
+            <ul className="search-menu-sub-menu-column">
+              {this.state.suggestionsBoldedForRender.map((suggestion, i) => {
+                if (!!suggestion === true) {
+                  return <li
+                    className="search-suggestion" key={i}>
+                    {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
+              </li>
+                } else {
+                  return <li key={i}></li>
+                }
+              })}
+            </ul>
+
+            <ul className="search-products-column">
+              {this.state.searchResults.map((searchResult, i) => (
+                <SearchResultsListEntry searchResult={searchResult} key={i} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
+    }
   }
 
   search(query) {
@@ -100,13 +132,14 @@ class Search extends React.Component {
             }
           })
           context.setState({ suggestionsBoldedForRender: boldedSuggestions });
+          context.setState({ displayFlyout: true })
         });
       }))
     }
   }
 
-  clearSearch() {
-    this.setState({ search: "" })
+  clearSearchResults() {
+    this.setState({ suggestions: [], suggestionsBoldedForRender: [], searchResults: [] })
   }
 
   render() {
@@ -122,31 +155,9 @@ class Search extends React.Component {
           <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
           <ClearSearchIcon search={this.state.search} clearSearchString={this.clearSearch} />
         </div>
-        <div className="search-menu-sub-menu">
-          <div className="search-menu-sub-menu-grid">
-            <div className="search-menu-sub-menu-column-header"> Suggestions </div>
-            <div className="search-menu-sub-menu-column-header"> Products </div>
 
-            <ul className="search-menu-sub-menu-column">
-              {this.state.suggestionsBoldedForRender.map((suggestion, i) => {
-                if (!!suggestion === true) {
-                  return <li
-                    className="search-suggestion" key={i}>
-                    {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
-              </li>
-                } else {
-                  return <li key={i}></li>
-                }
-              })}
-            </ul>
-
-            <ul className="search-products-column">
-              {this.state.searchResults.map((searchResult, i) => (
-                <SearchResultsListEntry searchResult={searchResult} key={i} />
-              ))}
-            </ul>
-          </div>
-        </div>
+        <SearchSubMenu suggestionsBoldedForRender={this.state.suggestionsBoldedForRender}
+          searchResults={this.state.searchResults} />
 
       </li>
     )
