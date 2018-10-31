@@ -83,8 +83,6 @@ class Search extends React.Component {
         context.setState({ suggestions: suggestions.data, searchResults: searchResults.data }, () => {
           // figure out some efficient method for when you should run this, and when you should
           // run the corresponding method client side!
-          console.log(context.state.searchResults);
-
           const boldedSuggestions = context.state.suggestions.map((suggestion) => {
             if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
               const matchingBeginningIndex = suggestion.match.toLowerCase().match(context.state.search.toLowerCase()).index;
@@ -122,7 +120,7 @@ class Search extends React.Component {
         <div className="search-input-wrapper">
           <SearchGlass />
           <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
-          <ClearSearchIcon search={this.state.search} clearSearch={this.clearSearch} />
+          <ClearSearchIcon search={this.state.search} clearSearchString={this.clearSearch} />
         </div>
         <div className="search-menu-sub-menu">
           <div className="search-menu-sub-menu-grid">
@@ -130,21 +128,21 @@ class Search extends React.Component {
             <div className="search-menu-sub-menu-column-header"> Products </div>
 
             <ul className="search-menu-sub-menu-column">
-              {this.state.suggestionsBoldedForRender.map((suggestion) => {
+              {this.state.suggestionsBoldedForRender.map((suggestion, i) => {
                 if (!!suggestion === true) {
                   return <li
-                    className="search-suggestion" >
+                    className="search-suggestion" key={i}>
                     {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
               </li>
                 } else {
-                  return <li></li>
+                  return <li key={i}></li>
                 }
               })}
             </ul>
 
             <ul className="search-products-column">
-              {this.state.searchResults.map((searchResult) => (
-                <SearchResultsListEntry searchResult={searchResult} />
+              {this.state.searchResults.map((searchResult, i) => (
+                <SearchResultsListEntry searchResult={searchResult} key={i} />
               ))}
             </ul>
           </div>

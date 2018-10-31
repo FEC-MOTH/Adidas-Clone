@@ -17,7 +17,7 @@ class ClearSearchIcon extends React.Component {
     super(props)
   }
   handleClick() {
-    this.props.clearSearch()
+    this.props.clearSearchString()
   }
 
   render() {
@@ -25,15 +25,17 @@ class ClearSearchIcon extends React.Component {
     // it may be possible to resolve levearging react life-cycle hooks
     if (this.props.search.length > 0) {
       return (
-        <svg onClick={() => (this.handleClick())} className="clear-search-icon" viewBox="0 0 18 24" {...this.props}>
-          <path
-            d="M17 4l-8 8 8 8M1 4l8 8-8 8"
-            fill="none"
-            stroke="currentColor"
-            strokeMiterlimit={10}
-            strokeWidth={2}
-          />
-        </svg>
+        <div onClick={() => (this.handleClick())}>
+          <svg className="clear-search-icon" viewBox="0 0 18 24" {...this.props}>
+            <path
+              d="M17 4l-8 8 8 8M1 4l8 8-8 8"
+              fill="none"
+              stroke="currentColor"
+              strokeMiterlimit={10}
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
       )
     } else {
       return (<div className="clear-search-icon"></div>)
