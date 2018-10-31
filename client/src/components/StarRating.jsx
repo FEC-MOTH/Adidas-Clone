@@ -1,7 +1,7 @@
 import React from 'react'
 
 const RatingStar = props => (
-  <svg className="gl-star-rating__star" viewBox="0 0 15 15" {...props}>
+  <svg className="gl-star-rating_star" viewBox="0 0 15 15" {...props}>
     <linearGradient id="a">
       <stop offset="0%" stopColor="currentcolor" />
       <stop offset="100%" stopColor="currentcolor" />

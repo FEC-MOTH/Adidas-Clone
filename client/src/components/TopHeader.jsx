@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../css/TopHeader.css'
+import TopHeaderIcon from './TopHeaderIcon'
 
 const TopHeader = (props) => {
   return (
@@ -12,7 +13,9 @@ const TopHeader = (props) => {
         <em>
           <a> Newsletter Signup </a>
         </em>
-        <a> Login </a>
+        <a> Login
+        <a><TopHeaderIcon /></a>
+        </a>
       </div>
     </nav>
   )

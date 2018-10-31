@@ -90,6 +90,7 @@ each sub-menu component of the mega-menu.
 }
 
 .mega-menu-second-level-category:first-of-type {
+  font-family: AdiNeuePro-Black;
   margin-top: 0;
 }
 

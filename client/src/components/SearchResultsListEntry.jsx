@@ -22,11 +22,18 @@ const SearchResultsListEntry = (props) => (
         </div>
       }
       <div className="ratings-summary">
-        <span className="star-rating">{props.searchResult.rating}</span>
-        {
-          [...Array(props.searchResult.rating)].map((e, i) => <RatingStar key={i} />)
-        }
-        <span className="num-reviews">{props.searchResult.num_ratings}</span>
+        <span className="star-rating">
+          {
+            [...Array(5)].map((e, i) => {
+              if (i <= props.searchResult.rating) {
+                return <RatingStar key={i} />
+              } else {
+                return <EmptyStarRating key={i} />
+              }
+            })
+          }
+        </span>
+        <span className="num-reviews">{" " + props.searchResult.num_ratings}</span>
       </div>
     </div>
     <img src={props.searchResult.imageUrl}></img>

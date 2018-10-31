@@ -36,17 +36,22 @@
   color: black;
   font-weight: bold;
   text-transform: uppercase;
+  font-family: AdiNeuePro-Black;
 }
 
 .search-menu-sub-menu li {
+  text-transform: uppercase;
   height: 25px;
   letter-spacing: .5px;
   color: black;
   display: block;
   position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  
 }
 
 /* here are the products lis! */
@@ -56,7 +61,7 @@
   display: block;
   height: 90px;
   position: relative;
-  border: 1px solid black;
+  margin: 0 0 8px;
 }
 
 .search-products-column li .product-information {
@@ -90,7 +95,7 @@
   white-space: nowrap;
   font-weight: 400;
   color: black;
-  padding: 3px 0px;
+  padding: 4px 0px;
 }
 
 .product-name {
@@ -100,7 +105,7 @@
   white-space: nowrap;
   font-weight: 400;
   color: black;
-  padding: 3px 0px;
+  padding: 4px 0px;
 }
 
 .price-container {
@@ -109,7 +114,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 400;
-  padding: 3px 0px;
+  padding: 4px 0px;
+}
+
+.ratings-summary {
+  padding: 4px 0px;
 }
 
 .sale-price {
@@ -118,23 +127,14 @@
 
 .gl-price-crossed {
   text-decoration: line-through;
+  color: #98989a;
 }
 
-.gl-star-rating__star {
+.gl-star-rating_star {
   height: 10px;
+  color: black;
 }
 
 .num-reviews {
   color: #98989a;
 }
-
-
-
-
-/*
-Mega Menu Sub Menu Column
-.mega-menu-sub-menu ul {
-  padding: 0;
-}
-
-*/

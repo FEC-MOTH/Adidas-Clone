@@ -11,7 +11,7 @@
 
 .inner-for-vertical-align {
   position: relative;
-  top: 25%;
+  top: 5%;
   float: right;
 }
 
@@ -40,4 +40,11 @@ em a {
   position: relative;
   top: 2px;
   background-color: #98989a;
+}
+
+.top-header-icon {
+  top: 5px;
+  position:relative;
+  height: 20px;
+  color: #ebedee;
 }
