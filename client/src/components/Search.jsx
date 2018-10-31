@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../css/Search.css'
 import axios from 'axios';
 import SearchResultsListEntry from '../components/SearchResultsListEntry.jsx';
+import SearchGlass from './SearchGlass.jsx';
 
 class Search extends React.Component {
   constructor(props) {
@@ -112,31 +113,34 @@ class Search extends React.Component {
     return (
 
       <li className="search-wrapper-outer">
-        <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
-
+        <div className="search-input-wrapper">
+          <SearchGlass />
+          <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
+        </div>
         <div className="search-menu-sub-menu">
-          <div className="search-menu-sub-menu-column-header"> Suggestions </div>
-          <div className="search-menu-sub-menu-column-header"> Products </div>
+          <div className="search-menu-sub-menu-grid">
+            <div className="search-menu-sub-menu-column-header"> Suggestions </div>
+            <div className="search-menu-sub-menu-column-header"> Products </div>
 
-          <ul className="search-menu-sub-menu-column">
-            {this.state.suggestionsBoldedForRender.map((suggestion) => {
-              if (!!suggestion === true) {
-                return <li
-                  className="search-suggestion" >
-                  {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
+            <ul className="search-menu-sub-menu-column">
+              {this.state.suggestionsBoldedForRender.map((suggestion) => {
+                if (!!suggestion === true) {
+                  return <li
+                    className="search-suggestion" >
+                    {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
               </li>
-              } else {
-                return <li></li>
-              }
-            })}
-          </ul>
+                } else {
+                  return <li></li>
+                }
+              })}
+            </ul>
 
-          <ul className="search-products-column">
-            {this.state.searchResults.map((searchResult) => (
-              <SearchResultsListEntry searchResult={searchResult} />
-            ))}
-          </ul>
-
+            <ul className="search-products-column">
+              {this.state.searchResults.map((searchResult) => (
+                <SearchResultsListEntry searchResult={searchResult} />
+              ))}
+            </ul>
+          </div>
         </div>
 
       </li>

@@ -7,12 +7,15 @@
   display: relative;
   height: 32px;
   background: linear-gradient(90deg,#000 30%,transparent 50%),linear-gradient(180deg,#000 0,#363738);
+  text-align: right;
+  margin: 0 auto;
 }
 
 .inner-for-vertical-align {
-  position: relative;
   top: 5%;
-  float: right;
+  width: 100%;
+  max-width: 1220px;
+  margin: auto;
 }
 
 
