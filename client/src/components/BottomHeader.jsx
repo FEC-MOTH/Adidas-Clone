@@ -6,6 +6,7 @@ import Search from '../components/Search';
 
 const BottomHeader = (props) => (
   <div className="glass-header-bottom-desktop">
+    <img src="/assets/img/shoedidas_white_2.svg"></img>
     <ul className="menu-main">
       <MegaMenu megaMenuAssets={megaMenuAssets} />
       <ul className="search-menu">

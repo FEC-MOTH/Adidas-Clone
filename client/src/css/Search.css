@@ -15,8 +15,9 @@
 
 .search-menu-sub-menu {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 48% 52%;
   grid-template-rows: 1fr 11fr;
+  grid-column-gap: 20px;
   position: absolute;
   background: white;
   width: 627px;
