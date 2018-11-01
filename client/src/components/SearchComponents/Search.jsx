@@ -5,6 +5,7 @@ import SearchResultsListEntry from './SearchResultsListEntry.jsx';
 import SearchGlass from './SearchGlass.jsx';
 import ClearSearchIcon from './ClearSearchIcon.jsx';
 import SearchSubMenu from './SearchSubMenu.jsx';
+import { debounce } from '../../../../utils/general.js';
 
 class Search extends React.Component {
   constructor(props) {
@@ -16,56 +17,61 @@ class Search extends React.Component {
       search: "",
       displayFlyout: false
     }
+
+    this.debounce = debounce.bind(this);
     this.search = this.search.bind(this);
     this.debouncedSearch = this.debounce(this.search, 500).bind(this);
     this.changeHandler = this.changeHandler.bind(this);
     this.clearSearchResults = this.clearSearchResults.bind(this);
   }
 
-  debounce(callback, timeout) {
-    var currentlyRunningTimeout;
-
-    return function () {
-      var args = [...arguments];
-      clearTimeout(currentlyRunningTimeout);
-      currentlyRunningTimeout = setTimeout(() => callback(...args), timeout);
-    }
-  }
-
   changeHandler(e) {
+    const search = e.target.value;
     const context = this;
     const oldSearch = this.state.search;
 
-    this.setState({ search: e.target.value }, () => {
-      if (context.state.search.length < oldSearch.length && this.state.search.length === 0) {
-        context.clearSearchResults();
-      } else if (context.state.search.length < oldSearch.length) {
-        const boldedSuggestions = context.state.suggestions.map((suggestion) => {
-          if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
-            const matchingBeginningIndex = suggestion.match.toLowerCase().match(context.state.search.toLowerCase()).index;
-            const matchingEndingIndex = matchingBeginningIndex + context.state.search.length;
-            const beginning = suggestion.match.slice(0, matchingBeginningIndex);
-            const matched = suggestion.match.slice(matchingBeginningIndex, matchingEndingIndex);
-            const end = suggestion.match.slice(matchingEndingIndex, suggestion.match.length);
+    this.setState({ search: search }, () => {
+      const didUserBackSpaceUntilSearchCleared = context.state.search.length < oldSearch.length && this.state.search.length === 0;
+      const didUserBackspace = context.state.search.length < oldSearch.length;
 
-            return {
-              beginning,
-              matched,
-              end,
-              count: suggestion.count
-            }
-          }
-        })
+      if (didUserBackSpaceUntilSearchCleared) {
+        context.clearSearchResults();
+      } else if (didUserBackspace) {
+        const boldedSuggestions = this.boldSearchStringInSuggestions(context.state.suggestions, context.state.search);
         context.setState({ suggestionsBoldedForRender: boldedSuggestions });
       }
       this.debouncedSearch(this.state.search)
-
     }
     )
   }
 
+  boldSearchStringInSuggestions(suggestions, search) {
+    return suggestions.map((suggestion) => {
+      if (suggestion.match.toLowerCase().match(search.toLowerCase())) {
+        return this.splitStringIntoPartsMatchingSubString(suggestion, search);
+      }
+    })
+  }
+
+  splitStringIntoPartsMatchingSubString(string, subString) {
+    const matchingBeginningIndex = string.match.toLowerCase().match(subString.toLowerCase()).index;
+    const matchingEndingIndex = matchingBeginningIndex + subString.length;
+    const beginning = string.match.slice(0, matchingBeginningIndex);
+    const matched = string.match.slice(matchingBeginningIndex, matchingEndingIndex);
+    const end = string.match.slice(matchingEndingIndex, string.match.length);
+
+    return {
+      beginning,
+      matched,
+      end,
+      count: string.count
+    }
+  }
+
   search(query) {
+
     const context = this;
+    console.log(query)
 
     if (query.length > 2) {
       axios.all([
@@ -83,22 +89,9 @@ class Search extends React.Component {
         context.setState({ suggestions: suggestions.data, searchResults: searchResults.data }, () => {
           // figure out some efficient method for when you should run this, and when you should
           // run the corresponding method client side!
-          const boldedSuggestions = context.state.suggestions.map((suggestion) => {
-            if (suggestion.match.toLowerCase().match(context.state.search.toLowerCase())) {
-              const matchingBeginningIndex = suggestion.match.toLowerCase().match(context.state.search.toLowerCase()).index;
-              const matchingEndingIndex = matchingBeginningIndex + context.state.search.length;
-              const beginning = suggestion.match.slice(0, matchingBeginningIndex);
-              const matched = suggestion.match.slice(matchingBeginningIndex, matchingEndingIndex);
-              const end = suggestion.match.slice(matchingEndingIndex, suggestion.match.length);
+          console.log('here?')
 
-              return {
-                beginning,
-                matched,
-                end,
-                count: suggestion.count
-              }
-            }
-          })
+          const boldedSuggestions = this.boldSearchStringInSuggestions(context.state.suggestions, context.state.search);
           context.setState({ suggestionsBoldedForRender: boldedSuggestions });
           context.setState({ displayFlyout: true })
         });

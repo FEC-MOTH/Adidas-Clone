@@ -8,7 +8,7 @@ const EmptyBagIcon = props => (
         <path d="M11 10V3H5v7" />
       </g>
     </svg>
-    <div class="bag-menu">
+    <div className="bag-menu">
       Your Bag is Empty!
     </div>
   </li >
