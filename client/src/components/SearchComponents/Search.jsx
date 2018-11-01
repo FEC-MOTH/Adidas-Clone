@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../css/Search.css'
+import styles from '../../css/Search.css'
 import axios from 'axios';
-import SearchResultsListEntry from '../components/SearchResultsListEntry.jsx';
+import SearchResultsListEntry from './SearchResultsListEntry.jsx';
 import SearchGlass from './SearchGlass.jsx';
 import ClearSearchIcon from './ClearSearchIcon.jsx';
 import SearchSubMenu from './SearchSubMenu.jsx';
@@ -62,38 +62,6 @@ class Search extends React.Component {
 
     }
     )
-  }
-
-  renderFlyOut() {
-    if (this.setState.displayFlyout === true) {
-      return (
-        <div className="search-menu-sub-menu">
-          <div className="search-menu-sub-menu-grid">
-            <div className="search-menu-sub-menu-column-header"> Suggestions </div>
-            <div className="search-menu-sub-menu-column-header"> Products </div>
-
-            <ul className="search-menu-sub-menu-column">
-              {this.state.suggestionsBoldedForRender.map((suggestion, i) => {
-                if (!!suggestion === true) {
-                  return <li
-                    className="search-suggestion" key={i}>
-                    {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
-              </li>
-                } else {
-                  return <li key={i}></li>
-                }
-              })}
-            </ul>
-
-            <ul className="search-products-column">
-              {this.state.searchResults.map((searchResult, i) => (
-                <SearchResultsListEntry searchResult={searchResult} key={i} />
-              ))}
-            </ul>
-          </div>
-        </div>
-      )
-    }
   }
 
   search(query) {
