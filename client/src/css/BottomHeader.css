@@ -1,6 +1,7 @@
 
 /* Main Menu Containers and Wrappers */
 .glass-header-bottom-desktop {
+  font-family: 'AdineuePRO',Helvetica,Arial,sans-serif;
   position: relative;
   top: 0px;
   font-weight: 400;
@@ -20,9 +21,9 @@
 }
 
 .glass-header-bottom-desktop #logo {
-  top: -20px;
+  top: -17px;
   left: 20px;
-  margin-right: 20px;
+  margin-right: 38px;
   position: relative;
   float: left;
   height: 60px;
@@ -42,7 +43,7 @@
 .menu-main li {
   display: inline-block;
   color: white;
-  margin: 0 5px;
+  margin: 0 2px;
   height: 100%;
 }
 
@@ -52,14 +53,14 @@
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  padding: .5em;
-  top: 5px;
+  padding: .2em;
+  top: 10px;
 }
 
 .menu-main .vertical-separator {
   width: 1px;
   height: 24px;
-  top: 11px;
+  top: 16px;
   position: relative;
   background-color: hsla(0,0%,100%,.25);
 }

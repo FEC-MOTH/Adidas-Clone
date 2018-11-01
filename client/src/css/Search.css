@@ -192,6 +192,7 @@ li#bag-icon-wrapper {
   position: relative;
   top: -5px;
   text-align: center;
+  transition: background .1s cubic-bezier(.3,0,.45,1);
 }
 
 li#bag-icon-wrapper:hover {
@@ -206,4 +207,28 @@ li#bag-icon-wrapper:hover .empty-bag-icon {
   margin-left: 2px;
   margin-right: 1px;
 }
+
+li#bag-icon-wrapper:hover .bag-menu {
+  display: block;
+  transition: background .1s cubic-bezier(.3,0,.45,1);
+}
+
+.bag-menu {
+  font-family: 'AdiNeuePro-Black';
+  font-weight: 600;
+  font-size: 20px;
+  padding: 17px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 310px;
+  z-index: 26;
+  background-color: #fff;
+  box-shadow: 0 12px 24px rgba(0,0,0,.1);
+  color: #000;
+  right: 0;
+  top: 100%;
+  position: absolute;
+  display: none;
+}
+
 
