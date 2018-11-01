@@ -2,10 +2,10 @@
 /* Main Menu Containers and Wrappers */
 .glass-header-bottom-desktop {
   position: relative;
-  top: 25px;
+  top: 0px;
   font-weight: 400;
   font-size: 15px;
-  height: 35px;
+  height: 53px;
   background: black;
   max-width: 1220px;
   margin: 0 auto;
@@ -13,7 +13,6 @@
 
 .menu-main {
   margin: 0 auto;
-  padding: 0px 0px 7px 0px;
   height: 100%;
   list-style: none;
   position: relative;
@@ -21,7 +20,7 @@
 }
 
 .glass-header-bottom-desktop #logo {
-  top: -30px;
+  top: -20px;
   left: 20px;
   margin-right: 20px;
   position: relative;
@@ -50,15 +49,17 @@
 .menu-main li a {
   display: inline-block;
   color: #fff;
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
   padding: .5em;
+  top: 5px;
 }
 
 .menu-main .vertical-separator {
   width: 1px;
   height: 24px;
-  top: 7px;
+  top: 11px;
   position: relative;
   background-color: hsla(0,0%,100%,.25);
 }
@@ -66,8 +67,12 @@
 /* IMPORTANT - these are the hover styles that reveal
 each sub-menu component of the mega-menu.
 */
-.menu-main li li a:hover {
+.menu-main li li:hover {
   background-color: white;
+  color: black;
+}
+
+.menu-main li li:hover a {
   color: black;
 }
 
@@ -80,6 +85,7 @@ each sub-menu component of the mega-menu.
 .mega-menu-sub-menu {
   position: absolute;
   background: white;
+  top: 100%;
   width: 100%;
   left: 0;
   padding: 2em;

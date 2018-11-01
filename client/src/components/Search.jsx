@@ -139,7 +139,7 @@ class Search extends React.Component {
   }
 
   clearSearchResults() {
-    this.setState({ suggestions: [], suggestionsBoldedForRender: [], searchResults: [] })
+    this.setState({ suggestions: [], suggestionsBoldedForRender: [], searchResults: [], search: "" })
   }
 
   render() {
@@ -153,7 +153,7 @@ class Search extends React.Component {
         <div className="search-input-wrapper">
           <SearchGlass />
           <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
-          <ClearSearchIcon search={this.state.search} clearSearchString={this.clearSearch} />
+          <ClearSearchIcon search={this.state.search} clearSearchResults={this.clearSearchResults} />
         </div>
 
         <SearchSubMenu suggestionsBoldedForRender={this.state.suggestionsBoldedForRender}

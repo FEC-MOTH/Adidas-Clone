@@ -17,7 +17,7 @@ class ClearSearchIcon extends React.Component {
     super(props)
   }
   handleClick() {
-    this.props.clearSearchString()
+    this.props.clearSearchResults()
   }
 
   render() {

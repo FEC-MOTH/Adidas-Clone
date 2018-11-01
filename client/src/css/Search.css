@@ -11,12 +11,12 @@
 
 input {
   padding: 5px;
-  width: 100px;
+  width: 85px;
   border: 0;
 }
 
 input:focus {
-  width: 247px;
+  width: 160px;
   outline-offset: 0;
   outline: none;
 }
@@ -31,7 +31,7 @@ input:focus {
   right: 0px;
   padding: 12px;
   box-shadow: 5px 5px 10px -10px black;
-  top: 35px;
+  top: 53px;
 }
 
 .search-menu-sub-menu-grid {
@@ -166,6 +166,7 @@ input:focus {
 
 .clear-search-icon {
   height: 29px;
+  width: 29px;
   color: black;
   padding: 2px 4px;
 }
@@ -174,5 +175,35 @@ input:focus {
   background-color: white;
   display: flex;
   align-items: center; 
+  position: relative;
+  top: 10px;
+}
+
+.empty-bag-icon {
+  top: 13px;
+  color: white;
+  height: 22px;
+  width: 22px;
+  position: relative;
+}
+
+li#bag-icon-wrapper {
+  width: 45px;
+  position: relative;
+  top: -5px;
+  text-align: center;
+}
+
+li#bag-icon-wrapper:hover {
+  background-color: white;
+}
+
+li#bag-icon-wrapper:hover .empty-bag-icon {
+  color: black;
+}
+
+.search-menu li {
+  margin-left: 2px;
+  margin-right: 1px;
 }
 
