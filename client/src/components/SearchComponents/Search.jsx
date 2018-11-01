@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from '../../css/Search.css'
 import axios from 'axios';
-import SearchResultsListEntry from './SearchResultsListEntry.jsx';
 import SearchGlass from './SearchGlass.jsx';
 import ClearSearchIcon from './ClearSearchIcon.jsx';
 import SearchSubMenu from './SearchSubMenu.jsx';
 import { debounce } from '../../../../utils/general.js';
+import { boldSearchStringInSuggestions } from '../../../../utils/parsers.js';
 
 class Search extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class Search extends React.Component {
       if (didUserBackSpaceUntilSearchCleared) {
         context.clearSearchResults();
       } else if (didUserBackspace) {
-        const boldedSuggestions = this.boldSearchStringInSuggestions(context.state.suggestions, context.state.search);
+        const boldedSuggestions = boldSearchStringInSuggestions(context.state.suggestions, context.state.search);
         context.setState({ suggestionsBoldedForRender: boldedSuggestions });
       }
       this.debouncedSearch(this.state.search)
@@ -45,33 +45,9 @@ class Search extends React.Component {
     )
   }
 
-  boldSearchStringInSuggestions(suggestions, search) {
-    return suggestions.map((suggestion) => {
-      if (suggestion.match.toLowerCase().match(search.toLowerCase())) {
-        return this.splitStringIntoPartsMatchingSubString(suggestion, search);
-      }
-    })
-  }
-
-  splitStringIntoPartsMatchingSubString(string, subString) {
-    const matchingBeginningIndex = string.match.toLowerCase().match(subString.toLowerCase()).index;
-    const matchingEndingIndex = matchingBeginningIndex + subString.length;
-    const beginning = string.match.slice(0, matchingBeginningIndex);
-    const matched = string.match.slice(matchingBeginningIndex, matchingEndingIndex);
-    const end = string.match.slice(matchingEndingIndex, string.match.length);
-
-    return {
-      beginning,
-      matched,
-      end,
-      count: string.count
-    }
-  }
-
   search(query) {
 
     const context = this;
-    console.log(query)
 
     if (query.length > 2) {
       axios.all([
@@ -89,9 +65,8 @@ class Search extends React.Component {
         context.setState({ suggestions: suggestions.data, searchResults: searchResults.data }, () => {
           // figure out some efficient method for when you should run this, and when you should
           // run the corresponding method client side!
-          console.log('here?')
 
-          const boldedSuggestions = this.boldSearchStringInSuggestions(context.state.suggestions, context.state.search);
+          const boldedSuggestions = boldSearchStringInSuggestions(context.state.suggestions, context.state.search);
           context.setState({ suggestionsBoldedForRender: boldedSuggestions });
           context.setState({ displayFlyout: true })
         });
@@ -104,12 +79,7 @@ class Search extends React.Component {
   }
 
   render() {
-    if (this.state.displayFlyout === true) {
-
-    }
-
     return (
-
       <li className="search-wrapper-outer">
         <div className="search-input-wrapper">
           <SearchGlass />
@@ -119,12 +89,9 @@ class Search extends React.Component {
 
         <SearchSubMenu suggestionsBoldedForRender={this.state.suggestionsBoldedForRender}
           searchResults={this.state.searchResults} />
-
       </li>
     )
   }
 }
 
 module.exports = Search;
-
-// 
