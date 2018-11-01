@@ -296,7 +296,7 @@ module.exports = {
       {
         "name": "RUNNING",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw69a7741c/_other/_navigation/running-fw18-header-nav-fly-out-image.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/sports/running-fw18-header-nav-fly-out-image.jpg",
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -312,7 +312,7 @@ module.exports = {
       {
         "name": "SOCCER",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwafc9f9cc/_other/_navigation/FB_FW18_SpectralMode_NV-IMG.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/sports/FB_FW18_SpectralMode_NV-IMG.jpg",
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -329,7 +329,7 @@ module.exports = {
       {
         "name": "BASKETBALL",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwec22dbca/_other/_navigation/HardenVOL3-Navigation%20thumbnail_1.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/sports/HardenVOL3-Navigation%20thumbnail_1.jpg",
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -344,7 +344,7 @@ module.exports = {
       {
         "name": "FOOTBALL",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwf7cd46b2/_other/_navigation/CLP_nav_1.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/sports/CLP_nav_1.jpg",
         "subCategories": [
           "Cleats",
           "Clothing",
@@ -385,8 +385,8 @@ module.exports = {
     "Categories": [
       {
         "name": "Originals",
-        "columnHeaderImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwa369c7b5/_other/_navigation/text_originals.png",
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw47948645/_other/_navigation/POGBA_PODSYSTEM_ORIGINALS_Web_Nav_178x80.jpg",
+        "columnHeaderImage": "/assets/img/megaMenu/brands/text_originals.png",
+        "mainColumnImage": "/assets/img/megaMenu/brands/POGBA_PODSYSTEM_ORIGINALS_Web_Nav_178x80.jpg",
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -402,8 +402,8 @@ module.exports = {
       },
       {
         "name": "Athletics",
-        "columnHeaderImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw6d6cce30/_other/_navigation/adidas-logo-menu-2.jpg",
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwc01e16fb/_other/_navigation/7083_TRAIN_DA_WebNav-172x80dual.jpg",
+        "columnHeaderImage": "/assets/img/megaMenu/brands/adidas-logo-menu-2.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/brands/7083_TRAIN_DA_WebNav-172x80dual.jpg",
         "subCategories": [
           "Men's Clothing",
           "Women's Clothing",
@@ -418,8 +418,8 @@ module.exports = {
       },
       {
         "name": "Adidas by Stella McCartney",
-        "columnHeaderImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw0114e977/_other/_navigation/SM.png",
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw07847c53/_other/_navigation/7150_TRAIN_STMC_SS18_WebNav_172x80.jpg",
+        "columnHeaderImage": "/assets/img/megaMenu/brands/SM.png",
+        "mainColumnImage": "/assets/img/megaMenu/brands/7150_TRAIN_STMC_SS18_WebNav_172x80.jpg",
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -434,8 +434,8 @@ module.exports = {
       },
       {
         "name": "Skateboarding",
-        "columnHeaderImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwe6dfb774/_other/_navigation/skateheaderline.jpg",
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw35ed055b/_other/_navigation/7104-Skate-Flyout1.jpeg",
+        "columnHeaderImage": "/assets/img/megaMenu/brands/skateheaderline.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/brands/7104-Skate-Flyout1.jpeg",
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -538,7 +538,7 @@ module.exports = {
       {
         "name": "GIFTS FOR MEN",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwa73c016a/_other/_navigation/topnav_holiday_men.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_men.jpg",
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
@@ -559,7 +559,7 @@ module.exports = {
       {
         "name": "GIFTS FOR WOMEN",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw0097a1f3/_other/_navigation/topnav_holiday_women.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_women.jpg",
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
@@ -580,7 +580,7 @@ module.exports = {
       {
         "name": "GIFTS FOR KIDS",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw5ab2725b/_other/_navigation/topnav_holiday_kids.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_kids.jpg",
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
@@ -601,7 +601,7 @@ module.exports = {
       {
         "name": "FEATURED",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw86f4609c/_other/_navigation/topnav_holiday_featured.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_featured.jpg",
         "subCategories": [
           "P.O.D. System",
           "Ultraboost",
@@ -615,7 +615,7 @@ module.exports = {
       {
         "name": "GIFT CARD",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw9da51f78/_other/_navigation/topnav_holiday_giftcard.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_giftcard.jpg",
         "subCategories": [
         ]
       },
