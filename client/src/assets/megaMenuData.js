@@ -210,6 +210,7 @@ module.exports = {
   {
     "name": "Kids",
     "isActive": true,
+    "hasBottomLine": true,
     "Categories": [
       {
         "name": "FEATURED",

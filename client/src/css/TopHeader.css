@@ -12,7 +12,7 @@
 }
 
 .inner-for-vertical-align {
-  top: 5%;
+  height: 100%;
   width: 100%;
   max-width: 1220px;
   margin: auto;
@@ -27,7 +27,7 @@ a {
   cursor: pointer;
   color: #ebedee;
   list-style-type: none;
-  display: inline;
+  display: inline-block;
 }
 
 em a {

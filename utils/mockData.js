@@ -152,7 +152,16 @@ const shoeDecorator = (product) => {
   shoe.imageUrl = `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${imgId}/zoom/${imgFileName}?sh=${64}`;
 
   // TODO DRY!
-  if (shoe.team) {
+  if (shoe.sport === 'Football' && shoe.team) {
+    shoe.name =
+      ` ${
+      shoe.team
+      } ${
+      shoe.sport
+      } ${
+      'Cleat'}`
+  }
+  else if (shoe.team) {
     shoe.name =
       ` ${
       shoe.team

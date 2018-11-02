@@ -82,6 +82,12 @@ each sub-menu component of the mega-menu.
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+.menu-main li li:hover .bottom-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 10fr 2fr;
+}
+
 /* Mega Menu Sub Menu */
 .mega-menu-sub-menu {
   position: absolute;
@@ -94,6 +100,7 @@ each sub-menu component of the mega-menu.
   color: black;
   box-shadow: 0px 5px 10px -10px black;
 }
+
 
 /* Mega Menu Sub Menu Column */
 .mega-menu-sub-menu ul {
@@ -156,8 +163,13 @@ each sub-menu component of the mega-menu.
   width: 150px;
   height: 1px;
   overflow: hidden;
-  margin: 40px 0 11px;
+  margin: 30px 0 11px;
   background-color: #ccc;
+}
+
+.mega-menu-sub-menu .horizontal-separator-large :after {
+  display: absolute;
+  bottom: 0px;
 }
 
 /* select the last horizontal separator */
