@@ -18,6 +18,10 @@
   margin: auto;
 }
 
+.inner-for-vertical-align a:last-of-type {
+  padding-right: 7px;
+}
+
 
 /* Element styling */
 a {
