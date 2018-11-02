@@ -141,3 +141,23 @@ each sub-menu component of the mega-menu.
   margin: 40px 0 11px;
   background-color: #ccc;
 }
+
+.mega-menu-sub-menu .horizontal-separator-less-margin {
+  width: 16px;
+  height: 1px;
+  overflow: hidden;
+  margin-top: 14px;
+  position: relative;
+  top: 7px;
+  background-color: #ccc;
+}
+
+.mega-menu-sub-menu .horizontal-separator-large {
+  width: 150px;
+  height: 1px;
+  overflow: hidden;
+  margin: 40px 0 11px;
+  background-color: #ccc;
+}
+
+/* select the last horizontal separator */

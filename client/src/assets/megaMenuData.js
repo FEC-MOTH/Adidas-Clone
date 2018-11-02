@@ -11,13 +11,13 @@ module.exports = {
           "New Arrivals",
           "Bestsellers",
           "Release Dates",
-          null,
+          { "horizontalSeparator": "small" },
           "P.O.D. System",
           "Ultraboost",
           "Ultraboost A16+",
           "NMD",
           "Fall Collection",
-          null,
+          { "horizontalSeparator": "small" },
           { "name": "SALE", "emphasized": true }
         ]
       },
@@ -119,13 +119,13 @@ module.exports = {
           "New Arrivals",
           "Best Sellers",
           "Release Dates",
-          null,
+          { "horizontalSeparator": "small" },
           "P.O.D.System",
           "Ultraboost",
           "NMD",
           "Statement Collection",
           "Fall Collection",
-          null,
+          { "horizontalSeparator": "small" },
           { "name": "SALE", "emphasized": true }
         ]
       },
@@ -218,13 +218,13 @@ module.exports = {
         "subCategories": [
           "New Arrivals",
           "Best Sellers",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "P.O.D.System",
           "Ultraboost",
           "NMD",
           "adicolor",
           "Fall Collection",
-          null,
+          { "horizontalSeparator": "large" },
           { "name": "SALE", "emphasized": true }]
       },
       {
@@ -236,14 +236,14 @@ module.exports = {
           "Girls Shoes",
           "Originals Shoes",
           "Sport Shoes",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Boys Clothing",
           "Girls Clothing",
           "Hoodies & Sweatshirts",
           "Pants & Shorts",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Sale",
-          null]
+          { "horizontalSeparator": "large" }]
       },
       {
         "name": "CHILDREN (4-8)",
@@ -254,12 +254,12 @@ module.exports = {
           "Girls Shoes",
           "Originals Shoes",
           "Sport Shoes",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Boys Clothing",
           "Girls Clothing",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Sale",
-          null,
+          { "horizontalSeparator": "large" },
           { "name": "all CHILDREN", "emphasized": true }]
       },
       {
@@ -269,9 +269,9 @@ module.exports = {
         "subCategories": [
           "Shoes",
           "Clothing",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Sale",
-          null,
+          { "horizontalSeparator": "large" },
           { "name": "all Baby & Toddler", "emphasized": true }]
       },
       {
@@ -301,11 +301,11 @@ module.exports = {
           "Shoes",
           "Clothing",
           "Accessories",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Ultraboost",
           "Alphabounce",
           "Pureboost",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all Running", "emphasized": true },
         ]
       },
@@ -317,12 +317,12 @@ module.exports = {
           "Shoes",
           "Clothing",
           "Accessories",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Predator",
           "X",
           "Nemeziz",
           "Copa",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all Soccer", "emphasized": true }
         ]
       },
@@ -334,10 +334,10 @@ module.exports = {
           "Shoes",
           "Clothing",
           "Accessories",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "James Harden",
           "Damian Lillard",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all Basketball", "emphasized": true }
         ]
       },
@@ -349,11 +349,11 @@ module.exports = {
           "Cleats",
           "Clothing",
           "Accessories",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Compression",
           "Freak Cleats",
           "Adizero 5-Star",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all Football", "emphasized": true },
         ]
       },
@@ -392,11 +392,11 @@ module.exports = {
           "Clothing",
           "Accessories",
           "New Arrivals",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "P.O.D.System",
           "NMD",
           "Falcon",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all adidas Originals", "emphasized": true },
         ]
       },
@@ -409,10 +409,10 @@ module.exports = {
           "Women's Clothing",
           "Kids Clothing",
           "New Arrivals",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Z.N.E.",
           "ID",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all Athletics", "emphasized": true },
         ]
       },
@@ -425,10 +425,10 @@ module.exports = {
           "Clothing",
           "Accessories",
           "New Arrivals",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Tennis",
           "Training",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all adidas by Stella McCartney", "emphasized": true },
         ]
       },
@@ -441,11 +441,11 @@ module.exports = {
           "Clothing",
           "Accessories",
           "New Arrivals",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "3MC",
           "Matchcourt",
           "Busenitz",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "all Skateboarding", "emphasized": true },
         ]
       },
@@ -462,7 +462,7 @@ module.exports = {
           "Tubular",
           "Samba",
           "I-5923",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "adicolor Clothing", "emphasized": true },
         ]
       }
@@ -488,7 +488,7 @@ module.exports = {
           "Tubular",
           "Gazelle",
           "Spezial",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "All Originals", "emphasized": true }
         ]
       },
@@ -503,7 +503,7 @@ module.exports = {
           "Solar Glide",
           "adizero Adios 3",
           "Energy Cloud",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "All Running", "emphasized": true }
         ]
       },
@@ -513,7 +513,7 @@ module.exports = {
         "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw67e56fe0/_other/_navigation/mi_172x80_dame.jpg",
         "subCategories": [
           "Dame 4",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           { "name": "All Basketball", "emphasized": true }
         ]
       },
@@ -526,7 +526,7 @@ module.exports = {
           "All Men’s",
           "All Women’s",
           "Gift Cards",
-          null
+          { "horizontalSeparator": "smallLessMargin" }
         ]
       }
     ]
@@ -542,17 +542,17 @@ module.exports = {
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Shoes",
           "Hoodies & Sweatshirts",
           "Track Suits",
           "Pants & Tights",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Gifts for the Athlete",
           "Gifts for the Tastemaker",
           "Gifts for Dad",
           "Gifts Under $100",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Holiday Sale"
         ]
       },
@@ -563,17 +563,17 @@ module.exports = {
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Shoes",
           "Hoodies & Sweatshirts",
           "Track Suits",
           "Pants & Tights",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Gifts for the Athlete",
           "Gifts for the Tastemaker",
           "Gifts for Mom",
           "Gifts Under $100",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Holiday Sale"
         ]
       },
@@ -584,17 +584,17 @@ module.exports = {
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Shoes",
           "Hoodies & Sweatshirts",
           "Boys",
           "Girls",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Gifts for Teens",
           "Gifts for Children",
           "Gifts for Babies & Toddlers",
           "Gifts Under $50",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Holiday Sale"
         ]
       },
@@ -607,7 +607,7 @@ module.exports = {
           "Ultraboost",
           "NMD",
           "Boost",
-          null,
+          { "horizontalSeparator": "smallLessMargin" },
           "Black Friday Preview",
           "Cyber Monday Preview"
         ]
