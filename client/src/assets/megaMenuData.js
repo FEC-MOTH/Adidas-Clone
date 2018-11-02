@@ -224,9 +224,7 @@ module.exports = {
           "Ultraboost",
           "NMD",
           "adicolor",
-          "Fall Collection",
-          { "horizontalSeparator": "large" },
-          { "name": "SALE", "emphasized": true }]
+          "Fall Collection"]
       },
       {
         "name": "YOUTH (8-14)",
@@ -242,9 +240,7 @@ module.exports = {
           "Girls Clothing",
           "Hoodies & Sweatshirts",
           "Pants & Shorts",
-          { "horizontalSeparator": "smallLessMargin" },
-          "Sale",
-          { "horizontalSeparator": "large" }]
+          { "horizontalSeparator": "smallLessMargin" }]
       },
       {
         "name": "CHILDREN (4-8)",
@@ -287,6 +283,16 @@ module.exports = {
           "Balls"
         ]
       }
+    ],
+    "bottomLineCategories": [
+      [
+        { "horizontalSeparator": "large" },
+        { "name": "SALE", "emphasized": true }
+      ],
+      [
+        { "horizontalSeparator": "large" },
+        { "name": "SALE", "emphasized": true }
+      ]
     ]
   },
     null,

@@ -8,7 +8,7 @@ class MegaMenuSubMenuColumn extends React.Component {
 
   render() {
     const { megaMenuSecondLevelCategory } = this.props;
-
+    // if there is a large separator, break
     return (
       <div className="mega-menu-sub-menu-col">
         <ul>
@@ -33,6 +33,7 @@ class MegaMenuSubMenuColumn extends React.Component {
         </ul>
       </div>
     )
+
   }
 }
 

@@ -82,6 +82,7 @@ each sub-menu component of the mega-menu.
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+
 .menu-main li li:hover .bottom-line {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -99,6 +100,12 @@ each sub-menu component of the mega-menu.
   display: none;
   color: black;
   box-shadow: 0px 5px 10px -10px black;
+  /* This is done so that the mega-menu-sub-menu can be wider than its parent
+    For an explanation, see 
+    https://stackoverflow.com/questions/5581034/is-there-are-way-to-make-a-child-divs-width-wider-than-the-parent-div-using-css
+   */
+  width: 100vw;
+  left: calc(-50vw + 50%);
 }
 
 
