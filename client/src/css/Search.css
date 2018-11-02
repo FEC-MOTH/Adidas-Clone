@@ -69,12 +69,13 @@ input:focus {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 14px;
-  margin: 0;
+  margin: 0 0 6px;
   padding: 0;
 }
 
 /* here are the products lis! */
 .search-products-column li {
+  font-family: 'AdihausDIN',Helvetica,Arial,sans-serif;
   color: black;
   width: 100%;
   display: block;
@@ -98,6 +99,7 @@ input:focus {
 }
 
 .product-subtitle {
+  text-transform: none;
   color: #98989a;
   display: block;
   overflow: hidden;
@@ -156,6 +158,7 @@ input:focus {
 
 .num-reviews {
   color: #98989a;
+  font-size: 10px;
 }
 
 .search-glass {
@@ -229,6 +232,40 @@ li#bag-icon-wrapper:hover .bag-menu {
   top: 100%;
   position: absolute;
   display: none;
+}
+
+/* TODO some of the attributes of these styles may be redundant */
+
+.see-all-query:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2px;
+  bottom: 0px;
+  width: calc(100% - 4px);
+  border-bottom-width: 1.01565px;
+  border-bottom-style: solid;
+  border-color: #000;
+  transition: border-color .2s cubic-bezier(.3,0,.45,1);
+}
+
+.see-all-query {
+  left: 15px;
+  bottom: 27px;
+  position: absolute;
+  padding: 2px 5px 2px 2px;
+  min-height: 0;
+  color: #000;
+  background-color: transparent;
+  max-width: 100%;
+  white-space: unset;
+  text-align: left;
+  line-height: 13px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-family: 'AdihausDIN',Helvetica,Arial,sans-serif;
+  font-weight: 1000;
 }
 
 

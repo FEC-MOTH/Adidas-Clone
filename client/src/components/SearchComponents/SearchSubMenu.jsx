@@ -19,12 +19,13 @@ class SearchSubMenu extends React.Component {
                 if (!!suggestion === true) {
                   return <li
                     className="search-suggestion" key={i}>
-                    {suggestion.beginning}<b>{suggestion.matched}</b>{suggestion.end} - ({suggestion.count})
+                    {suggestion.beginning}<strong>{suggestion.matched}</strong>{suggestion.end} - ({suggestion.count})
             </li>
                 } else {
                   return <li key={i}></li>
                 }
               })}
+              <div className="see-all-query"> See All "{this.props.search}" </div>
             </ul>
 
             <ul className="search-products-column">

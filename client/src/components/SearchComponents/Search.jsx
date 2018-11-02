@@ -88,7 +88,8 @@ class Search extends React.Component {
         </div>
 
         <SearchSubMenu suggestionsBoldedForRender={this.state.suggestionsBoldedForRender}
-          searchResults={this.state.searchResults} />
+          searchResults={this.state.searchResults}
+          search={this.state.search} />
       </li>
     )
   }
