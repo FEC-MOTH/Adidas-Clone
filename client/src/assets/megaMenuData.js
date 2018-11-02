@@ -336,6 +336,21 @@ module.exports = {
         ]
       },
       {
+        "name": "OUTDOOR",
+        "columnHeaderImage": null,
+        "mainColumnImage": "/assets/img/megaMenu/sports/FB_FW18_SpectralMode_NV-IMG.jpg",
+        "subCategories": [
+          "Shoes",
+          "Clothing",
+          { "horizontalSeparator": "smallLessMargin" },
+          "TERREX",
+          "Hiking Boots",
+          "Winter Jackets",
+          { "horizontalSeparator": "smallLessMargin" },
+          { "name": "all Outdoor", "emphasized": true }
+        ]
+      },
+      {
         "name": "BASKETBALL",
         "columnHeaderImage": null,
         "mainColumnImage": "/assets/img/megaMenu/sports/HardenVOL3-Navigation%20thumbnail_1.jpg",
