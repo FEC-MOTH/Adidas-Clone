@@ -223,8 +223,8 @@ module.exports = {
           "P.O.D.System",
           "Ultraboost",
           "NMD",
-          "adicolor",
-          "Fall Collection"]
+          "adicolor"
+        ]
       },
       {
         "name": "YOUTH (8-14)",
@@ -240,7 +240,8 @@ module.exports = {
           "Girls Clothing",
           "Hoodies & Sweatshirts",
           "Pants & Shorts",
-          { "horizontalSeparator": "smallLessMargin" }]
+          { "horizontalSeparator": "smallLessMargin" },
+          "Sale"]
       },
       {
         "name": "CHILDREN (4-8)",
@@ -255,9 +256,7 @@ module.exports = {
           "Boys Clothing",
           "Girls Clothing",
           { "horizontalSeparator": "smallLessMargin" },
-          "Sale",
-          { "horizontalSeparator": "large" },
-          { "name": "all CHILDREN", "emphasized": true }]
+          "Sale"]
       },
       {
         "name": "BABY & TODDLER (0-4)",
@@ -267,9 +266,7 @@ module.exports = {
           "Shoes",
           "Clothing",
           { "horizontalSeparator": "smallLessMargin" },
-          "Sale",
-          { "horizontalSeparator": "large" },
-          { "name": "all Baby & Toddler", "emphasized": true }]
+          "Sale"]
       },
       {
         "name": "ACCESSORIES",
@@ -284,15 +281,20 @@ module.exports = {
         ]
       }
     ],
-    "bottomLineCategories": [
+    "footerCategories": [
+      [{ "horizontalSeparator": "large" },
+      { "name": "SALE", "emphasized": true }],
       [
         { "horizontalSeparator": "large" },
-        { "name": "SALE", "emphasized": true }
+        { "name": "all Youth", "emphasized": true }
       ],
       [
         { "horizontalSeparator": "large" },
-        { "name": "SALE", "emphasized": true }
-      ]
+        { "name": "all Children", "emphasized": true }
+      ],
+      [{ "horizontalSeparator": "large" },
+      { "name": "all Baby & Toddler", "emphasized": true }],
+      []
     ]
   },
     null,
@@ -624,6 +626,9 @@ module.exports = {
         "columnHeaderImage": null,
         "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_giftcard.jpg",
         "subCategories": [
+          "Email a Gift Card",
+          "Ship a Gift Card",
+          "Check Balance"
         ]
       },
     ]

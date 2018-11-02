@@ -82,11 +82,15 @@ each sub-menu component of the mega-menu.
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+.mega-menu-sub-menu.has-bottom-line {
+  padding-bottom: 0px;
+}
 
-.menu-main li li:hover .bottom-line {
+.menu-main li li:hover div.bottom-line {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 10fr 2fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10fr 3fr;
+  padding-bottom: 0px !important;
 }
 
 /* Mega Menu Sub Menu */
