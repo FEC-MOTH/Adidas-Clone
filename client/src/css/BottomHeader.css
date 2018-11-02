@@ -78,8 +78,15 @@ each sub-menu component of the mega-menu.
 }
 
 .menu-main li li:hover .mega-menu-sub-menu {
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 172px 172px 172px 172px 172px;
+  grid-column-gap: 20px;
+}
+
+.menu-main li li:hover .mega-menu-sub-menu-wrapper {
+  margin: 0 auto;
+  display: grid;
 }
 
 .mega-menu-sub-menu.has-bottom-line {
@@ -90,17 +97,16 @@ each sub-menu component of the mega-menu.
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 10fr 3fr;
-  padding-bottom: 0px !important;
 }
 
 /* Mega Menu Sub Menu */
-.mega-menu-sub-menu {
+
+.mega-menu-sub-menu-wrapper {
   position: absolute;
-  background: white;
+  background-color: white;
   top: 100%;
   width: 100%;
   left: 0;
-  padding: 2em;
   display: none;
   color: black;
   box-shadow: 0px 5px 10px -10px black;
@@ -110,6 +116,21 @@ each sub-menu component of the mega-menu.
    */
   width: 100vw;
   left: calc(-50vw + 50%);
+}
+
+.mega-menu-sub-menu {
+  background: white;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  padding: 2em;
+  display: none;
+  color: black;
+  /* This is done so that the mega-menu-sub-menu can be wider than its parent
+    For an explanation, see 
+    https://stackoverflow.com/questions/5581034/is-there-are-way-to-make-a-child-divs-width-wider-than-the-parent-div-using-css
+   */
+  max-width: 1220px;
 }
 
 

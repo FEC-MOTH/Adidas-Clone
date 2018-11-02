@@ -382,8 +382,7 @@ module.exports = {
           "Volleyball",
           "Yoga",
           "Weightlifting",
-          "Boxing",
-          { "name": "all Football", "emphasized": true }
+          "Boxing"
         ]
       }
     ]

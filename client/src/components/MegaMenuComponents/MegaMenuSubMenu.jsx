@@ -10,24 +10,28 @@ class MegaMenuSubMenu extends React.Component {
 
     if (this.props.megaMenuTopLevelCategory.hasOwnProperty("hasBottomLine")) {
       return (
-        <div className="mega-menu-sub-menu has-bottom-line">
-          {this.props.megaMenuTopLevelCategory.Categories.map((megaMenuSecondLevelCategory, i) => (
-            <div class="bottom-line">
-              <MegaMenuSubMenuColumn megaMenuSecondLevelCategory={megaMenuSecondLevelCategory} key={i} />
-              <MegaMenuSubMenuColumnFooter footerItems={this.props.megaMenuTopLevelCategory.footerCategories[i]} key={i} />
-            </div>
-          )
-          )}
-        </ div>
+        <div className="mega-menu-sub-menu-wrapper">
+          <div className="mega-menu-sub-menu has-bottom-line">
+            {this.props.megaMenuTopLevelCategory.Categories.map((megaMenuSecondLevelCategory, i) => (
+              <div class="bottom-line">
+                <MegaMenuSubMenuColumn megaMenuSecondLevelCategory={megaMenuSecondLevelCategory} key={i} />
+                <MegaMenuSubMenuColumnFooter footerItems={this.props.megaMenuTopLevelCategory.footerCategories[i]} key={i} />
+              </div>
+            )
+            )}
+          </ div>
+        </div>
       )
     } else {
       return (
-        <div className="mega-menu-sub-menu">
-          {this.props.megaMenuTopLevelCategory.Categories.map((megaMenuSecondLevelCategory, i) => {
-            return <MegaMenuSubMenuColumn megaMenuSecondLevelCategory={megaMenuSecondLevelCategory} key={i} />
-          }
-          )}
-        </ div>
+        <div className="mega-menu-sub-menu-wrapper">
+          <div className="mega-menu-sub-menu">
+            {this.props.megaMenuTopLevelCategory.Categories.map((megaMenuSecondLevelCategory, i) => {
+              return <MegaMenuSubMenuColumn megaMenuSecondLevelCategory={megaMenuSecondLevelCategory} key={i} />
+            }
+            )}
+          </ div>
+        </div>
       )
     }
   }
