@@ -23,6 +23,10 @@
   text-overflow: ellipsis;
 }
 
+.sub-header-item:hover {
+  text-decoration: underline;
+}
+
 .sub-header-item-glyph {
   display: inline-block;
   height: 20px;

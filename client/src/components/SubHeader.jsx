@@ -17,7 +17,7 @@ const SubHeader = (props) => (
         <div className="sub-header-item-label"> FREE SHIPPING AND FREE RETURNS </div>
       </div>
       <div className="sub-header-item">
-        <img className="sub-header-item-image" src="https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw0d789009/_other/adidas_icon_creatorID_WHITE_v6.png" alt="CREATORS GET REWARDED – JOIN THE NEW ADIDAS CREATORS CLUB" />
+        <img className="sub-header-item-image" src="/assets/img/subHeader/adidas_icon_creatorID_WHITE_v6.png" alt="CREATORS GET REWARDED – JOIN THE NEW ADIDAS CREATORS CLUB" />
         <div className="sub-header-item-label"> Creators Get Rewarded - Join the New Adidas Creators Club </div>
       </div>
     </div>
