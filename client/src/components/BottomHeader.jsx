@@ -7,7 +7,8 @@ import EmptyBagIcon from '../components/EmptyBagIcon';
 
 const BottomHeader = (props) => (
   <div className="glass-header-bottom-desktop">
-    <img id="logo" src="/assets/img/shoedidas_white_2.svg"></img>
+    <img id="logo" src="/assets/img/shoedidas_white_4.svg"></img>
+    {/* <ShoedidasLogo id="logo" /> */}
     <ul className="menu-main">
       <MegaMenu megaMenuAssets={megaMenuAssets} />
       <ul className="search-menu">
