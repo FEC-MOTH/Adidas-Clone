@@ -13,9 +13,9 @@ class MegaMenuSubMenu extends React.Component {
         <div className="mega-menu-sub-menu-wrapper">
           <div className="mega-menu-sub-menu has-bottom-line">
             {this.props.megaMenuTopLevelCategory.Categories.map((megaMenuSecondLevelCategory, i) => (
-              <div class="bottom-line">
-                <MegaMenuSubMenuColumn megaMenuSecondLevelCategory={megaMenuSecondLevelCategory} key={i} />
-                <MegaMenuSubMenuColumnFooter footerItems={this.props.megaMenuTopLevelCategory.footerCategories[i]} key={i} />
+              <div className="bottom-line" key={i}>
+                <MegaMenuSubMenuColumn megaMenuSecondLevelCategory={megaMenuSecondLevelCategory} />
+                <MegaMenuSubMenuColumnFooter footerItems={this.props.megaMenuTopLevelCategory.footerCategories[i]} />
               </div>
             )
             )}
