@@ -38,20 +38,9 @@ const footballCleats = require('./data/football-cleats');
 const runningAccessories = require('./data/running-accessories');
 const runningShoes = require('./data/running-shoes');
 
-const setUpForSampleDataGenerationComplete = false;
-const gendersForMock = ["Men", "Women", "Children"];
-const colorsForMock = ["Black", "white", "red", "green", "yellow", "blue", "pink", "gray", "brown", "orange", "purple"];
-const sportsForMock = ["Basketball", "Football", null, "Soccer", "Original"];
-const validProductPriceRange = { min: 50, max: 300 };
-
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
-
-// need - teamNames filtered for 'nfl'
-// need -  teamNames filtered for 'mls'
-// need - teamNames filtered for 'nba'
-
 
 const generateImageUrl = (imgId, imgFileName) => `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${imgId}/zoom/${imgFileName}?sh=${64}`
 
@@ -108,17 +97,12 @@ const hoodiePantsBackpackHatDecorator = (product) => {
 }
 
 const shoeDecorator = (() => {
-  let executed = false;
-  let nfl; let mls; let nba;
+  const nfl = teamNames.filter((team) => team.league === "nfl");
+  const mls = teamNames.filter((team) => team.league === "mls");
+  const nba = teamNames.filter((team) => team.league === "nba");
+  const sportsForMock = ["Basketball", "Football", null, "Soccer", "Original"];
 
   return (product) => {
-
-    if (!executed) {
-      executed = true;
-      nfl = teamNames.filter((team) => team.league === "nfl");
-      mls = teamNames.filter((team) => team.league === "mls");
-      nba = teamNames.filter((team) => team.league === "nba");
-    }
 
     const shoe = product;
 
@@ -130,32 +114,23 @@ const shoeDecorator = (() => {
       shoe.sport = sportsForMock[getRandomInt(0, sportsForMock.length)];
     }
 
-    // TODO CURRENTLY WE ARE FILTERING A GIANT TEAMS ARRAY EVERY TIME THIS IS RUN
     if (shoe.sport === "Football") {
-      // const nfl = teamNames.filter((team) => team.league === "nfl");
       shoe.team = nfl[getRandomInt(0, nfl.length)].name;
-
       shoeApiData = footballCleats[getRandomInt(0, footballCleats.length)];
       imgId = shoeApiData.images[0].id;
       imgFileName = shoeApiData.images[0].fileName;
     } else if (shoe.sport === "Soccer") {
-      // const mls = teamNames.filter((team) => team.league === "mls");
       shoe.team = mls[getRandomInt(0, mls.length)].name;
-
       shoeApiData = footballCleats[getRandomInt(0, footballCleats.length)];
       imgId = shoeApiData.images[0].id;
       imgFileName = shoeApiData.images[0].fileName;
     } else if (shoe.sport === "Basketball") {
-      // const nba = teamNames.filter((team) => team.league === "nba");
       shoe.team = nba[getRandomInt(0, nba.length)].name;
-
-
       shoeApiData = basketballShoes[getRandomInt(0, basketballShoes.length)];
       imgId = shoeApiData.images[0].id;
       imgFileName = shoeApiData.images[0].fileName;
     } else {
       shoe.team = null;
-
       shoeApiData = runningShoes[getRandomInt(0, runningShoes.length)];
       imgId = shoeApiData.images[0].id;
       imgFileName = shoeApiData.images[0].fileName;
@@ -199,13 +174,11 @@ const shoeDecorator = (() => {
 
 const generateProduct = (() => {
 
-  let executed = false;
+  const gendersForMock = ["Men", "Women", "Children"];
+  const colorsForMock = ["Black", "white", "red", "green", "yellow", "blue", "pink", "gray", "brown", "orange", "purple"];
+  const validProductPriceRange = { min: 50, max: 300 };
 
   return (category) => {
-
-    if (!executed) {
-      executed = true;
-    }
 
     let product = {};
 
