@@ -338,7 +338,7 @@ module.exports = {
       {
         "name": "OUTDOOR",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/sports/FB_FW18_SpectralMode_NV-IMG.jpg",
+        "mainColumnImage": "/assets/img/megaMenu/sports/OUTDOOR_SUBNAV_FW18.jpg",
         "subCategories": [
           "Shoes",
           "Clothing",
