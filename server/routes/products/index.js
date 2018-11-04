@@ -38,19 +38,12 @@ router.route('/search')
 router.route('/search/suggestions')
   .get((req, res) => {
     const query = req.query.q;
-    /*
-    TODO currently all I have in the way of search optimization is
-    that we start looking in more specific categories: name, team,
-    and then trickle down to less specific: color, gender. 
 
-    SELECT Count(*) FROM name, team, spot, category, color, gender
-      WHERE name || team || sport || category || color || gender like query
-  */
     if (!!query === false) {
       res.send('');
     } else {
 
-      connection.query(sqlQuery(query), { type: sequelize.QueryTypes.SELECT })
+      connection.query(sqlQuery(), { replacements: Array(6).fill(query), type: sequelize.QueryTypes.SELECT })
         .then((responseArray) => {
 
           const counts = {};

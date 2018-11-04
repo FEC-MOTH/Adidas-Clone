@@ -1,33 +1,33 @@
 module.exports = {
-  sqlQuery: (query) => `SELECT NameMatch, TeamMatch, SportMatch, CategoryMatch, ColorMatch, GenderMatch FROM (
+  sqlQuery: () => `SELECT NameMatch, TeamMatch, SportMatch, CategoryMatch, ColorMatch, GenderMatch FROM (
     SELECT name,
        CASE
-         WHEN name like "%${query}%" THEN name
+         WHEN name like "%"?"%" THEN name
         END AS NameMatch,
   
         team,
          CASE
-         WHEN team like "%${query}%" THEN team
+         WHEN team like "%"?"%" THEN team
         END AS TeamMatch,
   
         sport,
           CASE
-          WHEN sport like "%${query}%" THEN sport
+          WHEN sport like "%"?"%" THEN sport
         END AS SportMatch,
   
         category,
           CASE
-          WHEN category like "%${query}%" THEN category
+          WHEN category like "%"?"%" THEN category
         END AS CategoryMatch,
   
         color,
           CASE
-          WHEN color like "%${query}%" THEN color
+          WHEN color like "%"?"%" THEN color
         END AS ColorMatch,
   
        gender,
        CASE
-         WHEN gender LIKE "%${query}%" THEN gender
+         WHEN gender LIKE "%"?"%" THEN gender
        END AS GenderMatch
   
       FROM products AS T
