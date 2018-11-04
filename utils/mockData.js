@@ -1,33 +1,48 @@
 /*
-The following 
-We have the following schema:
+The functions in this file generates instance of the Product model of the following types:
+Basketball shoes, football shoes, sandles and slides, soccer shoes, original shoes, hoodies
+running shoes, pants, backpacks, and hats.
 
-1 - 10 = basketball shoes
-11-20 = football shoes 
-21-30 = sandles and slides
-31-40 = soccer shoes
-41-50 = original shoes
-51-60 = hoodies and sweater
-61-70 = running shoes
-71-80 = pants
-81-90 = bags and backpacks
-91-100 = hats and beanies
+All of these types of data follow the Product schema. But some of these types of products
+fill out the product schema more completely than others. A football cleat
+record, for example, might be nearly complete.:
 
-I want to fake the following fields:
+{
+  name: 'Dallas Cowboys Football Cleat'
+  price: 261,
+  salePrice: 250,
+  sport: 'Football',
+  color: 'green',
+  team: 'Dallas Cowboys',
+  rating: 4,
+  num_ratings: 250,
+  imageUrl: 'http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/dw468379c7/zoom/BW1085_01_standard.jpg?sh=64',
+  gender: 'Children',
+  category: 'Shoe'
+}
 
+Whereas, attributes of the schema like 'sport' and 'team' are irrelevant to pants.
 
-“name” - string
-“price” - int
-“salePrice” - int
-"sport" - [Basketball, Football, null, Soccer, Original];
-“color” - string - can easily use faker for this
-“team” - string
-"rating" - Float
-"num_ratings" - integer
-"imageUrl" - string
-"gender" - string [Men, Women, Children]
-"category" - string [Shoes, Sandles and Slides, Hoodies and Sweater, Pants, Bags and Backpacks, Hats and Beanies]
+{
+  name: 'East Taryn Pants'
+  price: 72,
+  salePrice: 50,
+  sport: NULL,
+  color: 'green',
+  team: 'NULL
+  rating: 4,
+  num_ratings: 250,
+  imageUrl: 'http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/dwf878ce7b/zoom/BS3115_21_model.jpg?sh=64',
+  gender: 'Men',
+  category: 'Pants'
+}
+
+For this reason, the functions in this file use the factory, decorator pattern. All product records
+are initialized using the generateProduct() factory function. After that, the records pass variously
+through the hoodiePantsBackpackHatDecorator(), shoeDecorator(), etc.
+
 */
+
 const faker = require("faker");
 const { teamNames } = require("./staticDataForMock.js");
 
@@ -45,56 +60,57 @@ function getRandomInt(min, max) {
 const generateImageUrl = (imgId, imgFileName) => `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${imgId}/zoom/${imgFileName}?sh=${64}`
 
 
-const hoodiePantsBackpackHatDecorator = (product) => {
-  const decoratedProduct = product;
-  decoratedProduct.sport = null;
-  decoratedProduct.team = null;
-  let shoeApiData;
+const hoodiePantsBackpackHatDecorator = (() => {
+  const hoodies = [];
+  const pants = [];
+  const hats = [];
 
-  if (decoratedProduct.category === 'Hoodie') {
-    basketBallApparel.sort(() => .5 - Math.random())
-
-    for (let i = 0; i < basketBallApparel.length; i += 1) {
-      if (basketBallApparel[i].title.match(decoratedProduct.category)) {
-        shoeApiData = basketBallApparel[i];
-        decoratedProduct.imageUrl = generateImageUrl(shoeApiData.images[0].id, shoeApiData.images[0].fileName);
-        break;
-      }
+  basketBallApparel.forEach((item) => {
+    if (item.title.match('Hoodie')) {
+      hoodies.push(item);
     }
-  } else if (decoratedProduct.category === 'Pants') {
-    basketBallApparel.sort(() => .5 - Math.random())
+    if (item.title.match('Pants')) {
+      pants.push(item);
+    }
+  })
 
-    for (let i = 0; i < basketBallApparel.length; i += 1) {
-      if (basketBallApparel[i].title.match(decoratedProduct.category)) {
-        shoeApiData = basketBallApparel[i];
-        decoratedProduct.imageUrl = generateImageUrl(shoeApiData.images[0].id, shoeApiData.images[0].fileName);
-        break;
-      }
+  basketballAccessories.forEach((accessory) => {
+    if (accessory.title.match('Hat')) {
+      hats.push(accessory);
+    }
+  });
+
+  runningAccessories.forEach((accessory) => {
+    if (accessory.title.match('Hat')) {
+      hats.push(accessory);
+    }
+  });
+
+  return (product) => {
+    const decoratedProduct = product;
+    decoratedProduct.sport = null;
+    decoratedProduct.team = null;
+    let shoeApiData;
+
+    if (decoratedProduct.category === 'Hoodie') {
+      shoeApiData = hoodies[getRandomInt(0, hoodies.length)];
+      decoratedProduct.imageUrl = generateImageUrl(shoeApiData.images[0].id, shoeApiData.images[0].fileName);
+    } else if (decoratedProduct.category === 'Pants') {
+      shoeApiData = pants[getRandomInt(0, pants.length)];
+      decoratedProduct.imageUrl = generateImageUrl(shoeApiData.images[0].id, shoeApiData.images[0].fileName);
+    } else if (decoratedProduct.category === 'Backpack') {
+      decoratedProduct.imageUrl = `https://loremflickr.com/320/240/${decoratedProduct.category}/all`;
+    } else if (decoratedProduct.category === 'Hat') {
+      shoeApiData = hats[getRandomInt(0, hats.length)];
+      decoratedProduct.imageUrl = generateImageUrl(shoeApiData.images[0].id, shoeApiData.images[0].fileName);
+    } else if (decoratedProduct.category === 'Sandle') {
+      decoratedProduct.imageUrl = `https://loremflickr.com/320/240/${decoratedProduct.category}/all`;
     }
 
-  } else if (decoratedProduct.category === 'Backpack') {
-    decoratedProduct.imageUrl = `https://loremflickr.com/320/240/${decoratedProduct.category}/all`;
-  } else if (decoratedProduct.category === 'Hat') {
-
-    const basketballOrRunningAccessories = [basketballAccessories, runningAccessories][getRandomInt(0, 2)];
-
-    basketballOrRunningAccessories.sort(() => .5 - Math.random())
-
-    for (let i = 0; i < basketballOrRunningAccessories.length; i += 1) {
-      if (basketballOrRunningAccessories[i].title.match(decoratedProduct.category)) {
-        shoeApiData = basketballOrRunningAccessories[i];
-        decoratedProduct.imageUrl = generateImageUrl(shoeApiData.images[0].id, shoeApiData.images[0].fileName);
-        break;
-      }
-    }
-
-  } else if (decoratedProduct.category === 'Sandle') {
-    decoratedProduct.imageUrl = `https://loremflickr.com/320/240/${decoratedProduct.category}/all`;
+    decoratedProduct.name = `${faker.fake("{{address.city}}")} ${decoratedProduct.category}`;
+    return decoratedProduct;
   }
-
-  decoratedProduct.name = `${faker.fake("{{address.city}}")} ${decoratedProduct.category}`;
-  return decoratedProduct;
-}
+})();
 
 const shoeDecorator = (() => {
   const nfl = teamNames.filter((team) => team.league === "nfl");
@@ -107,8 +123,6 @@ const shoeDecorator = (() => {
     const shoe = product;
 
     let shoeApiData;
-    let imgId;
-    let imgFileName;
 
     if (shoe.category === 'Shoe') {
       shoe.sport = sportsForMock[getRandomInt(0, sportsForMock.length)];
@@ -117,24 +131,19 @@ const shoeDecorator = (() => {
     if (shoe.sport === "Football") {
       shoe.team = nfl[getRandomInt(0, nfl.length)].name;
       shoeApiData = footballCleats[getRandomInt(0, footballCleats.length)];
-      imgId = shoeApiData.images[0].id;
-      imgFileName = shoeApiData.images[0].fileName;
     } else if (shoe.sport === "Soccer") {
       shoe.team = mls[getRandomInt(0, mls.length)].name;
       shoeApiData = footballCleats[getRandomInt(0, footballCleats.length)];
-      imgId = shoeApiData.images[0].id;
-      imgFileName = shoeApiData.images[0].fileName;
     } else if (shoe.sport === "Basketball") {
       shoe.team = nba[getRandomInt(0, nba.length)].name;
       shoeApiData = basketballShoes[getRandomInt(0, basketballShoes.length)];
-      imgId = shoeApiData.images[0].id;
-      imgFileName = shoeApiData.images[0].fileName;
     } else {
       shoe.team = null;
       shoeApiData = runningShoes[getRandomInt(0, runningShoes.length)];
-      imgId = shoeApiData.images[0].id;
-      imgFileName = shoeApiData.images[0].fileName;
     }
+
+    const imgId = shoeApiData.images[0].id;
+    const imgFileName = shoeApiData.images[0].fileName;
 
     shoe.imageUrl = `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${imgId}/zoom/${imgFileName}?sh=${64}`;
 
@@ -170,7 +179,6 @@ const shoeDecorator = (() => {
     return shoe;
   }
 })();
-
 
 const generateProduct = (() => {
 
