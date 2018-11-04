@@ -1,5 +1,5 @@
 module.exports = {
-  sqlQuery: () => `SELECT NameMatch, TeamMatch, SportMatch, CategoryMatch, ColorMatch, GenderMatch FROM (
+  suggestionQuery: () => `SELECT NameMatch, TeamMatch, SportMatch, CategoryMatch, ColorMatch, GenderMatch FROM (
     SELECT name,
        CASE
          WHEN name like "%"?"%" THEN name

@@ -2,7 +2,7 @@ const express = require('express');
 const sequelize = require('sequelize');
 const { Product } = require('../../../database/models');
 const { connection } = require('../../../database/index');
-const { sqlQuery } = require('../../../database/utils/autoCompleteSQL');
+const { suggestionQuery } = require('../../../database/utils/autoCompleteSQL');
 
 const router = express.Router();
 
@@ -43,7 +43,7 @@ router.route('/search/suggestions')
       res.send('');
     } else {
 
-      connection.query(sqlQuery(), { replacements: Array(6).fill(query), type: sequelize.QueryTypes.SELECT })
+      connection.query(suggestionQuery(), { replacements: Array(6).fill(query), type: sequelize.QueryTypes.SELECT })
         .then((responseArray) => {
 
           const counts = {};
