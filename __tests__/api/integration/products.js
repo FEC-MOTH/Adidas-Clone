@@ -1,15 +1,17 @@
 const request = require("supertest");
 const app = require("../../../server/app");
+const { Product } = require("../../../database/models");
+const { dropProducts, syncProducts } = require('../../../database/utils/testUtils')
 // const connection = require("../../../database/index");
 
-beforeEach(() => {
-  // await dropProductTables()
-  // await dropCategoryTables()
-  // await syncProductTables()
-  // await syncCategoryTables()
-  // token = await request(app)
-  // .post(signupUrl)
+beforeEach(async () => {
+  await dropProducts();
+  await syncProducts();
 });
+
+afterAll(() => {
+  Product.sequelize.close();
+})
 
 /* example tests
 it('should fetch all users', async() => {
@@ -40,12 +42,12 @@ describe("/api/products", () => {
     expect(response.statusCode).toBe(200);
   });
 
-  test("/search should respond to GET", async () => {
+  test("/search/:query should respond to GET", async () => {
     const response = await request(app).get("/api/products/search");
     expect(response.statusCode).toBe(200);
   });
 
-  test("/search/suggestions should respond to GET", async () => {
+  test("/search/suggestions/:query should respond to GET", async () => {
     const response = await request(app).get("/api/products/search/suggestions");
     expect(response.statusCode).toBe(200);
   });

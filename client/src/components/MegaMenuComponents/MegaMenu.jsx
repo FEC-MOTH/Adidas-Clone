@@ -2,20 +2,19 @@ import React from 'react';
 import MegaMenuSubMenu from '../MegaMenuComponents/MegaMenuSubMenu';
 
 const MegaMenu = (props) => (
-        <div className="megaMenuTopLevelCategories">
-            {props.megaMenuAssets.map((megaMenuTopLevelCategory) => {
-                if (megaMenuTopLevelCategory === null) {
-                    return <li className="vertical-separator"></li>
-                } else {
-                    return (
-                        <li><a href="#">{megaMenuTopLevelCategory.name}</a>
-                            <MegaMenuSubMenu megaMenuTopLevelCategory={megaMenuTopLevelCategory} />
-                        </li>
-                    )
-                }
-
-            })}
-        </div>
+  <li className="megaMenuTopLevelCategories">
+    {props.megaMenuAssets.map((megaMenuTopLevelCategory, i) => {
+      if (megaMenuTopLevelCategory === null) {
+        return <li className="vertical-separator" key={i}></li>
+      } else if (megaMenuTopLevelCategory.isActive === true) {
+        return (
+          <li key={i}><a href="#">{megaMenuTopLevelCategory.name}</a>
+            <MegaMenuSubMenu megaMenuTopLevelCategory={megaMenuTopLevelCategory} />
+          </li>
+        )
+      }
+    })}
+  </li>
 )
 
 module.exports = MegaMenu;

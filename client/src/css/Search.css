@@ -1,0 +1,271 @@
+.search-wrapper-outer {
+  color: white;
+  text-align: right;
+  display: inline-block;
+}
+
+.search-wrapper-inner {
+  color: white;
+  display: inline-block;
+}
+
+input {
+  padding: 5px;
+  width: 85px;
+  border: 0;
+}
+
+input:focus {
+  width: 160px;
+  outline-offset: 0;
+  outline: none;
+}
+
+.search-menu-sub-menu {
+  display: flex;
+  align-content: center;
+  position: absolute;
+  background: white;
+  width: 627px;
+  height: 460px;
+  right: 0px;
+  padding: 12px;
+  box-shadow: 5px 5px 10px -10px black;
+  top: 53px;
+}
+
+.search-menu-sub-menu-grid {
+  display: grid;
+  grid-template-columns: 290px 290px;
+  grid-column-gap: 16px;
+  grid-row-gap: 5px;
+  grid-template-rows: 1fr 14fr;
+  color: black;
+  top: 35px;
+  text-align: left;
+}
+
+.search-menu-sub-menu ul {
+  padding: 0px;
+}
+
+.search-menu-sub-menu-column-header {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: AdiNeuePro-Black;
+}
+
+.search-menu-sub-menu li {
+  text-transform: uppercase;
+  height: 25px;
+  letter-spacing: .5px;
+  color: black;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  margin: 0 0 6px;
+  padding: 0;
+}
+
+/* here are the products lis! */
+.search-products-column li {
+  font-family: 'AdihausDIN',Helvetica,Arial,sans-serif;
+  color: black;
+  width: 100%;
+  display: block;
+  height: 90px;
+  position: relative;
+  margin: 0 0 8px;
+}
+
+.search-products-column li .product-information {
+  padding: 0 0 0 100px;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+
+.search-products-column li img {
+  height: 90px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 90px;
+}
+
+.product-subtitle {
+  text-transform: none;
+  color: #98989a;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 4px 0px 2px 0px;
+}
+
+.product-name {
+  text-transform: uppercase;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+  color: black;
+  padding: 4px 0px;
+}
+
+.product-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+  color: black;
+  padding: 4px 0px;
+}
+
+.price-container {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+  padding: 4px 0px;
+}
+
+.ratings-summary {
+  padding: 4px 0px;
+}
+
+.sale-price {
+  color: red;
+}
+
+.gl-price-crossed {
+  text-decoration: line-through;
+  color: #98989a;
+}
+
+.gl-star-rating_star {
+  height: 10px;
+  color: black;
+}
+
+.num-reviews {
+  color: #98989a;
+  font-size: 10px;
+}
+
+.search-glass {
+  height: 29px;
+  color: black;
+  padding: 2px 4px;
+}
+
+.clear-search-icon {
+  height: 29px;
+  width: 29px;
+  color: black;
+  padding: 2px 4px;
+}
+
+.search-input-wrapper {
+  background-color: white;
+  display: flex;
+  align-items: center; 
+  position: relative;
+  top: 10px;
+}
+
+.empty-bag-icon {
+  top: 13px;
+  color: white;
+  height: 22px;
+  width: 22px;
+  position: relative;
+}
+
+li#bag-icon-wrapper {
+  width: 45px;
+  position: relative;
+  top: -5px;
+  text-align: center;
+  transition: background .1s cubic-bezier(.3,0,.45,1);
+}
+
+li#bag-icon-wrapper:hover {
+  background-color: white;
+}
+
+li#bag-icon-wrapper:hover .empty-bag-icon {
+  color: black;
+}
+
+.search-menu li {
+  margin-left: 2px;
+  margin-right: 1px;
+}
+
+li#bag-icon-wrapper:hover .bag-menu {
+  display: block;
+  transition: background .1s cubic-bezier(.3,0,.45,1);
+}
+
+.bag-menu {
+  font-family: 'AdiNeuePro-Black';
+  font-weight: 600;
+  font-size: 20px;
+  padding: 17px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 310px;
+  z-index: 26;
+  background-color: #fff;
+  box-shadow: 0 12px 24px rgba(0,0,0,.1);
+  color: #000;
+  right: 0;
+  top: 100%;
+  position: absolute;
+  display: none;
+}
+
+/* TODO some of the attributes of these styles may be redundant */
+
+.see-all-query:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2px;
+  bottom: 0px;
+  width: calc(100% - 4px);
+  border-bottom-width: 1.01565px;
+  border-bottom-style: solid;
+  border-color: #000;
+  transition: border-color .2s cubic-bezier(.3,0,.45,1);
+}
+
+.see-all-query {
+  left: 15px;
+  bottom: 27px;
+  position: absolute;
+  padding: 2px 5px 2px 2px;
+  min-height: 0;
+  color: #000;
+  background-color: transparent;
+  max-width: 100%;
+  white-space: unset;
+  text-align: left;
+  line-height: 13px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-family: 'AdihausDIN',Helvetica,Arial,sans-serif;
+  font-weight: 1000;
+}
+
+

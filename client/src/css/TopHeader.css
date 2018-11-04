@@ -7,12 +7,19 @@
   display: relative;
   height: 32px;
   background: linear-gradient(90deg,#000 30%,transparent 50%),linear-gradient(180deg,#000 0,#363738);
+  text-align: right;
+  margin: 0 auto;
 }
 
 .inner-for-vertical-align {
-  position: relative;
-  top: 25%;
-  float: right;
+  height: 100%;
+  width: 100%;
+  max-width: 1220px;
+  margin: auto;
+}
+
+.inner-for-vertical-align a:last-of-type {
+  padding-right: 7px;
 }
 
 
@@ -24,7 +31,8 @@ a {
   cursor: pointer;
   color: #ebedee;
   list-style-type: none;
-  display: inline;
+  height: 100%;
+  display: inline-block;
 }
 
 em a {
@@ -40,4 +48,11 @@ em a {
   position: relative;
   top: 2px;
   background-color: #98989a;
+}
+
+.top-header-icon {
+  top: 5px;
+  position:relative;
+  height: 20px;
+  color: #ebedee;
 }

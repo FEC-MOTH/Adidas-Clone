@@ -11,13 +11,7 @@ const Product = connection.define("product", {
   salePrice: {
     type: Sequelize.INTEGER
   },
-  gender: {
-    type: Sequelize.STRING
-  },
   sport: {
-    type: Sequelize.STRING
-  },
-  category: {
     type: Sequelize.STRING
   },
   color: {
@@ -26,10 +20,26 @@ const Product = connection.define("product", {
   team: {
     type: Sequelize.STRING
   },
+  rating: {
+    type: Sequelize.FLOAT
+  },
+  num_ratings: {
+    type: Sequelize.INTEGER
+  },
   imageUrl: {
     type: Sequelize.STRING
+  },
+  gender: {
+    type: Sequelize.STRING
+  },
+  category: {
+    type: Sequelize.STRING
   }
-});
+}, {
+    indexes: [
+      { type: 'FULLTEXT', name: 'search_idx', fields: ['name', 'team', 'sport', 'category', 'color', 'gender'] }
+    ]
+  });
 
 const Category = connection.define("category", {
   name: {
@@ -43,13 +53,13 @@ const Category = connection.define("category", {
   }
 });
 
-Category.sync({ force: true }).then(() => {
-  console.log("successfully created Category table!");
-});
+// Category.sync().then(() => {
+//   console.log("successfully created Category table!");
+// });
 
-Product.sync({ force: true }).then(() => {
-  console.log("successfully created Product table!");
-});
+// Product.sync().then(() => {
+//   console.log("successfully created Product table!");
+// });
 
 module.exports.Product = Product;
 module.exports.Category = Category;

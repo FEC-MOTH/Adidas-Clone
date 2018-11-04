@@ -1,7 +1,22 @@
+@font-face {
+  font-family: 'AdiNeuePro-Black';
+  src: url('/assets/fonts/adineuePRO-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'AdiNeuePro';
+  src: url('/assets/fonts/adineuePRO-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'AdihausDIN';
+  src: url("/assets/fonts/AdihausDIN-Regular.woff2") format('woff2');
+}
+
 * { box-sizing: border-box }
 
 .header-desktop {
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: AdihausDIN, Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   display: block;
   position: fixed;
@@ -9,4 +24,6 @@
   left: 0;
   right: 0;
   background-color: black;
+  margin: 0 auto;
+  height: 85px;
 }

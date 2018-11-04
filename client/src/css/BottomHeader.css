@@ -1,44 +1,65 @@
+
 /* Main Menu Containers and Wrappers */
 .glass-header-bottom-desktop {
+  font-family: 'AdihausDIN',Helvetica,Arial,sans-serif;
   position: relative;
-  top: 25px;
+  top: 0px;
   font-weight: 400;
   font-size: 15px;
-  height: 35px;
+  height: 53px;
   background: black;
+  max-width: 1220px;
   margin: 0 auto;
 }
 
 .menu-main {
   margin: 0 auto;
-  padding: 0;
   height: 100%;
   list-style: none;
   position: relative;
   text-align: left;
 }
 
+.glass-header-bottom-desktop #logo {
+  top: -17px;
+  left: 20px;
+  margin-right: 38px;
+  position: relative;
+  float: left;
+  height: 60px;
+}
+
+.search-menu {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  position: relative;
+  float: right;
+}
+
 /* Mega Menu Top Level Elements */
 .menu-main li {
   display: inline-block;
   color: white;
-  margin: 0 5px;
+  margin: 0 2px;
   height: 100%;
 }
 
 .menu-main li a {
   display: inline-block;
   color: #fff;
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  height: 100%;
-  padding: .5em;
+  padding: .2em;
+  top: 10px;
 }
 
 .menu-main .vertical-separator {
   width: 1px;
   height: 24px;
-  top: 7px;
+  top: 16px;
   position: relative;
   background-color: hsla(0,0%,100%,.25);
 }
@@ -46,27 +67,69 @@
 /* IMPORTANT - these are the hover styles that reveal
 each sub-menu component of the mega-menu.
 */
-.menu-main li a:hover {
+.menu-main li li:hover {
   background-color: white;
   color: black;
 }
 
-.menu-main li:hover .mega-menu-sub-menu {
+.menu-main li li:hover a {
+  color: black;
+}
+
+.menu-main li li:hover .mega-menu-sub-menu {
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* the auto-fit property here allows for a variable
+  number of columns */
+  grid-template-columns: repeat(auto-fit, 172px);
+  grid-column-gap: 20px;
+}
+
+.menu-main li li:hover .mega-menu-sub-menu-wrapper {
+  margin: 0 auto;
+  display: grid;
+}
+
+.mega-menu-sub-menu.has-bottom-line {
+  padding-bottom: 0px;
+}
+
+.menu-main li li:hover div.bottom-line {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10fr 3fr;
 }
 
 /* Mega Menu Sub Menu */
-.mega-menu-sub-menu {
+
+.mega-menu-sub-menu-wrapper {
   position: absolute;
+  background-color: white;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  display: none;
+  color: black;
+  box-shadow: 0px 5px 10px -10px black;
+  /* This is done so that the mega-menu-sub-menu can be wider than its parent
+    For an explanation, see 
+    https://stackoverflow.com/questions/5581034/is-there-are-way-to-make-a-child-divs-width-wider-than-the-parent-div-using-css
+   */
+  width: 100vw;
+  left: calc(-50vw + 50%);
+}
+
+.mega-menu-sub-menu {
   background: white;
+  top: 100%;
   width: 100%;
   left: 0;
   padding: 2em;
   display: none;
   color: black;
-  box-shadow: 0px 5px 10px -10px black;
+  max-width: 1220px;
 }
+
 
 /* Mega Menu Sub Menu Column */
 .mega-menu-sub-menu ul {
@@ -81,6 +144,7 @@ each sub-menu component of the mega-menu.
 }
 
 .mega-menu-second-level-category:first-of-type {
+  font-family: AdiNeuePro-Black;
   margin-top: 0;
 }
 
@@ -113,3 +177,28 @@ each sub-menu component of the mega-menu.
   margin: 40px 0 11px;
   background-color: #ccc;
 }
+
+.mega-menu-sub-menu .horizontal-separator-less-margin {
+  width: 16px;
+  height: 1px;
+  overflow: hidden;
+  margin-top: 14px;
+  position: relative;
+  top: 7px;
+  background-color: #ccc;
+}
+
+.mega-menu-sub-menu .horizontal-separator-large {
+  width: 150px;
+  height: 1px;
+  overflow: hidden;
+  margin: 30px 0 11px;
+  background-color: #ccc;
+}
+
+.mega-menu-sub-menu .horizontal-separator-large :after {
+  display: absolute;
+  bottom: 0px;
+}
+
+/* select the last horizontal separator */
