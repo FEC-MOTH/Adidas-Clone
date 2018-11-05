@@ -25,7 +25,7 @@ To do so, enter the MySQL shell, and enter
 7) Start server: `npm start`
 8) In your browser, visit: `localhost:3000`
 
-IMPORTANT: currently when you run `npm test`, the database designated in `shoedidas_header` will be dropped. Further, `npm test` is run as a pre-commit hook every time that you attempt to make a commit. This means that you should run `npm run seed` to seed the database after every commit.
+**IMPORTANT**: currently when you run `npm test`, the database designated in `shoedidas_header` will be dropped. Further, `npm test` is run as a pre-commit hook every time that you attempt to make a commit. This means that you should run `npm run seed` to seed the database after every commit.
 
 (This issue will be fixed soon!)
 
