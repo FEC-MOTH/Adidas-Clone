@@ -9,6 +9,7 @@
     "verbose": true
   },
   "scripts": {
+    "seed": "node database/seeds.js",
     "test": "jest --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore .",
     "react-dev": "webpack -w",
