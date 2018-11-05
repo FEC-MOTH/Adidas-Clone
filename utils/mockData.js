@@ -217,7 +217,7 @@ const generateProduct = (() => {
     product.num_ratings = getRandomInt(10, 500);
 
     product.gender = gendersForMock[getRandomInt(0, gendersForMock.length)];
-
+  
     if (product.category === 'Shoe' || product.category === 'Sandle') {
       product = shoeDecorator(product);
     } else if (product.category === 'Hoodie' || product.category === 'Pants' || product.category === 'Backpack' || product.category === 'Hat') {
