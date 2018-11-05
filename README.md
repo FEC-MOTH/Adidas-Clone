@@ -15,14 +15,15 @@ In the new `.env` file, update the values of the three environment variables as 
 `DB_PASS_DEVELOPMENT=samplePassword` // replace `samplePassword` with your MySQL password.
 `DB_NAME_DEVELOPMENT=shoedidas_header` // `shoedidas_header` is the name of the database into which the component will attempt to seed data. You do not necessarily need to replace `shoedidas_header` with a new database name, however, you do need to create a new mySQL database named `shoedidas_header` on your system.
 
-To do so, enter the MySQL shell, and write 
-`CREATE DATABASE shoedidas_header`
+To do so, enter the MySQL shell, and enter 
+`CREATE DATABASE shoedidas_header;`
 
 (Make sure that the user designated in `sampleUsername` has access to this database!)
 
-5) Initiate webpack continuous build: `npm run run react-dev`
-6) Start server: `npm start`
-7) In your browser, visit: `localhost:3000`
+5) Seed the database: `npm run seed`
+6) Initiate webpack continuous build: `npm run run react-dev`
+7) Start server: `npm start`
+8) In your browser, visit: `localhost:3000`
 
 IMPORTANT: currently when you run `npm test`, the database designated in `shoedidas_header` will be dropped. Further, `npm test` is run as a pre-commit hook every time that you attempt to make a commit. This means that you should run `npm run seed` to seed the database after every commit.
 
