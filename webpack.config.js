@@ -32,7 +32,6 @@ module.exports = {
     extensions: [".js", ".jsx"]
   },
   plugins: [
-    // add the plugin to your plugins array
     new webpack.DefinePlugin({
       'process.env.HOSTNAME': JSON.stringify(process.env.HOSTNAME),
       'process.env.PORT': JSON.stringify(process.env.PORT),
