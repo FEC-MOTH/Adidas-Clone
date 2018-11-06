@@ -116,7 +116,7 @@ const shoeDecorator = (() => {
   const nfl = teamNames.filter((team) => team.league === "nfl");
   const mls = teamNames.filter((team) => team.league === "mls");
   const nba = teamNames.filter((team) => team.league === "nba");
-  const sportsForMock = ["Basketball", "Football", null, "Soccer", "Original"];
+  const sportsForMock = ["Basketball", "Football", null, "Soccer", "Running"];
 
   return (product) => {
 
