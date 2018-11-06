@@ -1,4 +1,3 @@
-const pluralize = require('pluralize');
 const express = require('express');
 const sequelize = require('sequelize');
 const { Product } = require('../../../database/models');
@@ -13,7 +12,8 @@ router.route('/')
 router.route('/search')
   .get((req, res) => {
     /*
-   TODO We considered 'singularizing' all queries, so a search for 
+   TODO We considered 'singularizing' all queries,
+   using the 'pluralize' library so a search for 
    'hats' would result in a query for 'hat'. This is not a good solution
    for a variety of reasons. One of them is that it breaks the search
    suggestions features (when you are search for something plural). It
@@ -44,7 +44,6 @@ router.route('/search')
         ]
       }
     }).then((response) => {
-      console.log('here is the search reponse', response)
       res.send(response);
     })
   })
@@ -72,32 +71,35 @@ router.route('/search/suggestions')
 
       connection.query(suggestionQuery(), { replacements: Array(6).fill(query), type: sequelize.QueryTypes.SELECT })
         .then((responseArray) => {
+          if (responseArray.length > 0) {
+            const counts = {};
+            const keys = Object.keys(responseArray[0]);
 
-          const counts = {};
-          const keys = Object.keys(responseArray[0]);
-
-          for (let i = 0; i < responseArray.length; i += 1) {
-            keys.forEach((key) => {
-              if (responseArray[i][key] !== null) {
-                if (counts[responseArray[i][key]]) {
-                  counts[responseArray[i][key]] += 1;
-                } else {
-                  counts[responseArray[i][key]] = 1;
+            for (let i = 0; i < responseArray.length; i += 1) {
+              keys.forEach((key) => {
+                if (responseArray[i][key] !== null) {
+                  if (counts[responseArray[i][key]]) {
+                    counts[responseArray[i][key]] += 1;
+                  } else {
+                    counts[responseArray[i][key]] = 1;
+                  }
                 }
-              }
+              })
+            }
+
+            const countsArray = [];
+
+            Object.keys(counts).forEach((key) => {
+              countsArray.push({ match: key, count: counts[key] });
             })
+
+            countsArray.sort((aTuple, bTuple) => bTuple.count - aTuple.count)
+
+
+            res.send(countsArray.slice(0, 10));
+          } else {
+            res.send(responseArray);
           }
-
-          const countsArray = [];
-
-          Object.keys(counts).forEach((key) => {
-            countsArray.push({ match: key, count: counts[key] });
-          })
-
-          countsArray.sort((aTuple, bTuple) => bTuple.count - aTuple.count)
-
-
-          res.send(countsArray.slice(0, 10));
         })
     }
   })
