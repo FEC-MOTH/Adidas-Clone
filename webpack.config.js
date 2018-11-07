@@ -7,7 +7,8 @@ module.exports = {
   entry: path.resolve(__dirname, "./client/src/"),
   output: {
     path: path.resolve(__dirname, "./client/dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: 'https://s3-us-west-1.amazonaws.com/shoedidas-static/'
   },
   module: {
     rules: [
@@ -24,6 +25,12 @@ module.exports = {
         use: [
           { loader: "style-loader" },
           { loader: "css-loader" }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          'file-loader'
         ]
       }
     ]
