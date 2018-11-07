@@ -35,6 +35,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.HOSTNAME': JSON.stringify(process.env.HOSTNAME),
       'process.env.PORT': JSON.stringify(process.env.PORT),
+      'process.env.CDN_ROOT': JSON.stringify(process.env.CDN_ROOT)
     })
   ]
 };

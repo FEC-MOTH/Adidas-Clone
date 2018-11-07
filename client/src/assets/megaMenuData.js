@@ -1,3 +1,5 @@
+const BASENAME = process.env.CDN_ROOT;
+
 module.exports = {
   megaMenuAssets: [{
     "name": "Men",
@@ -305,7 +307,7 @@ module.exports = {
       {
         "name": "RUNNING",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/sports/running-fw18-header-nav-fly-out-image.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/sports/running-fw18-header-nav-fly-out-image.jpg'),
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -321,7 +323,7 @@ module.exports = {
       {
         "name": "SOCCER",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/sports/FB_FW18_SpectralMode_NV-IMG.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/sports/FB_FW18_SpectralMode_NV-IMG.jpg'),
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -338,7 +340,7 @@ module.exports = {
       {
         "name": "OUTDOOR",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/sports/OUTDOOR_SUBNAV_FW18.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/sports/OUTDOOR_SUBNAV_FW18.jpg'),
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -353,7 +355,7 @@ module.exports = {
       {
         "name": "BASKETBALL",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/sports/HardenVOL3-Navigation%20thumbnail_1.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/sports/HardenVOL3-Navigation+thumbnail_1.jpg'),
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -368,7 +370,7 @@ module.exports = {
       {
         "name": "FOOTBALL",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/sports/CLP_nav_1.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/sports/CLP_nav_1.jpg'),
         "subCategories": [
           "Cleats",
           "Clothing",
@@ -408,8 +410,8 @@ module.exports = {
     "Categories": [
       {
         "name": "Originals",
-        "columnHeaderImage": "/assets/img/megaMenu/brands/text_originals.png",
-        "mainColumnImage": "/assets/img/megaMenu/brands/POGBA_PODSYSTEM_ORIGINALS_Web_Nav_178x80.jpg",
+        "columnHeaderImage": BASENAME.concat('/assets/img/megaMenu/brands/text_originals.png'),
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/brands/POGBA_PODSYSTEM_ORIGINALS_Web_Nav_178x80.jpg'),
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -425,8 +427,8 @@ module.exports = {
       },
       {
         "name": "Athletics",
-        "columnHeaderImage": "/assets/img/megaMenu/brands/adidas-logo-menu-2.jpg",
-        "mainColumnImage": "/assets/img/megaMenu/brands/7083_TRAIN_DA_WebNav-172x80dual.jpg",
+        "columnHeaderImage": BASENAME.concat('/assets/img/megaMenu/brands/adidas-logo-menu-2.jpg'),
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/brands/7083_TRAIN_DA_WebNav-172x80dual.jpg'),
         "subCategories": [
           "Men's Clothing",
           "Women's Clothing",
@@ -441,8 +443,8 @@ module.exports = {
       },
       {
         "name": "Adidas by Stella McCartney",
-        "columnHeaderImage": "/assets/img/megaMenu/brands/SM.png",
-        "mainColumnImage": "/assets/img/megaMenu/brands/7150_TRAIN_STMC_SS18_WebNav_172x80.jpg",
+        "columnHeaderImage": BASENAME.concat('/assets/img/megaMenu/brands/SM.png'),
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/brands/7150_TRAIN_STMC_SS18_WebNav_172x80.jpg'),
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -457,8 +459,8 @@ module.exports = {
       },
       {
         "name": "Skateboarding",
-        "columnHeaderImage": "/assets/img/megaMenu/brands/skateheaderline.jpg",
-        "mainColumnImage": "/assets/img/megaMenu/brands/7104-Skate-Flyout1.jpeg",
+        "columnHeaderImage": BASENAME.concat('/assets/img/megaMenu/brands/skateheaderline.jpg'),
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/brands/7104-Skate-Flyout1.jpeg'),
         "subCategories": [
           "Shoes",
           "Clothing",
@@ -499,7 +501,7 @@ module.exports = {
       {
         "name": "ORIGINALS",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwf6ca62c8/_other/_navigation/mi_172x80_super.jpg",
+        "mainColumnImage": "",
         "subCategories": [
           "Superstar",
           "adilette",
@@ -518,7 +520,7 @@ module.exports = {
       {
         "name": "RUNNING",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dwe78d54b8/_other/_navigation/mi_172x80_pure.jpg",
+        "mainColumnImage": "",
         "subCategories": [
           "Pureboost",
           "Alphabounce Beyond",
@@ -533,7 +535,7 @@ module.exports = {
       {
         "name": "BASKETBALL",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw67e56fe0/_other/_navigation/mi_172x80_dame.jpg",
+        "mainColumnImage": "",
         "subCategories": [
           "Dame 4",
           { "horizontalSeparator": "smallLessMargin" },
@@ -543,7 +545,7 @@ module.exports = {
       {
         "name": "EXPLORE MORE",
         "columnHeaderImage": null,
-        "mainColumnImage": "https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw7e4e8f17/_other/_navigation/alpha_172x80.jpg",
+        "mainColumnImage": "",
         "subCategories": [
           "Baseball",
           "All Men’s",
@@ -561,7 +563,7 @@ module.exports = {
       {
         "name": "GIFTS FOR MEN",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_men.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/holiday/topnav_holiday_men.jpg'),
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
@@ -582,7 +584,7 @@ module.exports = {
       {
         "name": "GIFTS FOR WOMEN",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_women.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/holiday/topnav_holiday_women.jpg'),
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
@@ -603,7 +605,7 @@ module.exports = {
       {
         "name": "GIFTS FOR KIDS",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_kids.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/holiday/topnav_holiday_kids.jpg'),
         "subCategories": [
           "Holiday New Arrivals",
           "Top Gifts",
@@ -624,7 +626,7 @@ module.exports = {
       {
         "name": "FEATURED",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_featured.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/holiday/topnav_holiday_featured.jpg'),
         "subCategories": [
           "P.O.D. System",
           "Ultraboost",
@@ -638,7 +640,7 @@ module.exports = {
       {
         "name": "GIFT CARD",
         "columnHeaderImage": null,
-        "mainColumnImage": "/assets/img/megaMenu/holiday/topnav_holiday_giftcard.jpg",
+        "mainColumnImage": BASENAME.concat('/assets/img/megaMenu/holiday/topnav_holiday_giftcard.jpg'),
         "subCategories": [
           "Email a Gift Card",
           "Ship a Gift Card",
