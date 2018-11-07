@@ -15,6 +15,7 @@
     "react-dev": "webpack -w",
     "start": "nodemon server/index.js",
     "validate": "npm-run-all --parallel test lint",
+    "build": "webpack",
     "precommit": "npm run validate"
   },
   "repository": {
