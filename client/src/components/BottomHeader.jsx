@@ -8,12 +8,11 @@ import EmptyBagIcon from '../components/EmptyBagIcon';
 const BottomHeader = (props) => (
   <div className={styles.glassHeaderBottomDesktop}>
     <img className={styles.logo} src={process.env.CDN_ROOT.concat('/assets/img/shoedidas_white_5.svg')} ></img>
-    {/* <ShoedidasLogo id="logo" /> */}
     <ul className={styles.menuMain}>
       <MegaMenu megaMenuAssets={megaMenuAssets} />
       <ul className={styles.searchMenu}>
         <Search />
-        {/* <EmptyBagIcon /> */}
+        <EmptyBagIcon />
       </ul>
     </ul >
   </div >

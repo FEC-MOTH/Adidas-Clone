@@ -190,7 +190,7 @@ input:focus {
   position: relative;
 }
 
-li#bagIconWrapper {
+.bagIconWrapper {
   width: 45px;
   position: relative;
   top: -5px;
@@ -198,11 +198,11 @@ li#bagIconWrapper {
   transition: background .1s cubic-bezier(.3,0,.45,1);
 }
 
-li#bagIconWrapper:hover {
+.bagIconWrapper:hover {
   background-color: white;
 }
 
-li#bagIconWrapper:hover .emptyBagIcon {
+.bagIconWrapper:hover .emptyBagIcon {
   color: black;
 }
 
@@ -211,7 +211,7 @@ li#bagIconWrapper:hover .emptyBagIcon {
   margin-right: 1px;
 }
 
-li#bagIconWrapper:hover .bagMenu {
+.bagIconWrapper:hover .bagMenu {
   display: block;
   transition: background .1s cubic-bezier(.3,0,.45,1);
 }
