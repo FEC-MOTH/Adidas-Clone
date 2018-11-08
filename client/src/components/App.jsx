@@ -16,11 +16,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.headerDesktop}>
-        <TopHeader />
-        <BottomHeader />
-        <SubHeader />
-      </div >
+      <div className={styles.navbar} >
+        <div className={styles.headerDesktop}>
+          <TopHeader />
+          <BottomHeader />
+          <SubHeader />
+        </div >
+      </div>
     );
   }
 }

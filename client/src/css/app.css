@@ -15,6 +15,12 @@
 
 * { box-sizing: border-box }
 
+.navbar {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
 .headerDesktop {
   font-family: AdihausDIN, Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
