@@ -46,7 +46,7 @@ module.exports = {
         ]
       },
       {
-        "name": "Clothing",
+        "name": "CLOTHING",
         "columnHeaderImage": null,
         "mainColumnImage": null,
         "subCategories": [
