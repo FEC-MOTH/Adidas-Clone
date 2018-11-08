@@ -4,12 +4,12 @@ import TopHeaderIcon from './TopHeaderIcon'
 
 const TopHeader = (props) => {
   return (
-    <nav className="glass-header-top-desktop">
-      <div className="inner-for-vertical-align">
+    <nav className={styles.glassHeaderTopDesktop}>
+      <div className={styles.innerForVerticalAlign}>
         <a> Help </a>
-        <div className="top-header-vertical-spacer"></div>
+        <div className={styles.topHeaderVerticalSpacer}></div>
         <a> Order Tracking and Returns </a>
-        <div className="top-header-vertical-spacer"></div>
+        <div className={styles.topHeaderVerticalSpacer}></div>
         <em>
           <a> Newsletter Signup </a>
         </em>

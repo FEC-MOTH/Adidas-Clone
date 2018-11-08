@@ -1,7 +1,8 @@
 import React from 'react'
+import styles from '../../css/Search.css';
 
 const EmptyStarRating = props => (
-  <svg className="gl-star-rating_star" viewBox="0 0 15 15" {...props}>
+  <svg className={styles.glStarRating_star} viewBox="0 0 15 15" {...props}>
     <linearGradient id="a">
       <stop offset="0%" stopColor="currentcolor" />
       <stop offset="11.11%" stopColor="currentcolor" />

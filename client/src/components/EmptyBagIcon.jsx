@@ -1,14 +1,15 @@
 import React from 'react'
+import styles from '../css/BottomHeader.css';
 
 const EmptyBagIcon = props => (
-  <li id="bag-icon-wrapper">
-    <svg className="empty-bag-icon" viewBox="0 0 16 24" {...props}>
+  <li id="bagIconWrapper">
+    <svg className={styles.emptyBagIcon} viewBox="0 0 16 24" {...props}>
       <g fill="none" stroke="currentColor" strokeMiterlimit={10} strokeWidth={2}>
         <path d="M1 7h14v14H1z" />
         <path d="M11 10V3H5v7" />
       </g>
     </svg>
-    <div className="bag-menu">
+    <div className={styles.bagMenu}>
       Your Bag is Empty!
     </div>
   </li >

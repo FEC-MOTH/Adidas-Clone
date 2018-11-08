@@ -80,10 +80,10 @@ class Search extends React.Component {
 
   render() {
     return (
-      <li className="search-wrapper-outer">
-        <div className="search-input-wrapper">
+      <li className={styles.searchWrapperOuter}>
+        <div className={styles.searchInputWrapper}>
           <SearchGlass />
-          <input id="search-box" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
+          <input id="searchBox" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
           <ClearSearchIcon search={this.state.search} clearSearchResults={this.clearSearchResults} />
         </div>
 

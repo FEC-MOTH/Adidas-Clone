@@ -1,11 +1,12 @@
 import React from 'react';
 import MegaMenuSubMenu from '../MegaMenuComponents/MegaMenuSubMenu';
+import styles from '../../css/BottomHeader.css';
 
 const MegaMenu = (props) => (
-  <li className="megaMenuTopLevelCategories">
+  <li className={styles.megaMenuTopLevelCategories}>
     {props.megaMenuAssets.map((megaMenuTopLevelCategory, i) => {
       if (!megaMenuTopLevelCategory) {
-        return <li className="vertical-separator" key={i}></li>
+        return <li className={styles.verticalSepartor} key={i}></li>
       }
       if (megaMenuTopLevelCategory.isActive) {
         return (

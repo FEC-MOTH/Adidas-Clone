@@ -6,14 +6,14 @@ import Search from '../components/SearchComponents/Search';
 import EmptyBagIcon from '../components/EmptyBagIcon';
 
 const BottomHeader = (props) => (
-  <div className="glass-header-bottom-desktop">
-    <img id="logo" src={process.env.CDN_ROOT.concat('/assets/img/shoedidas_white_5.svg')} ></img>
+  <div className={styles.glassHeaderBottomDesktop}>
+    <img className={styles.logo} src={process.env.CDN_ROOT.concat('/assets/img/shoedidas_white_5.svg')} ></img>
     {/* <ShoedidasLogo id="logo" /> */}
-    <ul className="menu-main">
+    <ul className={styles.menuMain}>
       <MegaMenu megaMenuAssets={megaMenuAssets} />
-      <ul className="search-menu">
+      <ul className={styles.searchMenu}>
         <Search />
-        <EmptyBagIcon />
+        {/* <EmptyBagIcon /> */}
       </ul>
     </ul >
   </div >

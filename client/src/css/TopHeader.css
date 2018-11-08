@@ -1,5 +1,5 @@
 /* Containers */
-.glass-header-top-desktop {
+.glassHeaderTopDesktop {
   padding: 0 10px;
   vertical-align: center;
   font-weight: 400;
@@ -11,20 +11,20 @@
   margin: 0 auto;
 }
 
-.inner-for-vertical-align {
+.innerForVerticalAlign {
   height: 100%;
   width: 100%;
   max-width: 1220px;
   margin: auto;
 }
 
-.inner-for-vertical-align a:last-of-type {
+.innerForVerticalAlign a:last-of-type {
   padding-right: 7px;
 }
 
 
 /* Element styling */
-a {
+.glassHeaderTopDesktop a {
   padding: 0 10px;
   align-items: center;
   text-transform: uppercase;
@@ -35,13 +35,13 @@ a {
   display: inline-block;
 }
 
-em a {
+.glassHeaderTopDesktop em a {
   font-weight: bold;
   font-style: normal;
 }
 
 /* Spacer elements */
-.top-header-vertical-spacer {
+.topHeaderVerticalSpacer {
   display: inline-block;
   height: 12px;
   width: 1px;
@@ -50,7 +50,7 @@ em a {
   background-color: #98989a;
 }
 
-.top-header-icon {
+.topHeaderIcon {
   top: 5px;
   position:relative;
   height: 20px;

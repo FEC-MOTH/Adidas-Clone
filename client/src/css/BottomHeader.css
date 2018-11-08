@@ -1,6 +1,6 @@
 
 /* Main Menu Containers and Wrappers */
-.glass-header-bottom-desktop {
+.glassHeaderBottomDesktop {
   font-family: 'AdihausDIN',Helvetica,Arial,sans-serif;
   position: relative;
   top: 0px;
@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 
-.menu-main {
+.menuMain {
   margin: 0 auto;
   height: 100%;
   list-style: none;
@@ -20,7 +20,7 @@
   text-align: left;
 }
 
-.glass-header-bottom-desktop #logo {
+.glassHeaderBottomDesktop .logo {
   top: -17px;
   left: 20px;
   margin-right: 38px;
@@ -29,7 +29,9 @@
   height: 60px;
 }
 
-.search-menu {
+
+
+.searchMenu {
   margin: 0 auto;
   padding: 0;
   height: 100%;
@@ -39,14 +41,14 @@
 }
 
 /* Mega Menu Top Level Elements */
-.menu-main li {
+.menuMain li {
   display: inline-block;
   color: white;
   margin: 0 2px;
   height: 100%;
 }
 
-.menu-main li a {
+.menuMain li a {
   display: inline-block;
   color: #fff;
   position: relative;
@@ -56,7 +58,7 @@
   top: 10px;
 }
 
-.menu-main .vertical-separator {
+.menuMain .verticalSeparator {
   width: 1px;
   height: 24px;
   top: 16px;
@@ -67,16 +69,16 @@
 /* IMPORTANT - these are the hover styles that reveal
 each sub-menu component of the mega-menu.
 */
-.menu-main li li:hover {
+.menuMain li li:hover {
   background-color: white;
   color: black;
 }
 
-.menu-main li li:hover a {
+.menuMain li li:hover a {
   color: black;
 }
 
-.menu-main li li:hover .mega-menu-sub-menu {
+.menuMain li li:hover .megaMenuSubMenu {
   margin: 0 auto;
   display: grid;
   /* the auto-fit property here allows for a variable
@@ -85,16 +87,16 @@ each sub-menu component of the mega-menu.
   grid-column-gap: 20px;
 }
 
-.menu-main li li:hover .mega-menu-sub-menu-wrapper {
+.menuMain li li:hover .megaMenuSubMenuWrapper {
   margin: 0 auto;
   display: grid;
 }
 
-.mega-menu-sub-menu.has-bottom-line {
+.megaMenuSubMenu.hasBottomLine {
   padding-bottom: 0px;
 }
 
-.menu-main li li:hover div.bottom-line {
+.menuMain li li:hover div.bottomLine {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 10fr 3fr;
@@ -102,7 +104,7 @@ each sub-menu component of the mega-menu.
 
 /* Mega Menu Sub Menu */
 
-.mega-menu-sub-menu-wrapper {
+.megaMenuSubMenuWrapper {
   position: absolute;
   background-color: white;
   top: 100%;
@@ -119,7 +121,7 @@ each sub-menu component of the mega-menu.
   left: calc(-50vw + 50%);
 }
 
-.mega-menu-sub-menu {
+.megaMenuSubMenu {
   background: white;
   top: 100%;
   width: 100%;
@@ -132,45 +134,45 @@ each sub-menu component of the mega-menu.
 
 
 /* Mega Menu Sub Menu Column */
-.mega-menu-sub-menu ul {
+.megaMenuSubMenu ul {
   padding: 0;
 }
 
 /* Mega Menu Sub Menu Column Header */
 
-.mega-menu-second-level-category {
+.megaMenuSecondLevelCategory {
   margin: 2.5em 0 .5em;
   color: black;
 }
 
-.mega-menu-second-level-category:first-of-type {
+.megaMenuSecondLevelCategory:first-of-type {
   font-family: AdiNeuePro-Black;
   margin-top: 0;
 }
 
 /* Mega Menu Sub Menu Column Elements */
 
-.mega-menu-sub-menu li a {
+.megaMenuSubMenu li a {
   color: black;
   padding: 0;
   text-transform: none;
 }
 
-.mega-menu-sub-menu li a:hover {
+.megaMenuSubMenu li a:hover {
   text-decoration: underline;
 }
 
-.mega-menu-sub-menu li {
+.megaMenuSubMenu li {
   display: block;
   margin: .5em 0em;
 }
 
-.mega-menu-sub-menu .emphasized {
+.megaMenuSubMenu .emphasized {
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.mega-menu-sub-menu .horizontal-separator {
+.megaMenuSubMenu .horizontalSeparator {
   width: 16px;
   height: 1px;
   overflow: hidden;
@@ -178,7 +180,7 @@ each sub-menu component of the mega-menu.
   background-color: #ccc;
 }
 
-.mega-menu-sub-menu .horizontal-separator-less-margin {
+.megaMenuSubMenu .horizontalSeparatorLessMargin {
   width: 16px;
   height: 1px;
   overflow: hidden;
@@ -188,7 +190,7 @@ each sub-menu component of the mega-menu.
   background-color: #ccc;
 }
 
-.mega-menu-sub-menu .horizontal-separator-large {
+.megaMenuSubMenu .horizontalSeparatorLarge {
   width: 150px;
   height: 1px;
   overflow: hidden;
@@ -196,7 +198,7 @@ each sub-menu component of the mega-menu.
   background-color: #ccc;
 }
 
-.mega-menu-sub-menu .horizontal-separator-large :after {
+.megaMenuSubMenu .horizontalSeparatorLarge :after {
   display: absolute;
   bottom: 0px;
 }

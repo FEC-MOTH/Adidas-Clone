@@ -16,7 +16,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.headerdesktop}>
+      <div className={styles.headerDesktop}>
         <TopHeader />
         <BottomHeader />
         <SubHeader />

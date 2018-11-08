@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchResultsListEntry from './SearchResultsListEntry';
+import styles from '../../css/Search.css';
 
 class SearchSubMenu extends React.Component {
   constructor(props) {
@@ -9,32 +10,32 @@ class SearchSubMenu extends React.Component {
   render() {
     if (this.props.searchResults.length > 0) {
       return (
-        <div className="search-menu-sub-menu">
-          <div className="search-menu-sub-menu-grid">
-            <div className="search-menu-sub-menu-column-header"> Suggestions </div>
-            <div className="search-menu-sub-menu-column-header"> Products </div>
+        <div className={styles.searchMenuSubMenu}>
+          <div className={styles.searchMenuSubMenuGrid}>
+            <div className={styles.searchMenuSubMenuColumnHeader}> Suggestions </div>
+            <div className={styles.searchMenuSubMenuColumnHeader}> Products </div>
 
-            <ul className="search-menu-sub-menu-column">
+            <ul className={styles.searchMenuSubMenuColumn}>
               {this.props.suggestionsBoldedForRender.map((suggestion, i) => {
                 if (!!suggestion === true) {
                   return <li
-                    className="search-suggestion" key={i}>
+                    className={styles.searchSuggestion} key={i}>
                     {suggestion.beginning}<strong>{suggestion.matched}</strong>{suggestion.end} - ({suggestion.count})
             </li>
                 } else {
                   return <li key={i}></li>
                 }
               })}
-              <div className="see-all-query"> See All "{this.props.search}" </div>
+              <div className={styles.seeAllQuery}> See All "{this.props.search}" </div>
             </ul>
 
-            <ul className="search-products-column">
+            <ul className={styles.searchProductsColumn}>
               {this.props.searchResults.map((searchResult, i) => (
                 <SearchResultsListEntry searchResult={searchResult} key={i} />
               ))}
             </ul>
           </div>
-        </div>
+        </div >
       )
     } else {
       return (<div></div>);

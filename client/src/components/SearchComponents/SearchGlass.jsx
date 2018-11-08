@@ -1,7 +1,8 @@
 import React from 'react'
+import styles from '../../css/Search.css';
 
 const SearchGlass = props => (
-  <svg className="search-glass" viewBox="0 0 20 24" {...props}>
+  <svg className={styles.searchGlass} viewBox="0 0 20 24" {...props}>
     <g
       fill="none"
       stroke="currentColor"
