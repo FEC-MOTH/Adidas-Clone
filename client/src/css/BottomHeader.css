@@ -12,6 +12,10 @@
   margin: 0 auto;
 }
 
+.megaMenuTopLevelCategories {
+  
+}
+
 .menuMain {
   margin: 0 auto;
   height: 100%;
@@ -28,8 +32,6 @@
   float: left;
   height: 60px;
 }
-
-
 
 .searchMenu {
   margin: 0 auto;

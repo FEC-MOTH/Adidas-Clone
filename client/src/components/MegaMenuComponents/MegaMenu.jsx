@@ -6,7 +6,7 @@ const MegaMenu = (props) => (
   <li className={styles.megaMenuTopLevelCategories}>
     {props.megaMenuAssets.map((megaMenuTopLevelCategory, i) => {
       if (!megaMenuTopLevelCategory) {
-        return <li className={styles.verticalSepartor} key={i}></li>
+        return <li className={styles.verticalSeparator} key={i}></li>
       }
       if (megaMenuTopLevelCategory.isActive) {
         return (
