@@ -20,6 +20,10 @@ To do so, enter the MySQL shell, and enter
 
 (Make sure that the user designated in `sampleUsername` has access to this database!)
 
+Set 
+`CDN_ROOT`=`https://s3-us-west-1.amazonaws.com/shoedidas-static`
+
+
 5) Seed the database: `npm run seed`
 6) Initiate webpack continuous build: `npm run run react-dev`
 7) Start server: `npm start`
