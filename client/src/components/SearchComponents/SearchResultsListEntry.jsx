@@ -1,5 +1,5 @@
 import React from 'react';
-import Pluralize from 'Pluralize';
+import Pluralize from 'pluralize';
 import RatingStar from './StarRating';
 import EmptyStarRating from './EmptyStarRating';
 import styles from '../../css/Search.css';
