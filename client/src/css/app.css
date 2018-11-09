@@ -13,12 +13,11 @@
   src: url("https://s3-us-west-1.amazonaws.com/shoedidas-static/assets/fonts/AdihausDIN-Regular.woff2") format('woff2');
 }
 
-* { box-sizing: border-box }
-
 .navbar {
   position: absolute;
   top: 0;
   z-index: 10;
+  box-sizing: border-box;
 }
 
 .headerDesktop {
