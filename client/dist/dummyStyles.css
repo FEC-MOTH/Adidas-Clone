@@ -5,3 +5,18 @@
   height: 500px;
   margin-top: 50px;
 }
+
+#dummyWrapper {
+  padding-top: 150px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#dummyWrapper h3 {
+  padding-top: 20px;
+  text-align: left;
+}
+
+#dummyWrapper p {
+  text-align: left;
+}
