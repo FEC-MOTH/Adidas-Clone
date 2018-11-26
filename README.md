@@ -2,11 +2,12 @@
 
 This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in Novembe 2018.
 
+## Walkthrough Video
+[![IMAGE ALT TEXT HERE](https://i.imgur.com/KxDzCLA.png)](https://www.youtube.com/watch?v=iUA7akiyqQM)
+
 # Live Demo
 > Coming Soon
 
-# Walkthrough Video
-[![IMAGE ALT TEXT HERE](https://i.imgur.com/KxDzCLA.png)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 
 ## Running Development Environment Locally
 
