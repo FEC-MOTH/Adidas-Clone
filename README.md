@@ -6,8 +6,8 @@ This repository contains a clone of the header, navbar, and live-search elements
 > Coming Soon
 
 ## Walk-through Videos
-#### 15 Second Scroll-Through
-[![IMAGE ALT TEXT HERE](https://i.imgur.com/MZqlLyt.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
+#### 25 Second Scroll-Through
+[![IMAGE ALT TEXT HERE](https://i.imgur.com/AWGvLhz.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 #### Detailed Explanations of Technical Challenges: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
 
 ## Running Development Environment Locally
