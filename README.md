@@ -5,7 +5,7 @@ This repository contains a clone of the header, navbar, and live-search elements
 ## Live Demo
 > Coming Soon
 
-## Walkthrough Video
+## Walk-through Videos
 [![IMAGE ALT TEXT HERE](https://i.imgur.com/KxDzCLA.png)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 
 
