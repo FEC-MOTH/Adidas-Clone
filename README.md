@@ -6,6 +6,7 @@ This repository contains a clone of the header, navbar, and live-search elements
 > Coming Soon
 
 ## Walk-through Videos
+### 15 Second Scroll-Through
 [![IMAGE ALT TEXT HERE](https://i.imgur.com/KxDzCLA.png)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 
 
