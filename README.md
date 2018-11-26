@@ -1,12 +1,13 @@
 # Adidas Clone
 
-This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in November 2018.
+This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in November 2018. These components are written as fully modular microservices, which can be seamlessly combined with other components to create a full Adidas.com product-page clone.
 
 #### Tech Stack
 React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
 ## Live Demo
-> Coming Soon
+> Header, navbar, and live-search elements: Coming Soon
+> Full-proxy demo: Coming Soon
 
 ## Walk-through Videos
 #### 25 Second Scroll-Through
