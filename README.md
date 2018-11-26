@@ -12,7 +12,7 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
 ## Walk-through Videos
 #### 25 Second Scroll-Through
-[![IMAGE ALT TEXT HERE](https://i.imgur.com/KxDzCLA.png)](https://www.youtube.com/watch?v=iUA7akiyqQM)
+[![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 #### Detailed explanations of technical challenges encountered and overcome: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
 
 ## Running Development Environment Locally
