@@ -1,6 +1,6 @@
 # Adidas Clone
 
-This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in Novembe 2018.
+This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in November 2018.
 
 ## Live Demo
 > Coming Soon
