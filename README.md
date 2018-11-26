@@ -36,14 +36,3 @@ Set
 6) Initiate webpack continuous build: `npm run run react-dev`
 7) Start server: `npm start`
 8) In your browser, visit: `localhost:3000`
-
-**IMPORTANT**: currently when you run `npm test`, the database designated in `shoedidas_header` will be dropped. Further, `npm test` is run as a pre-commit hook every time that you attempt to make a commit. This means that you should run `npm run seed` to seed the database after every commit.
-
-(This issue will be fixed soon!)
-
-
-## Adidas.com (10/27/18)
-![adidas](https://i.imgur.com/cJG0tOL.png)
-
-## Shoedidas (10/27/18)
-![shoedidas](https://i.imgur.com/HWtOEGy.png)
