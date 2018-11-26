@@ -7,6 +7,7 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
 ## Live Demo
 > Header, navbar, and live-search elements: Coming Soon
+
 > Full-proxy demo: Coming Soon
 
 ## Walk-through Videos
