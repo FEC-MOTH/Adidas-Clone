@@ -25,10 +25,10 @@
 
 @-webkit-keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(47, 44, 204, 1);
+    -webkit-box-shadow: 0 0 0 0 rgb(204, 89, 44);
   }
   70% {
-      -webkit-box-shadow: 0 0 0 10px rgba(47, 44, 204, .3);
+      -webkit-box-shadow: 0 0 0 10px rgba(204, 89, 44, .3);
   }
   100% {
       -webkit-box-shadow: 0 0 0 0 rgba(47, 44, 204, 0);
@@ -36,12 +36,12 @@
 }
 @keyframes pulse {
   0% {
-    -moz-box-shadow: 0 0 0 0 rgba(47, 44, 204, 1);
-    box-shadow: 0 0 0 0 rgba(47, 44, 204, 1);
+    -moz-box-shadow: 0 0 0 0 rgba(204, 89, 44, 1);
+    box-shadow: 0 0 0 0 rgba(204, 89, 44, 1);
   }
   70% {
-      -moz-box-shadow: 0 0 0 10px rgba(47, 44, 204, .3);
-      box-shadow: 0 0 0 10px rgba(47, 44, 204, .3);
+      -moz-box-shadow: 0 0 0 10px rgba(204, 89, 44, .3);
+      box-shadow: 0 0 0 10px rgba(204, 89, 44, .3);
   }
   100% {
       -moz-box-shadow: 0 0 0 0 rgba(47, 44, 204, 0);
