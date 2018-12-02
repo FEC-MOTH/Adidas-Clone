@@ -13,7 +13,7 @@
     "test": "jest --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore .",
     "react-dev": "webpack -w",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "validate": "npm-run-all --parallel test lint",
     "build": "webpack",
     "precommit": "npm run validate"
