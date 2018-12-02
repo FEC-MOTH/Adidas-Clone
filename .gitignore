@@ -3,3 +3,5 @@ client/dist/bundle.js
 coverage
 .env
 docker
+.DS_STORE
+client/.DS_STORE

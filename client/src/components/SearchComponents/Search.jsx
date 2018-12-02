@@ -6,6 +6,7 @@ import ClearSearchIcon from './ClearSearchIcon.jsx';
 import SearchSubMenu from './SearchSubMenu.jsx';
 import { debounce } from '../../../../utils/general.js';
 import { boldSearchStringInSuggestions } from '../../../../utils/parsers.js';
+import ReactTooltip from 'react-tooltip';
 
 class Search extends React.Component {
   constructor(props) {
@@ -81,7 +82,9 @@ class Search extends React.Component {
   render() {
     return (
       <li className={styles.searchWrapperOuter}>
-        <div className={styles.searchInputWrapper}>
+        <ReactTooltip />
+
+        <div className={styles.searchInputWrapper} data-tip="Try searching for Shoe, Football, or Hoodie!">
           <SearchGlass />
           <input id="searchBox" placeholder="search" type="text" value={this.state.search} onChange={(e) => { this.changeHandler(e) }}></input>
           <ClearSearchIcon search={this.state.search} clearSearchResults={this.clearSearchResults} />

@@ -14,7 +14,16 @@
 }
 
 #dummyWrapper h3 {
+<<<<<<< HEAD
   padding-top: 20px;
+=======
+  text-align: left;
+}
+
+#dummyWrapper h3.explainer {
+  padding-top: 0px;
+  margin-top: 0px;
+>>>>>>> docker-deploy-attempt
   text-align: left;
 }
 

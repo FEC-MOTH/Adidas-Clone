@@ -1,5 +1,5 @@
 import React from 'react';
-import Pluralize from 'Pluralize';
+import Pluralize from 'pluralize';
 import RatingStar from './StarRating';
 import EmptyStarRating from './EmptyStarRating';
 import styles from '../../css/Search.css';
@@ -13,8 +13,8 @@ const SearchResultsListEntry = (props) => (
       <span className={styles.productName}> {props.searchResult.name} </span>
       {props.searchResult.salePrice !== null &&
         <div className={styles.priceContainer}>
-          <span className={styles.salePrice}>${props.searchResult.price + " "}</span>
-          <span className={styles.glPriceCrossed}>${props.searchResult.salePrice}</span>
+          <span className={styles.salePrice}>${props.searchResult.salePrice + " "}</span>
+          <span className={styles.glPriceCrossed}>${props.searchResult.price}</span>
         </div>
       }
       {props.searchResult.salePrice === null &&

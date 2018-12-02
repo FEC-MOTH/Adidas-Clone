@@ -51,6 +51,7 @@
     "random-part-of-speech": "^1.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-tooltip": "^3.9.0",
     "sequelize": "^4.41.0",
     "styled-components": "^4.0.3",
     "webpack": "^4.23.0",
