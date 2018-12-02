@@ -1,6 +1,19 @@
-# Shoedidas Header
+# Adidas Clone
 
-This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in Novembe 2018.
+This repository contains a clone of the header, navbar, and live-search elements on Adidas.com, as they appeared in November 2018. These components are written as fully modular microservices, which can be seamlessly combined with other components to create a full Adidas.com product-page clone.
+
+#### Tech Stack
+React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
+
+## Live Demo
+> Header, navbar, and live-search elements: Coming Soon
+
+> Full-proxy demo: Coming Soon
+
+## Walk-through Videos
+#### [25 Second Scroll-through](https://www.youtube.com/watch?v=iUA7akiyqQM)
+[![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
+#### Detailed explanations of technical challenges encountered and overcome: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
 
 ## Running Development Environment Locally
 
@@ -28,14 +41,3 @@ Set
 6) Initiate webpack continuous build: `npm run run react-dev`
 7) Start server: `npm start`
 8) In your browser, visit: `localhost:3000`
-
-**IMPORTANT**: currently when you run `npm test`, the database designated in `shoedidas_header` will be dropped. Further, `npm test` is run as a pre-commit hook every time that you attempt to make a commit. This means that you should run `npm run seed` to seed the database after every commit.
-
-(This issue will be fixed soon!)
-
-
-## Adidas.com (10/27/18)
-![adidas](https://i.imgur.com/cJG0tOL.png)
-
-## Shoedidas (10/27/18)
-![shoedidas](https://i.imgur.com/HWtOEGy.png)
