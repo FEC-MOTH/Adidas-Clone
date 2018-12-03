@@ -6,7 +6,7 @@ This repository contains a clone of the header, navbar, and live-search elements
 React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
 ## Live Demo
-> Header, navbar, and live-search elements: Coming Soon
+> Header, navbar, and live-search elements: http://54.146.229.91:3000/
 
 > Full-proxy demo: Coming Soon
 
