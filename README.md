@@ -15,6 +15,17 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 [![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 #### Detailed explanations of technical challenges encountered and overcome: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
 
+## Team Members
+Shoedias was created as a project at Hack Reactor, Los Angeles. Team members include:
+
+Hayden Betts (@haydenbetts)
+
+Tim Tran (@datusername1)
+
+Omar Jandali (@omar-jandali)
+
+Matthew Lin (@mlin367)
+
 ## Running Development Environment Locally
 
 To run locally
