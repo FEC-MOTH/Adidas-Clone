@@ -13,7 +13,7 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 > Full-proxy demo: Coming Soon
 
 ## Supporting Documentation
-> Video Explanation of technical challenges encountered and overcome: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
+> Video explanations of technical challenges encountered and overcome: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
 
 > [Slides from a presentation explaining optimizations made while scaling to 10,000,000 records, 4200 RPS](https://docs.google.com/presentation/d/1oLnoV3tQnWJlWnQBg-WspJ_Cik1YmxTjscEmiLPMicE/edit?usp=sharing)
 
