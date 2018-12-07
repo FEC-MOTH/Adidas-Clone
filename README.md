@@ -5,8 +5,8 @@ This repository contains a clone of the header, navbar, and live-search elements
 #### Tech Stack
 React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
-## Demos
-> Live: (Header, navbar, and live-search elements)[http://54.146.229.91:3000/]
+## Lives Demos
+> [Header, navbar, and live-search elements](http://54.146.229.91:3000/)
 
 > Full-proxy demo: Coming Soon
 
