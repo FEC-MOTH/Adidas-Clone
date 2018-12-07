@@ -5,13 +5,14 @@ This repository contains a clone of the header, navbar, and live-search elements
 #### Tech Stack
 React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
-## Live Demo
-> Header, navbar, and live-search elements: http://54.146.229.91:3000/
+## Demos
+> Live: (Header, navbar, and live-search elements)[http://54.146.229.91:3000/]
 
 > Full-proxy demo: Coming Soon
 
+## Supporting Documentation
 > [Slides from a presentation explaining optimizations made while scaling:](https://docs.google.com/presentation/d/1oLnoV3tQnWJlWnQBg-WspJ_Cik1YmxTjscEmiLPMicE/edit?usp=sharing)
-## Walk-through Videos
+
 #### [25 Second Scroll-through](https://www.youtube.com/watch?v=iUA7akiyqQM)
 [![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 #### Detailed explanations of technical challenges encountered and overcome: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
