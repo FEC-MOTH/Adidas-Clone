@@ -20,7 +20,7 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 > [25 Second Scroll-through Video](https://www.youtube.com/watch?v=iUA7akiyqQM)
 
 ## Team Members
-Shoedias was created as a project at Hack Reactor, Los Angeles. Team members include:
+Shoedidas was created as a project at Hack Reactor, Los Angeles. Team members include:
 
 Hayden Betts (@haydenbetts)
 
