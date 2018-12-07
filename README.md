@@ -5,7 +5,6 @@ This repository contains a clone of the header, navbar, and live-search elements
 #### Tech Stack
 React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
-(click me to see HQ video!)
 [![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 
 ## Live Demos
