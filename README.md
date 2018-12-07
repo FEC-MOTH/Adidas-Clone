@@ -11,7 +11,7 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 > Full-proxy demo: Coming Soon
 
 ## Supporting Documentation
-> [Slides from a presentation explaining optimizations made while scaling:](https://docs.google.com/presentation/d/1oLnoV3tQnWJlWnQBg-WspJ_Cik1YmxTjscEmiLPMicE/edit?usp=sharing)
+> [Slides from a presentation explaining optimizations made while scaling to 10,000,000 records, 4200 RPS](https://docs.google.com/presentation/d/1oLnoV3tQnWJlWnQBg-WspJ_Cik1YmxTjscEmiLPMicE/edit?usp=sharing)
 
 #### [25 Second Scroll-through](https://www.youtube.com/watch?v=iUA7akiyqQM)
 [![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
