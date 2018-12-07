@@ -5,18 +5,19 @@ This repository contains a clone of the header, navbar, and live-search elements
 #### Tech Stack
 React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
-## Lives Demos
+[![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
+
+## Live Demos
 > [Header, navbar, and live-search elements](http://54.146.229.91:3000/)
 
 > Full-proxy demo: Coming Soon
 
 ## Supporting Documentation
-> Detailed explanations of technical challenges encountered and overcome: [1](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
+> [Explanations of technical challenges encountered and overcome](https://www.youtube.com/watch?v=rScMgF77G0U), [2](https://www.youtube.com/watch?v=XKypb11Ok2o)
 
 > [Slides from a presentation explaining optimizations made while scaling to 10,000,000 records, 4200 RPS](https://docs.google.com/presentation/d/1oLnoV3tQnWJlWnQBg-WspJ_Cik1YmxTjscEmiLPMicE/edit?usp=sharing)
 
-#### [25 Second Scroll-through](https://www.youtube.com/watch?v=iUA7akiyqQM)
-[![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
+> [25 Second Scroll-through Video](https://www.youtube.com/watch?v=iUA7akiyqQM)
 
 ## Team Members
 Shoedias was created as a project at Hack Reactor, Los Angeles. Team members include:
