@@ -10,7 +10,7 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 ## Live Demos
 > [Header, navbar, and live-search elements](http://54.146.229.91:3000/)
 
-> Full-proxy demo: Coming Soon
+> [Full-proxy demo](http://54.146.229.91/)
 
 ## Supporting Documentation
 > [25 Second Scroll-through Video](https://www.youtube.com/watch?v=iUA7akiyqQM)
