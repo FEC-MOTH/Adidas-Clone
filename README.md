@@ -7,10 +7,7 @@ React | Express | Postgres | Amazon EC2, S3 | Docker | Jest
 
 [![IMAGE ALT TEXT HERE](https://i.imgur.com/CZP6LVH.gif)](https://www.youtube.com/watch?v=iUA7akiyqQM)
 
-## Live Demos
-> [Header, navbar, and live-search elements](http://54.146.229.91:3000/)
-
-> [Full-proxy demo](http://54.146.229.91/)
+## Live Demos (Available upon request)
 
 ## Supporting Documentation
 > [25 Second Scroll-through Video](https://www.youtube.com/watch?v=iUA7akiyqQM)
